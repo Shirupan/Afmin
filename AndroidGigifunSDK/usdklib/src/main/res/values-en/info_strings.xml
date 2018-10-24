@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="float_usercenter">User Center</string>
+	<string name="float_gamegift">Gift</string>
+	<string name="float_contact">Contact us</string>
+	<string name="float_buy">recharge</string>
+	<string name="float_play_game">relax</string>
+
+	<string name="exsituname">The user name you entered is already registered</string>
+	<string name="incorrectpw">The password you entered is incorrect</string>
+	<string name="notexsituname">The username you entered does not exist</string>
+	<string name="vistornotexsit">You have not used a guest login for this device</string>
+	<string name="vistorhadbind">Your visitor login for this device is already bundled</string>
+	<string name="emailhadbind">You have entered the mailbox has been bound to other accounts</string>
+	<string name="acchadbindemail">The account you entered is bound to the mailbox</string>
+	<string name="emailnotbind">You enter the account and the mailbox does not exist binding</string>
+	<string name="sendemailfail">Mail delivery failed. Please try again or contact customer service</string>
+	<string name="invalidpw">The length of the password you entered does not meet the requirements. Please enter 6-12 characters</string>
+	<string name="invaliduname">The user name you entered contains illegal characters</string>
+	<string name="unameinvalid">The length of the username you entered does not match. Please enter 4-20 characters</string>
+	<string name="fbaccounthadbind">Your Facebook account has been bound to gigifun account</string>
+
+	<string name="bindsucess">Bind successfully</string>
+	<string name="contactcustomservice">Please contact customer service</string>
+	<string name="invalidemail">Please enter a properly formatted mailbox</string>
+	<string name="visitormode">You are already tourists</string>
+	<string name="askforbindcontent">You are now using a visitor login, for your account security, Please bind the visitor account </string>
+	<string name="askforbind">Please bind the account number</string>
+	<string name="determine">Bind accounts</string>
+	<string name="cancel">enter the game</string>
+	<string name="hadbindcontent">You have already bound the account number, please login with the Bind account: </string>
+	<string name="hadbind">Had Bind accounts</string>
+	<string name="OK">OK</string>
+
+	<string name="lijizhuce"><b>Sign up now</b></string>
+	<!--  <string name="pay_type">google</string> -->
+
+	<string name="reset_pw">change Password</string>
+	<string name="bind_email">Bind the mailbox</string>
+	<string name="bind_visitor">Bind visitor account</string>
+	<string name="bind_facebook">Facebook binding</string>
+	<string name="vistor">vistor</string>
+	<!--请输入您的账号  -->
+	<string name="input_email_select">Please enter your email address (optional)</string>
+	<string name="input_email">Please enter your e-mail address</string>
+	<string name="binding">Binding</string>
+	<string name="More_login_mode">More logins</string>
+	<string name="forget_pw">forget password?</string>
+	<string name="no_account">No account?</string>
+	<string name="input_new_pw">Please enter a new password</string>
+	<string name="btn_ensure">change</string>
+	<string name="btn_send">send</string>
+	<string name="recover_pw">Find the password</string>
+	<string name="regist_acount">REGISTRATION</string>
+	<string name="regist">sign up</string>
+	<string name="bind_btn">bind</string>
+
+	<string name="fb_lonin_success">facebook login sucess</string>
+	<string name="reset_sucess">reset password success</string>
+	<string name="acouhadbind">Has been bound to an account, can no longer bind other accounts</string>
+	<string name="logfbfirst">Please login facebook account</string>
+	<string name="user_cancel">user cancel the order</string>
+	<string name="send_to_email">Has been sent to the mailbox</string>
+	<string name="noaction">There is  no activity</string>
+	<string name="rewardsend">Rewards have been sent and can not be repeated</string>
+
+
+
+    <string name="action_settings">Settings</string>
+     <!-- 账号密码不能为空 -->
+     <string name="username_pwd_not_null">Account password can not be empty</string>
+     <!-- 参数缺少或不匹配 -->
+     <string name="program_error">参数缺少或不匹配</string>
+     <!--  登陆成功 -->
+	<string name="login_success">login successful</string>
+	<!-- 用户名不符合规定 -->
+	<string name="username_verification_failure">Username non-compliance</string>
+	<!-- 密码不符规定  -->
+	<string name="password_verification_failure">Password irregularities</string>
+	<!--  没有注册该用户名-->
+	<string name="the_user_name_is_not_registered">The user name is not registered</string>
+	<!--输入的密码有误  -->
+	<string name="password_is_error">Enter the password is incorrect</string>
+	<!-- 填写项不能为空 -->
+	<string name="content_can_not_be_empty">Fill item can not be empty</string>
+	<!-- 前后密码不一致 -->
+	<string name="two_password_does_not_match">The password doesn’t match</string>
+	<!-- 注册成功 -->
+	<string name="successful_registration">Successful registration</string>
+	<!-- 网络连接异常 -->
+	<string name="network_error">No network, please check</string>
+	<!-- 已经存在同名用户 -->
+	<string name="username_already_exists">Existing Account</string>
+	<!-- 您有未消费的订单，正在尝试消费请稍等再试 -->
+	<string name="you_have_noconsume_order">You have unconsumed order(s), processing now and please try again later</string>
+	<!-- 手机没有安装Google Play Store,不能进行google支付! -->
+	<string name="the_device_is_not_installed_google_play_store">Your device has not installed Google Play Store, unable to proceed with the payment!</string>
+	<!--Google Play初始化失败,当前无法进行支付，请确定您所在地区支持Google Play支付或重启游戏再试！  -->
+	<string name="google_play_initialization_failure">Google Play Initialising  failed, unable to make payment now. Please ensure that your current location supports Google Play payment or restart the game to try agin!</string>
+	<!--链接错误  -->
+	<string name="link_error">Connection error</string>
+	<!-- 网络连接错误，正在重新请求 -->
+	<string name="network_error_request_again">Network connection error, trying to connect again</string>
+	<!-- 请求网络失败，五分钟后会自动再次发次请求或重启游戏，进行重新请求! -->
+	<string name="request_network_error">Network connection failed, will try to connect again after ten minutes!</string>
+	<!-- 网络连接错误，您有未消费的订单 -->
+	<string name="network_error_and_you_have_unconsumed_order">Network connection error, you have unconsumed order(s)</string>
+	<!-- 数据返回错误 -->
+	<string name="request_order_error">数据返回错误</string>
+	<!-- 正在检查您的订单，请稍等再试 -->
+	<string name="checking_unconsume_order">System is validating if you have any unconsumed order(s), please wait for a while and try again</string>
+	<!-- 充值成功 -->
+	<string name="successful_recharge">Payment is successful</string>
+	<!-- 充值失败 -->
+	<string name="recharge_failure">Payment is unsuccessful</string>
+	<!--该好友已经被邀请过  -->
+	<string name="friend_has_been_invited">This friend have been invited</string>
+	<!-- 当前没有邀请好友活动 -->
+	<string name="has_no_invite_friend_event">No invite friends activities currently</string>
+	<!-- 加载错误 -->
+	<string name="loading_error">Load Error</string>
+	<!-- 支付异常 -->
+	<string name="pay_error">Pay anomalies: </string>
+	<!-- 当前没有分享活动 -->
+	<string name="has_no_share_event">No sharing activities currently</string>
+	<!-- 订单消费失败 -->
+	<string name="order_consume_failue">Order consumed failure</string>
+	<!--请联系客服，服务器端错误  -->
+	<string name="please_contact_customer">Please contact customer service, the server error.</string>
+	<!--此订单已经消费过  -->
+	<string name="this_order_had_been_consumed">This order had been consumed.</string>
+	<!-- 订单消费成功 -->
+	<string name="order_consume_success">Order consumed successfully</string>
+	<!--分享成功  -->
+	<string name="share_success">Share Success</string>
+	<!--请输入您的账号  -->
+	<string name="input_accout">Please enter your username</string>
+	<!--请输入您的密码  -->
+	<string name="input_password">Please enter your password</string>
+
+	<!-- 记住密码 -->
+	<string name="re_password">Remember Password</string>
+	<!-- 自动登录 -->
+	<string name="auto_logo">Auto-login</string>
+	<!-- 登\t\t陆 -->
+	<string name="login_text">Login</string>
+	<!-- 注\t\t册 -->
+	<string name="reg_text">Registration</string>
+	<string name="account_reg">REGISTRATION</string>
+	<string name="account_login">LOGIN</string>
+	<!-- 活动说明 -->
+	 <string name="event_description">Event Details </string>
+
+		
+	<string name="invite_text">Invite</string>
+	<string name="invite_friend_text">Friends</string>
+	<string name="invite_people_text">(PPL)</string>
+    <!--Facebook登錄  -->
+	<string name="facebook_text">Facebook Login</string>
+	<!-- 邀請越多，獎勵越多 -->
+	<string name="invite_more_text">Please invite more friends to obtain more gift packs</string>
+	<!--點贊禮包  -->
+	<string name="like_gift_text">Like Gift Pack</string>
+	<!-- 分享禮包 -->
+	<string name="share_gift_text">Share Gift Pack</string>
+	<!-- 邀請禮包 -->
+	<string name="invite_gift_text">Invitation Gift Pack</string>	
+	<!--未達成  -->
+	<string name="like_incompleted">Incomplete</string>
+	<!--已達成  -->
+	<string name="like_completed">Completed</string>
+	<!-- 立即分享 -->
+	<string name="share_gift_send">Share Now</string>
+	<!-- 禮包已發送 -->
+	<string name="share_gift_hadsend">Reward Sent</string>
+	<!-- 邀請 -->
+	<string name="invite_peo_send">Invite</string>
+	<!-- 已發送 -->
+	<string name="invite_peo_hadsend">Sent</string>
+
+	<string name="has_received_reward">You have received a reward</string>
+	<string name="send_reward_failed">Send reward failed</string>
+
+	<!-- 快速注册截图弹窗口-->
+	<string name="reg_submit">Submit</string>
+	<string name="reg_pic">Screenshot</string>
+	<string name="reg_gen">Gentle Reminder</string>
+	<string name="reg_context">Gentle reminder instant registration will generate username and password randomly. You may tap on the "screenshot" and all your account information will be saved to your photo album. Tap the "Submit" to login immediately.</string>
+
+	<!-- 更新窗口-->
+	<string name="upgrade_tip">Version Tips</string>
+	<string name="upgrade_ok">Update Now</string>	
+	<string name="upgrade_cancel">Later</string>
+	<string name="upgrade_message">update info</string>
+	<string name="invite_peo_msg">invite friends</string>
+</resources>

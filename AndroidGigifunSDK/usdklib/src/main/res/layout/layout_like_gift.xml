@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/like_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/layout_list"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ugame_gift_size1"
+            
+             >
+
+            <ListView
+                android:id="@+id/like_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:fadingEdge="none" >
+            </ListView>
+            <com.gigifun.gp.ui.ProgressWheel
+                android:id="@+id/progress_wheel"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                wheel:barColor="#5588FF"
+                android:visibility="gone"
+                wheel:progressIndeterminate="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/gift_bottom_bg"
+            >
+
+            <com.facebook.share.widget.LikeView
+                android:id="@+id/like_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerVertical="true" >
+            </com.facebook.share.widget.LikeView>
+
+            <TextView
+            android:id="@+id/img_activite_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/select_false"
+            android:textSize="14dp"
+            android:text="@string/event_description" />
+        </RelativeLayout>
+    </LinearLayout>
+

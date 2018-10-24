@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- 设置进度条颜色（橘红色） -->
+    <item android:id="@android:id/progress" >
+        <clip>
+            <shape>
+                <corners android:radius="20dp" />
+
+                <gradient
+                    android:endColor="#e0a402"
+                    android:startColor="#e0a402"
+                    />
+                
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

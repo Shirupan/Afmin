@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="float_usercenter">用戶</string>
+    <string name="float_gamegift">好康</string>
+    <string name="float_contact">客服</string>
+    <string name="float_buy">儲值</string>
+    <string name="float_play_game">娛樂一下</string>
+
+    <string name="exsituname">您輸入的用戶名已被註冊</string>
+    <string name="incorrectpw">您輸入的密碼錯誤</string>
+    <string name="notexsituname">您輸入的用戶名不存在</string>
+    <string name="vistornotexsit">您這台設備還未使用過遊客登錄</string>
+    <string name="vistorhadbind">您這台設備的遊客登錄已綁定了帳號</string>
+    <string name="emailhadbind">你輸入的郵箱已綁定過其他帳號</string>
+    <string name="acchadbindemail">你輸入的帳號已綁定了郵箱</string>
+    <string name="emailnotbind">你輸入的帳號和郵箱不存在綁定關係</string>
+    <string name="sendemailfail">郵件發送失敗，請重試或聯繫客服</string>
+    <string name="invalidpw">你輸入的密碼長度不符合規定，請輸入6-12個字符</string>
+    <string name="invaliduname">您輸入的用戶名包含有非法字符</string>
+    <string name="unameinvalid">你輸入的用戶名長度不符合規定，請輸入4-20個字符</string>
+    <string name="fbaccounthadbind">您的Facebook帳號已綁定了gigifun帳號</string>
+
+    <string name="bindsucess">綁定成功</string>
+    <string name="contactcustomservice">請聯繫客服</string>
+    <string name="invalidemail">請輸入格式正確的郵箱</string>
+    <string name="visitormode">你已是遊客</string>
+    <string name="askforbindcontent">您現在使用的是遊客登錄，為了您的賬號安全，請您進行賬號綁定</string>
+    <string name="askforbind">請綁定賬號</string>
+    <string name="determine">綁定賬號</string>
+    <string name="cancel">進入遊戲</string>
+    <string name="hadbindcontent">您的機器已有相應的綁定賬號，請使用綁定的賬號登錄遊戲：</string>
+    <string name="hadbind">已綁定賬號</string>
+    <string name="OK">OK</string>
+
+    <string name="lijizhuce"><b>立即註冊</b></string>
+    <!--  <string name="pay_type">google</string> -->
+
+    <string name="reset_pw">修改密碼</string>
+    <string name="bind_email">綁定郵箱</string>
+    <string name="bind_visitor">綁定遊客賬號</string>
+    <string name="bind_facebook">facebook綁定</string>
+    <string name="vistor">游客</string>
+    <!--请输入您的账号  -->
+    <string name="input_email_select">請輸入你的郵箱（可選）</string>
+    <string name="input_email">請輸入你的郵箱</string>
+    <string name="binding">綁定</string>
+    <string name="More_login_mode">更多登錄方式</string>
+    <string name="forget_pw">忘記密碼？</string>
+    <string name="no_account">沒有賬號？</string>
+    <string name="input_new_pw">請輸入新密碼</string>
+    <string name="btn_ensure">確定</string>
+    <string name="btn_send">確定</string>
+    <string name="recover_pw">找回密碼</string>
+    <string name="regist_acount">賬號註冊</string>
+    <string name="regist">註冊</string>
+    <string name="bind_btn">绑定</string>
+
+    <string name="fb_lonin_success">facebook登入成功</string>
+    <string name="reset_sucess">修改成功</string>
+    <string name="acouhadbind">已綁定一個賬號，不能再綁定其他賬號</string>
+    <string name="logfbfirst">請先登錄facebook賬號</string>
+    <string name="user_cancel">用戶取消訂單</string>
+    <string name="send_to_email">已發送至郵箱</string>
+    <string name="noaction">當前沒有活動</string>
+    <string name="rewardsend">獎勵已發送，不能重複獲取</string>
+
+
+    <string name="action_settings">設置</string>
+    <string name="username_pwd_not_null">帳號密碼不能為空</string>
+    <string name="program_error">參數缺少或不匹配</string>
+    <string name="login_success">登入成功</string>
+    <string name="username_verification_failure">用戶名不符合規定</string>
+    <string name="password_verification_failure">密碼不符規定</string>
+    <string name="the_user_name_is_not_registered">沒有註冊該用戶名</string>
+    <string name="password_is_error">輸入的密碼有誤</string>
+    <string name="content_can_not_be_empty">填寫項不能為空</string>
+    <string name="two_password_does_not_match">前後密碼不壹致</string>
+    <string name="successful_registration">註冊成功</string>
+    <string name="network_error">網絡連接異常</string>
+    <string name="username_already_exists">已經存在同名用戶</string>
+    <string name="you_have_noconsume_order">您有未消費的訂單，正在嘗試消費請稍等再試</string>
+    <string name="the_device_is_not_installed_google_play_store">手機沒有安裝Google Play Store,不能進行google支付!</string>
+    <string name="google_play_initialization_failure">Google Play初始化失敗,當前無法進行支付，請確定您所在地區支持Google Play支付或重啟遊戲再試！</string>
+    <string name="link_error">鏈接錯誤</string>
+    <string name="network_error_request_again">網絡連接錯誤，正在重新請求</string>
+    <string name="request_network_error">請求網絡失敗，五分鐘後會自動再次發次請求或重啟遊戲，進行重新請求!</string>
+    <string name="network_error_and_you_have_unconsumed_order">網絡連接錯誤，您有未消費的訂單</string>
+    <string name="request_order_error">數據返回錯誤</string>
+    <string name="checking_unconsume_order">正在檢查您的訂單，請稍等再試</string>
+    <string name="successful_recharge">儲值成功</string>
+    <string name="recharge_failure">儲值失敗</string>
+    <string name="friend_has_been_invited">該好友已經被邀請過</string>
+    <string name="has_no_invite_friend_event">當前沒有邀請好友活動</string>
+    <string name="loading_error">加載錯誤</string>
+    <string name="pay_error">支付異常: </string>
+    <string name="has_no_share_event">當前沒有分享活動</string>
+    <string name="order_consume_failue">訂單消費失敗</string>
+    <string name="please_contact_customer">請聯系客服，服務器端錯誤</string>
+    <string name="this_order_had_been_consumed">此訂單已經消費過</string>
+    <string name="order_consume_success">訂單消費成功</string>
+    <string name="share_success">分享成功</string>
+    <string name="input_accout">請輸入您的帳號</string>
+    <string name="input_password">請輸入您的密碼</string>
+    <string name="re_password">記住密碼</string>
+    <string name="auto_logo">自動登入</string>
+    <string name="login_text">登\t\t入</string>
+    <string name="reg_text">註\t\t冊</string>
+    <string name="account_reg">帳號註冊</string>
+    <string name="account_login">帳號登入</string>
+
+    <string name="event_description">活動說明</string>
+
+    <string name="invite_text">邀請</string>
+    <string name="invite_friend_text">好友</string>
+    <string name="invite_people_text">(人)</string>
+
+    <string name="reg_text_su">快速註冊</string>
+    <string name="facebook_text">Facebook登入</string>
+    <string name="invite_more_text">邀請越多，獎勵越多</string>
+    <string name="like_gift_text">點贊好康</string>
+    <string name="share_gift_text">分享好康</string>
+    <string name="invite_gift_text">邀請好康</string>
+    <string name="like_incompleted">未達成</string>
+    <string name="like_completed">已達成</string>
+    <string name="share_gift_send">立即分享</string>
+    <string name="share_gift_hadsend">好康已發送</string>
+    <string name="invite_peo_send">邀請</string>
+    <string name="invite_peo_hadsend">已發送</string>
+
+    <string name="has_received_reward">已領取獎勵</string>
+    <string name="send_reward_failed">發送獎勵失敗</string>
+
+    <string name="reg_submit">提交</string>
+    <string name="reg_pic">截圖</string>
+    <string name="reg_gen">溫馨提示</string>
+    <string name="reg_context">快速註冊是隨機生成的賬號密碼,點擊“截圖”我們將為您截圖帳號信息並保存到相冊,點擊“提交”即可登入遊戲。 </string>
+
+    <string name="upgrade_tip">版本提示</string>
+    <string name="upgrade_ok">確定</string>
+    <string name="upgrade_cancel">取消</string>
+    <string name="upgrade_message">版本過低，需要到商店下載更新應用</string>
+    <string name="invite_peo_msg">邀請好友</string>
+</resources>

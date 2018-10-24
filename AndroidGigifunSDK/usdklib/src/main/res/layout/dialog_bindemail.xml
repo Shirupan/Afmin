@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gigifun.gp.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.gigifun.gp.percent.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        app:layout_heightPercent="80%h"
+        app:layout_widthPercent="65%w">
+
+        <com.gigifun.gp.percent.PercentRelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/TitleColor"
+            app:layout_heightPercent="15%h"
+            app:layout_widthPercent="100%w">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/iu_back"
+                app:layout_marginLeftPercent="3%"
+                app:layout_widthPercent="15%" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:text="@string/bind_email"
+                android:textColor="#fac600"
+                app:layout_textSizePercent="50%" />
+        </com.gigifun.gp.percent.PercentRelativeLayout>
+
+        <com.gigifun.gp.percent.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/name_input_edit_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_heightPercent="10%h"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="8%"
+            app:layout_marginTopPercent="10%"
+            app:layout_widthPercent="60%w">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/denglu"
+                app:layout_heightPercent="80%"
+                app:layout_widthPercent="10%" />
+
+            <EditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/input_accout"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textColorHint="#7a7a7a"
+                app:layout_marginLeftPercent="8%"
+                app:layout_marginTopPercent="5%"
+                app:layout_textSizePercent="60%" />
+        </com.gigifun.gp.percent.PercentLinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#e9e9e9"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="8%"
+            app:layout_widthPercent="70%w"></LinearLayout>
+
+        <com.gigifun.gp.percent.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/name_input_edit_bg2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_heightPercent="10%h"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="8%"
+            app:layout_marginTopPercent="5%"
+            app:layout_widthPercent="60%w">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/mima"
+                app:layout_heightPercent="80%"
+                app:layout_widthPercent="10%" />
+
+            <EditText
+                android:id="@+id/edt_psw"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:drawableRight="@drawable/zhenyan"
+                android:hint="@string/input_password"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textColorHint="#7a7a7a"
+                app:layout_marginLeftPercent="8%"
+                app:layout_marginTopPercent="5%"
+                app:layout_textSizePercent="60%" />
+
+        </com.gigifun.gp.percent.PercentLinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#e9e9e9"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="8%"
+            app:layout_widthPercent="70%w"></LinearLayout>
+
+        <com.gigifun.gp.percent.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/name_input_edit_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_heightPercent="10%h"
+            app:layout_marginLeftPercent="20%"
+            app:layout_marginRightPercent="8%"
+            app:layout_marginTopPercent="5%"
+            app:layout_widthPercent="60%w">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/youxiang"
+                app:layout_heightPercent="60%"
+                app:layout_widthPercent="10%" />
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/input_email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textColorHint="#7a7a7a"
+                app:layout_marginLeftPercent="8%"
+                app:layout_marginTopPercent="5%"
+                app:layout_textSizePercent="60%" />
+        </com.gigifun.gp.percent.PercentLinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#e9e9e9"
+            app:layout_marginLeftPercent="15%"
+            app:layout_marginRightPercent="8%"
+            app:layout_widthPercent="70%w"></LinearLayout>
+
+        <com.gigifun.gp.percent.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:background="@drawable/name_input_edit_bg"
+            android:orientation="horizontal"
+            app:layout_heightPercent="20%h"
+            app:layout_marginTopPercent="8%"
+            app:layout_widthPercent="60%w">
+
+
+            <Button
+                android:id="@+id/btn_bind"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/anniu"
+                android:text="@string/bind_btn"
+                android:textColor="@color/TextColorWhite"
+                android:textStyle="bold"
+                app:layout_heightPercent="100%h"
+                app:layout_textSizePercent="40%" />
+
+        </com.gigifun.gp.percent.PercentLinearLayout>
+    </com.gigifun.gp.percent.PercentLinearLayout>
+
+    <com.gigifun.gp.ui.ProgressWheel
+        android:id="@+id/progress_wheel"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        wheel:barColor="#F6A20E"
+        wheel:progressIndeterminate="true" />
+</com.gigifun.gp.percent.PercentRelativeLayout>

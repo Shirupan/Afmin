@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/invite_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ugame_gift_size1"
+        android:visibility="visible" >
+
+        <ListView
+            android:id="@+id/invite_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:fadingEdge="none" >
+        </ListView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/gift_bottom_bg" >
+
+        <TextView
+            android:id="@+id/img_invite_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+
+             android:textColor="#5F6E07"
+            android:text="@string/invite_more_text"
+               android:textSize="12dp"
+            android:visibility="gone"
+             />
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/img_invite_more"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/invite_progress_bg"
+            android:id="@+id/layout_progress">
+
+            <ProgressBar
+                android:id="@+id/invite_progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="200dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+
+                android:paddingBottom="3dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="3dp"
+                android:progressDrawable="@drawable/progressbar_bg" />
+
+            <TextView
+                android:id="@+id/tv_invite_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:textColor="#FFFFFFFF"
+                android:layout_centerHorizontal="true"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/img_activite_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/select_false"
+            android:textSize="14dp"
+            android:text="@string/event_description" />
+    </RelativeLayout>
+
+</LinearLayout>

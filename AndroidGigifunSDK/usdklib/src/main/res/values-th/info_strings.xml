@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="float_usercenter">สมาชิก</string>
+    <string name="float_gamegift">รางวัล</string>
+    <string name="float_contact">บริการลูกค้า</string>
+    <string name="float_buy">เติมเงิน</string>
+    <string name="float_play_game">เกมใหม่</string>
+
+    <string name="exsituname">บัญชีนี้ถูกใช้แล้ว</string>
+    <string name="incorrectpw">รหัสผ่านไม่ถูกต้อง</string>
+    <string name="notexsituname">บัญชีไม่ถูกต้อง</string>
+    <string name="vistornotexsit">เครือข่ายนี้ยังไม่เคยล็อคอินค้วยบัญชีผู้เข้าชม</string>
+    <string name="vistorhadbind">บัญชีผู้เข้าชมของเครือข่ายนี้ถูกล็อคแล้ว</string>
+    <string name="emailhadbind">อีเมล์นี้ถูกใช้แล้ว</string>
+    <string name="acchadbindemail">ไอดีได้ล็อคอีเมล์แล้ว</string>
+    <string name="emailnotbind">บัญชีไม่ได้ล็อคกับอีเมล์</string>
+    <string name="sendemailfail">ส่งเมล์ไม่สำเร็จ กรุณาลองใหม่หรือติดต่อบริการลูกค้า</string>
+    <string name="invalidpw">รหัสผ่านต้องเป็น6-12ตัวอักษร</string>
+    <string name="invaliduname">ชื่อบัญชีผิดกำหนด</string>
+    <string name="unameinvalid">ชื่อบัญชีต้องเป็น4-20ตัวอักษร</string>
+    <string name="fbaccounthadbind">บัญชีFacebookเคยล็อคไอดีgigifunแล้ว</string>
+
+    <string name="bindsucess">ล็อคสำเร็จ</string>
+    <string name="contactcustomservice">กรุณาติดต่อบริการลูกค้า</string>
+    <string name="invalidemail">กรุณากรอกอีเมล์ให้ถูกต้อง</string>
+    <string name="visitormode">เป็นบัญชีผู้เข้าชมอยู่แล้ว</string>
+    <string name="askforbindcontent">เป็นบัญชีผู้เข้าชมอยู่แล้ว แต่ขอล็อคไอดีเพื่อความปลอดภัยของบัญชีของท่าน</string>
+    <string name="askforbind">กรุณาล็อคไอดี</string>
+    <string name="determine">ล็อคไอดี</string>
+    <string name="cancel">เข้าเกม</string>
+    <string name="hadbindcontent">เครือข่ายเคยล็อคไอดีแล้ว กรุณาใช้ไอดีที่ล็อคไว้ล็อคอินนะคะ</string>
+    <string name="hadbind">ล็อคไอดีแล้ว</string>
+    <string name="OK">OK</string>
+
+
+    <string name="lijizhuce"><b>ลงทะเบียน</b></string>
+    <!--  <string name="pay_type">google</string> -->
+
+    <string name="reset_pw">เปลี่ยนรหัสผ่าน</string>
+    <string name="bind_email">ล็อคอีเมล์</string>
+    <string name="bind_visitor">ล็อคบัญชีผู้เข้าชม</string>
+    <string name="bind_facebook">ล็อคไอดีFacebook</string>
+    <string name="vistor">ผู้เข้าชม</string>
+    <!--กรุณากรอกบัญชี -->
+    <string name="input_email_select">กรุณากรอกอีเมล์(ถ้ามี)</string>
+    <string name="input_email">กรุณากรอกอีเมล์</string>
+    <string name="binding">ล็อค</string>
+    <string name="More_login_mode">ล็อคอินด้วยช่องทางอื่น</string>
+    <string name="forget_pw">ลืมรหัสผ่าน?</string>
+    <string name="no_account">ยังไม่มีไอดี?</string>
+    <string name="input_new_pw">กรุณากรอกรหัสผ่านใหม่</string>
+    <string name="btn_ensure">ยืนยัน</string>
+    <string name="btn_send">ยืนยัน</string>
+    <string name="recover_pw">ลืมรหัสผ่าน</string>
+    <string name="regist_acount">ลงทะเบียน</string>
+    <string name="regist">ลงทะเบียน</string>
+    <string name="bind_btn">ล็อค</string>
+
+    <string name="fb_lonin_success">facebookล็อคอินสำเร็จ</string>
+    <string name="reset_sucess">เปลี่ยนสำเร็จ</string>
+
+
+    <string name="fb_has_Login">facebookล็อคอินสำเร็จ</string>
+    <string name="acouhadbind">เคยล็อคไอดีแล้ว</string>
+    <string name="logfbfirst">กรุณาล็อคอินไอดีFacebookนะคะ</string>
+    <string name="user_cancel">ยกเลิกใบสั่งซื้อ</string>
+    <string name="send_to_email">ส่งเมล์ไม่สำเร็จ </string>
+    <string name="noaction">ยังไม่มีกิจกรรม</string>
+    <string name="rewardsend">ส่งรางวัลแล้ว</string>
+
+    <string name="action_settings">ตั้งค่า</string>
+    <string name="username_pwd_not_null">รหัสผ่านบัญชีว่างเปล่าไม่ได้</string>
+    <string name="program_error">error</string>
+    <string name="login_success">ล็อคอินสำเร็จ</string>
+    <string name="username_verification_failure">ชื่อบัญชีไม่ตรงตามข้อกำหนด</string>
+    <string name="password_verification_failure">รหัสผ่านไม่ตรงตามข้อกำหนด</string>
+    <string name="the_user_name_is_not_registered">ยังไม่มีชื่อบัญชีนี้</string>
+    <string name="password_is_error">รหัสผ่านไม่ถูกต้อง</string>
+    <string name="content_can_not_be_empty">ว่างเปล่าไม่ได้</string>
+    <string name="two_password_does_not_match">รหัสผ่านที่กรอกแตกต่างกัน</string>
+    <string name="successful_registration">ลงทะเบียนสำเร็จ</string>
+    <string name="network_error">การเชื่อมต่อเครือข่ายผิดปกติ</string>
+    <string name="username_already_exists">มีชื่อบัญชีนี้อยู่แล้ว</string>
+    <string name="you_have_noconsume_order">ท่านยังมีใบสั่งซื้อที่ไม่ได้ชำระ</string>
+    <string name="the_device_is_not_installed_google_play_store">Google Play สโตร์ไม่ได้ติดตั้งในโทรศัพท์ของคุณและไม่สามารถชำระเงินให้กับ Google!</string>
+    <string name="google_play_initialization_failure">Google Play ไม่สามารถเริ่มต้นและไม่สามารถชำระเงินได้ในขณะนี้โปรดตรวจสอบว่าภูมิภาคของคุณสนับสนุนการชำระเงินของ Google Play หรือเปิดดเกมใหม่！</string>
+    <string name="link_error">ข้อผิดพลาดในการเชื่อม</string>
+    <string name="network_error_request_again">การเชื่อมต่อเครือข่ายไม่ถูกต้อง กำลังลงใหม่</string>
+    <string name="request_network_error">เชื่อมเครือข่ายล้มเหลว จะลองใหม่อัตโนมัติหลัง5นาทีหรือเปิดเกมใหม่</string>
+    <string name="network_error_and_you_have_unconsumed_order">การเชื่อมต่อเครือข่ายไม่ถูกต้องและท่านยังมีใบสั่งซื้อที่ไม่ได้ชำระ</string>
+    <string name="request_order_error">ข้อมูลถูกส่งกลับไม่ถูกต้อง</string>
+    <string name="checking_unconsume_order">กำลังตรวจสอบคำสั่งซื้อของท่าน โปรดลองอีกครั้ง</string>
+    <string name="successful_recharge">เติมเงินสำเร็จ</string>
+    <string name="recharge_failure">เติมเงินไม่สำเร็จ</string>
+    <string name="friend_has_been_invited">เพื่อนเคยเชิญแล้ว</string>
+    <string name="has_no_invite_friend_event">ยังไม่มีกิจกรรมเชิญ</string>
+    <string name="loading_error">โหลดผิดพลาด</string>
+    <string name="pay_error">การชำระเงินผิดปกติ: </string>
+    <string name="has_no_share_event">ยังไม่มีกิจกรรมแชร์</string>
+    <string name="order_consume_failue">ชำระใบสั่งซื้อล้มเหลว</string>
+    <string name="please_contact_customer">เกิดข้อผิดพลาดฝั่งเซิร์ฟเวอร์ โปรดติดต่อฝ่ายบริการลูกค้า</string>
+    <string name="this_order_had_been_consumed">ใบสั่งซื้อชำระแล้ว</string>
+    <string name="order_consume_success">ชำระใบสั่งซื้อสำเร็จ</string>
+    <string name="share_success">แชร์สำเร็จ</string>
+    <string name="input_accout">กรุณากรอกชื่อบัญชี</string>
+    <string name="input_password">กรุณากรอกรหัสผ่าน</string>
+    <string name="re_password">จดจำรหัสผ่าน</string>
+    <string name="auto_logo">ล็อคอินอัตโนมัติ</string>
+    <string name="login_text">ล็อค\t\tอิน</string>
+    <string name="reg_text">ลงทะ\t\tเบียน</string>
+    <string name="account_reg">ลงทะเบียน</string>
+    <string name="account_login">ล็อคอิน</string>
+
+    <string name="event_description">รายละเอียด </string>
+
+    <string name="invite_text">เชิญ</string>
+    <string name="invite_friend_text">เพื่อน</string>
+    <string name="invite_people_text">(คน)</string>
+    <!--ลงทะเบียนปุ่มเดียว  -->
+    <string name="reg_text_su">ลงทะเบียนปุ่มเดียว</string>
+    <string name="facebook_text">ล็อคอินด้วยFacebook</string>
+    <string name="invite_more_text">เชิญเพื่อนยิงมาก ได้รางวัลยิงมาก</string>
+    <string name="like_gift_text">รางวัลกดlike</string>
+    <string name="share_gift_text">รางวัลแชร์</string>
+    <string name="invite_gift_text">รางวัลเชิญ</string>
+    <string name="like_incompleted">ยังไม่สำเร็จ</string>
+    <string name="like_completed">สำเร็จแล้ว</string>
+    <string name="share_gift_send">แชร์ทันที</string>
+    <string name="share_gift_hadsend">ส่งรางวัลแล้ว</string>
+    <string name="invite_peo_send">เชิญ</string>
+    <string name="invite_peo_hadsend">ส่งแล้ว</string>
+
+    <string name="has_received_reward">รับรางวัลแล้ว</string>
+    <string name="send_reward_failed">ส่งรางวัลไม่สำเร็จ</string>
+
+    <!-- ครอปรูป-->
+    <string name="reg_submit">ส่ง</string>
+    <string name="reg_pic">ครอปรูป</string>
+    <string name="reg_gen">โปรดทราบ</string>
+    <string name="reg_context">长夜将至，我从今开始守望，至死方休。我将不娶妻、不封地、不生子。我将不戴宝冠，不争荣宠。我将尽忠职守，生死於斯。我是黑暗中的利剑，长城上的守卫。我是抵御寒冷的烈焰，破晓时分的光线，唤醒眠者的号角，守护王国的坚盾。我将生命与荣耀献给守夜人，今夜如此，夜夜皆然。</string>
+    <!-- 更新窗口-->
+    <string name="upgrade_tip">เวอร์ชันใหม่</string>
+    <string name="upgrade_ok">อัปเดตทันที</string>
+    <string name="upgrade_cancel">แจ้งภายหลัง</string>
+    <string name="upgrade_message">เวอร์ชันต่ำเกินไป กรุณาอัปเดตก่อนใช้งาน</string>
+    <string name="invite_peo_msg">เชิญเพื่อน</string>
+</resources>

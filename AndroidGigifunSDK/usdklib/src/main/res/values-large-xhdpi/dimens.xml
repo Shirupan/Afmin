@@ -1,0 +1,33 @@
+<resources>
+
+    <!--
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    -->
+    <dimen name="activity_horizontal_margin">128dp</dimen>
+    <dimen name="ugame_size_630">410dp</dimen>
+    <dimen name="ugame_size_410">410dp</dimen>
+    <dimen name="ugame_size_450">400dp</dimen>
+     <dimen name="ugame_size_18">22dp</dimen>
+     
+      <dimen name="ugame_size_10">17dp</dimen>
+     
+       <dimen name="ugame_size_5">7dp</dimen>
+     
+       <dimen name="ugame_size_28">30dp</dimen>
+       
+       <dimen name="ugame_size_30">32dp</dimen>
+       
+         <dimen name="ugame_size_14">18dp</dimen>
+         
+          <dimen name="ugame_size_26">28dp</dimen>
+          
+          <dimen name="ugame_size_25">27dp</dimen>
+          
+          <dimen name="ugame_size_16">20dp</dimen>
+          
+          <dimen name="ugame_size_38">50dp</dimen>
+
+
+
+</resources>

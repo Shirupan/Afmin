@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!---->
+    <string name="float_usercenter">用户中心</string>
+    <string name="float_gamegift">游戏礼包</string>
+    <string name="float_contact">客服</string>
+    <string name="float_buy">充值</string>
+    <string name="float_play_game">娱乐一下</string>
+    <string name="float_facebook">facebook</string>
+
+    <string name="exsituname">您输入的用户名已被注册</string>
+    <string name="incorrectpw">您输入的密码错误</string>
+    <string name="notexsituname">您输入的用户名不存在</string>
+    <string name="vistornotexsit">您这台设备还未使用过游客登录</string>
+    <string name="vistorhadbind">您这台设备的游客登录已绑定了帐号</string>
+    <string name="emailhadbind">你输入的邮箱已绑定过其他帐号</string>
+    <string name="acchadbindemail">你输入的帐号已绑定了邮箱</string>
+    <string name="emailnotbind">你输入的帐号和邮箱不存在绑定关系</string>
+    <string name="sendemailfail">邮件发送失败，请重试或联系客服</string>
+    <string name="invalidpw">你输入的密码长度不符合规定，请输入6-12个字符</string>
+    <string name="invaliduname">您输入的用户名包含有非法字符</string>
+    <string name="unameinvalid">你输入的用户名长度不符合规定，请输入4-20个字符</string>
+    <string name="fbaccounthadbind">您的Facebook帐号已绑定了gigifun帐号</string>
+
+    <string name="bindsucess">绑定成功</string>
+    <string name="contactcustomservice">请联系客服</string>
+    <string name="invalidemail">请输入格式正确的邮箱</string>
+    <string name="visitormode">你已是游客</string>
+    <string name="askforbindcontent">您现在使用的是游客登录，为了您的账号安全，请您进行账号绑定</string>
+    <string name="askforbind">请绑定账号</string>
+    <string name="determine">绑定账号</string>
+    <string name="cancel">进入游戏</string>
+    <string name="hadbindcontent">您的机器已有相应的绑定账号，请使用绑定的账号登录游戏：</string>
+    <string name="hadbind">已绑定账号</string>
+    <string name="OK">OK</string>
+
+
+    <string name="lijizhuce"><b>立即注册</b></string>
+    <!--  <string name="pay_type">google</string> -->
+
+    <string name="reset_pw">修改密码</string>
+    <string name="bind_email">绑定邮箱</string>
+    <string name="bind_visitor">绑定游客账号</string>
+    <string name="bind_facebook">facebook绑定</string>
+    <string name="vistor">游客</string>
+    <!--请输入您的账号  -->
+    <string name="input_email_select">请输入邮箱（可选）</string>
+    <string name="input_email">请输入邮箱</string>
+    <string name="binding">绑定</string>
+    <string name="More_login_mode">更多登录方式</string>
+    <string name="forget_pw">忘记密码？</string>
+    <string name="no_account">没有账号？</string>
+    <string name="input_new_pw">请输入新密码</string>
+    <string name="btn_ensure">确定</string>
+    <string name="btn_send">确定</string>
+    <string name="recover_pw">找回密码</string>
+    <string name="regist_acount">账号注册</string>
+    <string name="regist">注册</string>
+    <string name="bind_btn">绑定</string>
+
+    <string name="fb_lonin_success">facebook登录成功</string>
+    <string name="reset_sucess">修改成功</string>
+
+    <string name="fb_has_Login">facebook登录成功</string>
+    <string name="acouhadbind">已绑定一个账号，不能再绑定其他账号</string>
+    <string name="logfbfirst">请先登录facebook账号</string>
+    <string name="user_cancel">用户取消订单</string>
+    <string name="send_to_email">已发送到邮箱</string>
+    <string name="noaction">当前没有活动</string>
+    <string name="rewardsend">奖励已发送，不能重复获取</string>
+
+
+    <string name="action_settings">设置</string>
+    <string name="username_pwd_not_null">账号密码不能为空</string>
+    <string name="program_error">参数缺少或不匹配</string>
+    <string name="login_success">登录成功</string>
+    <string name="username_verification_failure">用户名不符合规定</string>
+    <string name="password_verification_failure">密码不符规定</string>
+    <string name="the_user_name_is_not_registered">没有注册该用户名</string>
+    <string name="password_is_error">输入的密码有误</string>
+    <string name="content_can_not_be_empty">填写项不能为空</string>
+    <string name="two_password_does_not_match">前后密码不一致</string>
+    <string name="successful_registration">注册成功</string>
+    <string name="network_error">网络连接异常</string>
+    <string name="username_already_exists">已经存在同名用户</string>
+    <string name="you_have_noconsume_order">您有未消费的订单，正在尝试消费请稍等再试</string>
+    <string name="the_device_is_not_installed_google_play_store">手机没有安装Google Play Store,不能进行google支付!</string>
+    <string name="google_play_initialization_failure">Google Play初始化失败,当前无法进行支付，请确定您所在地区支持Google Play支付或重启游戏再试！</string>
+    <string name="link_error">链接错误</string>
+    <string name="network_error_request_again">网络连接错误，正在重新请求</string>
+    <string name="request_network_error">请求网络失败，五分钟后会自动再次发次请求或重启游戏，进行重新请求!</string>
+    <string name="network_error_and_you_have_unconsumed_order">网络连接错误，您有未消费的订单</string>
+    <string name="request_order_error">数据返回错误</string>
+    <string name="checking_unconsume_order">正在检查您的订单，请稍等再试</string>
+    <string name="successful_recharge">充值成功</string>
+    <string name="recharge_failure">充值失败</string>
+    <string name="friend_has_been_invited">该好友已经被邀请过</string>
+    <string name="has_no_invite_friend_event">当前没有邀请好友活动</string>
+    <string name="loading_error">加载错误</string>
+    <string name="pay_error">支付异常: </string>
+    <string name="has_no_share_event">当前没有分享活动</string>
+    <string name="order_consume_failue">订单消费失败</string>
+    <string name="please_contact_customer">请联系客服，服务器端错误</string>
+    <string name="this_order_had_been_consumed">此订单已经消费过</string>
+    <string name="order_consume_success">订单消费成功</string>
+    <string name="share_success">分享成功</string>
+    <string name="input_accout">请输入账号</string>
+    <string name="input_password">请输入密码</string>
+    <string name="re_password">记住密码</string>
+    <string name="auto_logo">自动登录</string>
+    <string name="login_text">登\t\t录</string>
+    <string name="reg_text">注\t\t册</string>
+    <string name="account_reg">账号注册</string>
+    <string name="account_login">账号登录</string>
+
+    <string name="event_description">活动说明 </string>
+
+    <string name="invite_text">邀请</string>
+    <string name="invite_friend_text">好友</string>
+    <string name="invite_people_text">名好友</string>
+    <!--快速注册  -->
+    <string name="reg_text_su">快速注册</string>
+    <string name="facebook_text">Facebook登录</string>
+    <string name="invite_more_text">邀请越多，奖励越多</string>
+    <string name="like_gift_text">点赞礼包</string>
+    <string name="share_gift_text">分享礼包</string>
+    <string name="invite_gift_text">邀请礼包</string>
+    <string name="like_incompleted">未达成</string>
+    <string name="like_completed">已达成</string>
+    <string name="share_gift_send">立即分享</string>
+    <string name="share_gift_hadsend">礼包已发送</string>
+    <string name="invite_peo_send">邀请</string>
+    <string name="invite_peo_hadsend">已发送</string>
+    <string name="has_received_reward">已领取奖励</string>
+    <string name="send_reward_failed">发送奖励失败</string>
+
+
+    <!-- 快速注册截图弹窗口-->
+    <string name="reg_submit">提交</string>
+    <string name="reg_pic">截图</string>
+    <string name="reg_gen">温馨提示</string>
+    <string name="reg_context">长夜将至，我从今开始守望，至死方休。我将不娶妻、不封地、不生子。我将不戴宝冠，不争荣宠。我将尽忠职守，生死於斯。我是黑暗中的利剑，长城上的守卫。我是抵御寒冷的烈焰，破晓时分的光线，唤醒眠者的号角，守护王国的坚盾。我将生命与荣耀献给守夜人，今夜如此，夜夜皆然。</string>
+    <!-- 更新窗口-->
+    <string name="upgrade_tip">版本提示</string>
+    <string name="upgrade_ok">立即更新</string>
+    <string name="upgrade_cancel">稍后提醒</string>
+    <string name="upgrade_message">版本过低，需要到商店下载更新应用</string>
+    <string name="invite_peo_msg">邀请好友</string>
+
+
+</resources>
