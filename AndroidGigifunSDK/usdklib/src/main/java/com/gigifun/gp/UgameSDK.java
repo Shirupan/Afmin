@@ -17,16 +17,12 @@ import com.gigifun.gp.listener.OnInitListener;
 import com.gigifun.gp.listener.OnLoginListener;
 import com.gigifun.gp.listener.OnThirdPurchaseListener;
 import com.gigifun.gp.listener.OnUpGradeListener;
-import com.gigifun.gp.ui.GiftDialog;
 import com.gigifun.gp.ui.LoginDialog;
 import com.gigifun.gp.utils.ButtonUtil;
 import com.gigifun.gp.utils.UgameUtil;
 import com.gigifun.gp.utils.LanucherMonitor;
 import com.gigifun.gp.utils.LogUtil;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
-import com.facebook.login.LoginManager;
+
 import com.gigifun.gp.service.FloatViewService;
 import com.gigifun.gp.widget.FloatView;
 import com.gigifun.gp.ui.FloatWebviewDialog;
@@ -105,7 +101,6 @@ public class UgameSDK {
      */
     public void initSDK(Context context) {
         LogUtil.w("---init facebook 之前");
-        initFacebook(context);
         LogUtil.w("___init gigifunData之前");
         LogUtil.w("----init---");
         UgameUtil.uInitialize(context);
@@ -200,7 +195,7 @@ public class UgameSDK {
         if (ButtonUtil.isFastDoubleClick()) {
             return;
         }
-        new GiftDialog(activity, serverid,mFloatViewService);
+//        new GiftDialog(activity, serverid,mFloatViewService);
     }
 
     public void startForGift1(Activity activity, String serverid) {
@@ -224,7 +219,6 @@ public class UgameSDK {
      */
     public void setAutoLoginStauts(Context context, boolean isAuto) {
         UgameUtil.getInstance().setAutoLoginStauts(context, isAuto);
-        LoginManager.getInstance().logOut();
     }
 
 
@@ -259,35 +253,8 @@ public class UgameSDK {
 
     }
 
-    public static CallbackManager callbackManager;
-
-    public void initFacebook(Context context) {
-
-        LogUtil.w("初始化facebook前"+context);
-        FacebookSdk.sdkInitialize(context);
-        LogUtil.w("初始化facebook后");
-        AppEventsLogger.activateApp(context);
-        callbackManager = CallbackManager.Factory.create();
-        LogUtil.w("init facebook 内容"+callbackManager);
-//        Uri targetUrl = AppLinks.getTargetUrlFromInboundIntent(context, mActivity.getIntent());
-//        LogUtil.k("targetUrl======="+targetUrl);
-//        if (targetUrl != null) {
-//            Log.i("Activity", "App Link Target URL: " + targetUrl.toString());
-//        } else {
-//            AppLinkData.fetchDeferredAppLinkData(
-//                    mActivity,
-//                    new AppLinkData.CompletionHandler() {
-//                        @Override
-//                        public void onDeferredAppLinkDataFetched(AppLinkData appLinkData) {
-//                            //process applink data
-//                        }
-//                    });
-//        }
-    }
-
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        callbackManager.onActivityResult(requestCode, resultCode, data);
         if (googlePay != null) {
             googlePay.onActivityResult(requestCode, resultCode, data);
         }

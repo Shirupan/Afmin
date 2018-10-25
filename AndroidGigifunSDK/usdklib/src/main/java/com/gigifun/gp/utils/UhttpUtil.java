@@ -11,7 +11,6 @@ import okhttp3.Call;
 
 public class UhttpUtil {
 
-	
 	public static void post(String url,final UcallBack onCallBack){
 		OkHttpUtils
 	    .post()

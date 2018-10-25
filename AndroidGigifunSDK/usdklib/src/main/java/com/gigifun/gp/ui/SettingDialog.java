@@ -122,7 +122,7 @@ public class SettingDialog implements View.OnClickListener{
 
         }else if (v.getId()==MResource.getIdByName(mActivity, "id", "tv_bindFacebook")){
             LogUtil.k("绑定FACEBOOK");
-            new BindFbDialog(mActivity);
+//            new BindFbDialog(mActivity);
         }else if (v.getId()==MResource.getIdByName(mActivity, "id", "btn_back")){
             mDialog.dismiss();
             onSettingListener.notifyLoginDialogShow();

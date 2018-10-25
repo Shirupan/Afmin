@@ -1,5 +1,6 @@
 package com.gigifun.gp.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -27,10 +28,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.appsflyer.AppsFlyerLib;
-import com.gigifun.gp.UgameSDK;
-
-
 import com.gigifun.gp.db.DatabaseManager;
 
 import com.gigifun.gp.listener.OnFloatLintener;
@@ -44,13 +41,6 @@ import com.gigifun.gp.utils.UhttpUtil;
 import com.gigifun.gp.utils.LanucherMonitor;
 import com.gigifun.gp.utils.LogUtil;
 import com.gigifun.gp.utils.MResource;
-import com.facebook.AccessToken;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -146,6 +136,7 @@ public class LoginDialog implements OnClickListener {
         //initAutoLogin();
     }
 
+    @SuppressLint("MissingPermission")
     public static String getDeviceId(Context context) {
         String id;
         //android.telephony.TelephonyManager
@@ -502,104 +493,9 @@ public class LoginDialog implements OnClickListener {
                 }
             });
 
-        } else if (v.getId() == MResource.getIdByName(mActivity, "id", "img_facebook")) {
-            if (ButtonUtil.isFastDoubleClick(v.getId())) {
-                return;
-            }
-            LogUtil.d("facebook  login ---------------");
-            if (AccessToken.getCurrentAccessToken() != null && !AccessToken.getCurrentAccessToken().isExpired()) {
-                //已经登录过
-                showProgressWheel();
-                String facebookUrl = "https://graph.facebook.com/me?fields=token_for_business&access_token="
-                        + AccessToken.getCurrentAccessToken().getToken() + "";
-
-                LogUtil.k("fb登录的url=" + facebookUrl);
-                UhttpUtil.get(facebookUrl, new UcallBack() {
-                    @Override
-                    public void onResponse(String response, int arg1) {
-                        mDialog.dismiss();
-                        LogUtil.k("fb登录的response=" + response);
-                        parsesecLogFbJson(response);
-                    }
-
-                    @Override
-                    public void onError(Call arg0, Exception arg1, int arg2) {
-                        closeProgressWheel();
-                        LogUtil.k("facebook第二次登录 onError,exception" + arg1);
-                        Toast.makeText(mActivity, MResource.getIdByName(mActivity, "string", "network_error"), Toast.LENGTH_SHORT)
-                                .show();
-                    }
-                });
-
-            } else {
-                //第一次登录
-                //执行登录操作
-                LoginManager.getInstance().logInWithReadPermissions(mActivity, Arrays.asList("email", "public_profile", "user_friends"));
-                //注册callback
-                LogUtil.k("注册facebook callback");
-                LoginManager.getInstance().registerCallback(UgameSDK.callbackManager, new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
-//                        保存FB用户信息
-                       // updateUI();
-                        showProgressWheel();
-                        loginForFacebook();
-                    }
-
-                    @Override
-                    public void onCancel() {
-
-                    }
-
-                    @Override
-                    public void onError(FacebookException error) {
-                        // closeProgressWheel();
-                        LogUtil.d("facebook login error" + error);
-                        Toast.makeText(mActivity, "facebook error", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
         }
     }
 
-    private void getfBUserInfo() {
-
-//        boolean isSava = preferences.getBoolean("isfbInfo", true);
-//
-//        if (isSava) {
-            //preferences.edit().putBoolean("isfbInfo", false).commit();
-            // 获取基本文本信息
-            GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-                @Override
-                public void onCompleted(JSONObject user, GraphResponse response) {
-                    if (user != null) {
-                        LogUtil.d("LOginDialog-->getfBUserInfo,user========" + user);
-                        Message msg = handler.obtainMessage();
-                        msg.obj = user;
-                        msg.what = 4;
-                        handler.sendMessage(msg);
-                    }
-                }
-            });
-
-            Bundle parameters = new Bundle();
-            parameters.putString("fields", "id,name,first_name,last_name,link,email,gender,locale,timezone,verified,updated_time");
-            request.setParameters(parameters);
-            request.executeAsync();
-//        }
-    }
-
-
-    private void updateUI() {
-        enableButtons = AccessToken.getCurrentAccessToken() != null;
-        LogUtil.d("enableButtons" + enableButtons);
-        if (enableButtons) {
-            getfBUserInfo();
-        } else {
-            Toast.makeText(mActivity, MResource.getIdByName(mActivity, "string", "network_error"), Toast.LENGTH_SHORT)
-                    .show();
-        }
-    }
 
     protected void hadBindDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
@@ -921,7 +817,6 @@ public class LoginDialog implements OnClickListener {
 //                            storeInfo.storeFacebookInfo();
 
                             if ("1".equals(isNew)) {
-                                getfBUserInfo();
                                 LanucherMonitor.getInstance().registrationTrack(mActivity, sdkUid, "Facebook");
                             } else if ("0".equals(isNew)) {
                                 LanucherMonitor.getInstance().loginTrack(mActivity, sdkUid, "Facebook");
@@ -985,7 +880,6 @@ public class LoginDialog implements OnClickListener {
                                 requestHD(userNameEt.getText().toString(), passwordEt.getText().toString(), sdkUid);
                             } else if ("1".equals(Is_new)) {
                                 //追踪注册
-                                getfBUserInfo();
                                 LanucherMonitor.getInstance().registrationTrack(mActivity, sdkUid, "Facebook");
                             }
                             SharedPreferences.Editor edit = preferences.edit();
@@ -1335,31 +1229,6 @@ public class LoginDialog implements OnClickListener {
 
     }
 
-    public void loginForFacebook() {
-        //获取AccessTokens
-        String facebookUrl = "https://graph.facebook.com/me?fields=token_for_business&access_token="
-                + AccessToken.getCurrentAccessToken().getToken() + "";
-
-        LogUtil.d("LOin-loin4fb-facebookUrl" + facebookUrl);
-        UhttpUtil.get(facebookUrl, new UcallBack() {
-            @Override
-            public void onResponse(String response, int arg1) {
-                LogUtil.k("LogDialog->loginfb,返回=" + response);
-                mDialog.dismiss();
-                parseVertifyJson(response);
-            }
-
-            @Override
-            public void onError(Call arg0, Exception arg1, int arg2) {
-                LogUtil.k("facebook onerror,exception=" + arg1);
-                Toast.makeText(mActivity, MResource.getIdByName(mActivity, "string", "network_error"), Toast.LENGTH_SHORT)
-                        .show();
-            }
-        });
-
-
-    }
-
     private void showProgressWheel() {
         if (progressWheel != null) {
             progressWheel.setVisibility(View.VISIBLE);
@@ -1379,7 +1248,7 @@ public class LoginDialog implements OnClickListener {
      * af加入，注册,登录
      */
     public void addAppFly(String uid){
-        AppsFlyerLib.getInstance().setCustomerUserId(uid);
+//        AppsFlyerLib.getInstance().setCustomerUserId(uid);
     }
 
 
