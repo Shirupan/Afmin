@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.IBinder;
 
+import com.facebook.CallbackManager;
 import com.gigifun.gp.listener.GooglePayListener;
 import com.gigifun.gp.listener.IFuntionCheck;
 import com.gigifun.gp.listener.OnFloatLintener;
@@ -22,7 +23,10 @@ import com.gigifun.gp.utils.ButtonUtil;
 import com.gigifun.gp.utils.UgameUtil;
 import com.gigifun.gp.utils.LanucherMonitor;
 import com.gigifun.gp.utils.LogUtil;
-
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.LoginManager;
 import com.gigifun.gp.service.FloatViewService;
 import com.gigifun.gp.widget.FloatView;
 import com.gigifun.gp.ui.FloatWebviewDialog;
@@ -39,7 +43,7 @@ public class UgameSDK {
     private static UgameSDK instance = null;
     private int type = 0;
     private SharedPreferences preferences;
-
+    public static CallbackManager callbackManager;
 
     public static UgameSDK sdkInitialize(Activity activity) {
         mActivity = activity;
@@ -89,29 +93,12 @@ public class UgameSDK {
                         Manifest.permission.WRITE_EXTERNAL_STORAGE
                 )
                 .request();
-        initSDK(context);
 
-    }
-
-
-    /**
-     * 初始化SDK APPFLY统计 Facebook
-     *
-     * @param context
-     */
-    public void initSDK(Context context) {
-        LogUtil.w("---init facebook 之前");
-        LogUtil.w("___init gigifunData之前");
-        LogUtil.w("----init---");
         UgameUtil.uInitialize(context);
         LanucherMonitor.LanucherInitialize((Activity) context);
-
         initUData(context);
-        LogUtil.w("___init gigifunData 之后");
-
-
-
-}
+        initFacebook(context);
+    }
 
     /***
      * 谷歌支付
@@ -129,26 +116,27 @@ public class UgameSDK {
             if (ButtonUtil.isFastDoubleClick()) {
                 return;
             }
-            googlePay.googlePlay(activity, serverId, product, coOrderId, sku, Ctext,googlePayListener);
+            googlePay.googlePlay(activity, serverId, product, coOrderId, sku, Ctext, googlePayListener);
         }
 
     }
 
     public boolean isChoolse = false;
-    public void checkFailBill(Activity activity, String serverId, String roleid, String sdkuid,String sPcText,IFuntionCheck mFuntionCheck) {
+
+    public void checkFailBill(Activity activity, String serverId, String roleid, String sdkuid, String sPcText, IFuntionCheck mFuntionCheck) {
         if (googlePay != null) {
             if (ButtonUtil.isFastDoubleClick()) {
                 return;
             }
-           googlePay.queryUnfinishBill(activity, serverId, roleid, sdkuid);
+            googlePay.queryUnfinishBill(activity, serverId, roleid, sdkuid);
         }
-        UgameUtil.getInstance().checkFuction(serverId, roleid, sdkuid, sPcText,mFuntionCheck,mFloatViewService);
+        UgameUtil.getInstance().checkFuction(serverId, roleid, sdkuid, sPcText, mFuntionCheck, mFloatViewService);
         isChoolse = true;
     }
 
     public void login(Activity activity, OnLoginListener onLoginListener) {
 
-        new LoginDialog(activity,onLoginListener, onFloatLintener);
+        new LoginDialog(activity, onLoginListener, onFloatLintener);
     }
 
 
@@ -204,7 +192,7 @@ public class UgameSDK {
         }
     }
 
-    public void showFloatView(Activity activity, String serverid){
+    public void showFloatView(Activity activity, String serverid) {
         if (ButtonUtil.isFastDoubleClick()) {
             return;
         }
@@ -253,31 +241,55 @@ public class UgameSDK {
 
     }
 
+    public void initFacebook(Context context) {
+
+        LogUtil.w("初始化facebook前" + context);
+        FacebookSdk.sdkInitialize(context);
+        LogUtil.w("初始化facebook后");
+        AppEventsLogger.activateApp(context);
+        callbackManager = CallbackManager.Factory.create();
+        LogUtil.w("init facebook 内容" + callbackManager);
+//        Uri targetUrl = AppLinks.getTargetUrlFromInboundIntent(context, mActivity.getIntent());
+//        LogUtil.k("targetUrl======="+targetUrl);
+//        if (targetUrl != null) {
+//            Log.i("Activity", "App Link Target URL: " + targetUrl.toString());
+//        } else {
+//            AppLinkData.fetchDeferredAppLinkData(
+//                    mActivity,
+//                    new AppLinkData.CompletionHandler() {
+//                        @Override
+//                        public void onDeferredAppLinkDataFetched(AppLinkData appLinkData) {
+//                            //process applink data
+//                        }
+//                    });
+//        }
+    }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        callbackManager.onActivityResult(requestCode, resultCode, data);
         if (googlePay != null) {
             googlePay.onActivityResult(requestCode, resultCode, data);
         }
     }
 
-    public void ShowWebView(OnThirdPurchaseListener onThirdPurchaseListener)
-    {
-        boolean isVer=true;//默认是横屏
-        switch(mActivity.getResources().getConfiguration().orientation){
+    public void ShowWebView(OnThirdPurchaseListener onThirdPurchaseListener) {
+        boolean isVer = true;//默认是横屏
+        switch (mActivity.getResources().getConfiguration().orientation) {
 
             case Configuration.ORIENTATION_LANDSCAPE:
                 //横屏
-                isVer=true;
+                isVer = true;
                 break;
             case Configuration.ORIENTATION_PORTRAIT:
                 //竖屏
-                isVer=false;
+                isVer = false;
                 break;
             default:
                 //默认是横屏
-                isVer=true;
+                isVer = true;
         }
-        new FloatWebviewDialog(mActivity, "1", FloatView.floatViewService, "pay",isVer, onThirdPurchaseListener);
+        new FloatWebviewDialog(mActivity, "1", FloatView.floatViewService, "pay", isVer, onThirdPurchaseListener);
     }
 
     public void onDestroy() {
@@ -290,27 +302,29 @@ public class UgameSDK {
         destroy();
 
     }
-    public void onResume(){
+
+    public void onResume() {
         LogUtil.k("onResume");
         String floatStatus = preferences.getString("floatStatus", "");
         String floatgiftStatus = preferences.getString("floatgiftStatus", "");
 //        boolean isChoose = preferences.getBoolean("isChoose", false);
-        if ("0".equals(floatStatus)&&isChoolse){
+        if ("0".equals(floatStatus) && isChoolse) {
             showFloatingView();
         }
 //
     }
 
-    public void onStop(){
-        LogUtil.k("onStop() onFloatLintener=="+onFloatLintener);
+    public void onStop() {
+        LogUtil.k("onStop() onFloatLintener==" + onFloatLintener);
         hideFloatingView();
     }
+
     /**
      * 释放PJSDK数据
      */
     public void destroy() {
         try {
-            if (mFloatViewService!= null){
+            if (mFloatViewService != null) {
                 mActivity.stopService(new Intent(mActivity, FloatViewService.class));
             }
 
@@ -319,7 +333,8 @@ public class UgameSDK {
         } catch (Exception e) {
         }
     }
-    private  FloatViewService mFloatViewService;
+
+    private FloatViewService mFloatViewService;
     /**
      * 连接到Service
      */
@@ -332,12 +347,13 @@ public class UgameSDK {
             FloatViewService.FloatViewServiceBinder iBinder1 = (FloatViewService.FloatViewServiceBinder) iBinder;
             mFloatViewService = (iBinder1).getService();
             onFloatLintener = (OnFloatLintener) iBinder;
-            LogUtil.k("init,成功连接服务"+ onFloatLintener);
+            LogUtil.k("init,成功连接服务" + onFloatLintener);
 
-            LogUtil.k("UgameSDK mFloatViewService=="+mFloatViewService);
+            LogUtil.k("UgameSDK mFloatViewService==" + mFloatViewService);
             //传入xuanfu接口和上下文
-            new FloatView(mActivity,mFloatViewService);
+            new FloatView(mActivity, mFloatViewService);
         }
+
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
             LogUtil.k("init,连接服务失败");
@@ -349,8 +365,8 @@ public class UgameSDK {
      * 隐藏悬浮图标
      */
     public void hideFloatingView() {
-        LogUtil.k("mFloatViewService hide===="+mFloatViewService);
-        if ( mFloatViewService != null ) {
+        LogUtil.k("mFloatViewService hide====" + mFloatViewService);
+        if (mFloatViewService != null) {
             mFloatViewService.hideFloat();
         }
     }
@@ -358,9 +374,9 @@ public class UgameSDK {
     /**
      * 显示悬浮图标
      */
-    public  void showFloatingView() {
-        LogUtil.k("mFloatViewService===="+mFloatViewService);
-        if ( mFloatViewService != null ) {
+    public void showFloatingView() {
+        LogUtil.k("mFloatViewService====" + mFloatViewService);
+        if (mFloatViewService != null) {
             mFloatViewService.showFloat();
         }
     }

@@ -5,11 +5,6 @@ import android.content.Context;
 public class MResource {
 	@SuppressWarnings("rawtypes")
 
-
-
-
-
-
 	 public static int getIdByName(Context context, String className, String name) {   
 		//return context.getResources().getIdentifier(name, className,context.getPackageName());
 		
@@ -42,8 +37,7 @@ public class MResource {
         return id;    
     }
 
-    public static int[] getIdsByName(Context context, String className, String name) {
-
+    public static int[] getIdByNames(Context context, String className, String name) {
 
         //return context.getResources().getIntArray( context.getResources().getIdentifier(name, className, context.getPackageName()));
         String packageName = context.getPackageName();

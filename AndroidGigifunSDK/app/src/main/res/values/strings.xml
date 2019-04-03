@@ -1,23 +1,18 @@
 <resources>
     <string name="app_name">gigifun</string>
 
-    <!--  game id -->
-    <string name="ugame_id"> 10001</string>
-   <!--  client_secret -->
-    <string name="ugame_client_secret">c2c99e0373355832f6c8be32ca82e2b7</string>
-    <!--<string name="ugame_client_secret">P8d!3!1X5gqaVHzlNt$SN$usOE$Uo!</string>-->
-
-    <!--  gm_key -->
-    <string name="ugame_gm_key">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl/SrruQov+htiNk8rvMYIC9vz43pEhUWGTEQug76YsIH1KR6OK7bweyMXjZZ1QQVKvVErvZHRBthrawDW3ncAG4DYRhUtBsCQJ8/9AU1JSjW1Kbx5hfB3oAtdscdeBFd9iFXBsrAAA5RDx8s5ekxSU4Q5C6aZAchDybmF+4rMcMThXmZItoLMS7AgtgOUHi/OWyRCGrK1/AsNrtv7EI40KxM8f9vMdXpLybmT3kSmfMEbf7YFwQx3sZekOeOXVpj3+3FpbrCNrCUAVzdADJMe0YDvLp+aiW4QpAuEJPmA5QHNxCJTsx3tjC6oOHfxfqgBRiZl9junzE9r1Z75+im1QIDAQAB</string>
-    <!--<string name="ugame_gm_key">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnjDvTIKSzxBXSedRPlCZwP1S/8j3iuqTzD/Sb4pD0+LmdeJH485TFfvEfcaBp0A2vsgtywDlno3gz7WEDMW9vdjtqSlxfY5lI3xB4LDKW6W5TgMnHHWfEk6KIxEJ08Op3UNo5iGS7zvIzb5OX2CS18en1s9/fbKskeZ8d9Vx5Bcsnt+ftI5bI9BgXHBEqcot24eYvvgEPinH3uQzvysYuS/0h4Ecw3n/y6Jvh2yYgbMGX6rWn+JLcRMGWizC3JGWlNlPT+DWtTxC1q7r4Iuqh26mFozk0wG8uxFfUjPqgRvrXYtywWxXBZT25of65djKznUAVEoNukWa+vdlcGOl/wIDAQAB</string>-->
-
-    <!--  Facebook id -->
-    <string name="facebook_app_id">110371866237374</string>
-    <!--<string name="facebook_app_id">975053165958950</string>-->
-    <!--<string name="facebook_app_id">157578437735213</string>-->
     <!--  language CN简体，TW繁体，EN英文-->
     <string name="lang">CN</string>
-    <!--  floatbutton pay CText -->
-    <!--<string name="sPcText">iiu</string>-->
 
+    <!--com.gtoken.unclejoe-->
+    <string name="ugame_id">10003</string>
+    <string name="ugame_client_secret">85a4551bc9822210549085a7448a7a60</string>
+    <string name="ugame_gm_key">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnLaK7+pdG3nH/QXu9JyD1sKJBH+CbMONFQ1DCz9GBUTG5+CAzkkcOcfxj9kIK89WJN4qtCf/yUtgSMun+UhPEgH7nyxFuZ7Tsql+NcVi2crgFaiDHWJZaYpKqf/utGbu3K7yp7ZLy7no+wTg9sFL5mH85KpV6BPUD+HFC6JduVpYDK3R/9yhlYmUrmhTlg7mCfIgc8N/IM1Pkwbls1y5WAewbdGQCJxT/tx/JpuxULFEYPp5XhdK9zLqL+nQhw0oKTI13zQasZRcqNzOO13eq4jWv5hlo4eGW9JLLS1mwBCC2/sw01XHla9yfQzyi1T/gDRylvEdaFzvtQqoJ/rMIQIDAQAB</string>
+    <string name="facebook_app_id">577417109261625</string>
+
+    <!--com.fwgame.fantasyfarm-->
+    <!--<string name="ugame_id">10001</string>-->
+    <!--<string name="ugame_client_secret">c2c99e0373355832f6c8be32ca82e2b7</string>-->
+    <!--<string name="ugame_gm_key">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl/SrruQov+htiNk8rvMYIC9vz43pEhUWGTEQug76YsIH1KR6OK7bweyMXjZZ1QQVKvVErvZHRBthrawDW3ncAG4DYRhUtBsCQJ8/9AU1JSjW1Kbx5hfB3oAtdscdeBFd9iFXBsrAAA5RDx8s5ekxSU4Q5C6aZAchDybmF+4rMcMThXmZItoLMS7AgtgOUHi/OWyRCGrK1/AsNrtv7EI40KxM8f9vMdXpLybmT3kSmfMEbf7YFwQx3sZekOeOXVpj3+3FpbrCNrCUAVzdADJMe0YDvLp+aiW4QpAuEJPmA5QHNxCJTsx3tjC6oOHfxfqgBRiZl9junzE9r1Z75+im1QIDAQAB</string>-->
+    <!--<string name="facebook_app_id">577417109261625</string>-->
 </resources>

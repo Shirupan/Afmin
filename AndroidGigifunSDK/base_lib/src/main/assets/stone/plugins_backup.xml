@@ -1,0 +1,17 @@
+<plugins>
+    <plugin name="user" class="com.pubsky.android.noui.impl.UserLoginPlugin" description="user" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="switch" class="com.idsky.lingdo.payh5.SwitchPlugin" description="user" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="channelUser" class="com.pubsky.android.noui.impl.UserChannelLogin" description="channelUser" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="basic" class="com.pubsky.impl.DskyPlugin" description="basic" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="jo" class="com.pubsky.jo.channel.JointOperate" description="channel" interfaces="OnLifeCycleListener,OnLoginListener" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="pay" class="com.pubsky.jo.charge.ChargePlugin" description="pay" interfaces="OnLoginListener" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="dlog" class="com.pubsky.jo.dlog.Dlog" description="dlog" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="push" class="com.pubsky.jo.idswz.Idswz" description="push" interfaces="OnLoginListener" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="weixin" class="com.pubsky.weixin.WeixinPlugin" description="weixin" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="qq" class="com.pubsky.tencent.qq.TencentUserPlugin" description="qq" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="activity_h5" class="com.pubsky.activity.v3.DskyActivityPlugin" description="activity h5" interfaces="OnLoginListener" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="operating" class="com.pubsky.activitiesbox.OperatingPlugin" description="activitiesbox" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="normal" class="com.pubsky.game.GamePlugin" description="game" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="QRCode" class="com.pubsky.zxing.QRCodeUtilsPlugin" description="QRCode" init="false" version="1.0.0" versionCode="1"/>
+    <plugin name="geo" class="com.pubsky.geo.Geo" description="geo" interfaces="OnLoginListener" init="false" version="1.0.0" versionCode="1"/>
+</plugins>

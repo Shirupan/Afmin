@@ -52,7 +52,7 @@
                 android:src="@drawable/setting"
                 app:layout_marginLeftPercent="80%"
                 app:layout_widthPercent="15%"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
         </com.gigifun.gp.percent.PercentRelativeLayout>
 
         <com.gigifun.gp.percent.PercentLinearLayout

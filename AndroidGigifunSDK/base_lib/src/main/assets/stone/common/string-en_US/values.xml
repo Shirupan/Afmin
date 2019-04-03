@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <string name="TIMEOUT_ERROR">Timeout to connect server</string>
+    <string name="NETWORK_ERROR">Netword error, please check your network</string>
+    <string name="DATA_ERROR">Server error occured</string>
+    <string name="UNAUTHORIZED_PUBLIC_HOT_SPOT_ERROR">Do not connect to unauthorized public hotspot</string>
+    <string name="SERVER_ERROR">Server is busy, please try later</string>
+
+</resources>

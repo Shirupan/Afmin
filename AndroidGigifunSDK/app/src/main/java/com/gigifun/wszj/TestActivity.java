@@ -26,6 +26,7 @@ import com.gigifun.gp.utils.MResource;
 import com.gigifun.gp.utils.UcallBack;
 import com.gigifun.gp.utils.UgameUtil;
 import com.gigifun.gp.utils.UhttpUtil;
+import com.gtoken.unclejoe.R;
 
 
 import org.json.JSONException;
@@ -340,6 +341,8 @@ public class TestActivity extends Activity implements View.OnTouchListener {
 
 
         });
+
+
     }
 
 

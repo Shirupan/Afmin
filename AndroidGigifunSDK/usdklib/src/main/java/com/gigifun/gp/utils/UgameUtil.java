@@ -203,7 +203,6 @@ public class UgameUtil {
     public static Context mycontext;
 
 
-
     public static UgameUtil uInitialize(Context context) {
         mycontext = context;
         if (instance == null) {
@@ -292,7 +291,7 @@ public class UgameUtil {
         FACEBOOK_INVITE_GIFT = UGAMURL + "online.php?a=inviteGift";
         GET_USER_PAY = UGAMURL + "online.php?a=getPayData";
         GET_UPGRADEWINDOS = UGAMURL + "online.php?a=sdkUpdate";
-        GET_REDPOINT=UGAMURL+"online.php?a=showRedPoint";
+        GET_REDPOINT = UGAMURL + "online.php?a=showRedPoint";
 
         SECOND_REQUEST = UGAMURL + "android_paycallback.php";
         ERROR_LOG = UGAMURL + "pushlogs.php";
@@ -308,7 +307,7 @@ public class UgameUtil {
         //LogUtil.d("UgameUtil end＝＝＝＝＝＝＝＝＝＝＝ "+VERTIFY_IP);
     }
 
-
+    //游戏更新
     public void getUpGradeGame(final Context context, final OnUpGradeListener onUpGradeListener) {
 
         HashMap<String, String> map = new HashMap<String, String>();
@@ -433,26 +432,25 @@ public class UgameUtil {
     }
 
     /**
-     *
      * @param context
      * @return true是横屏，false竖屏
      */
-   public boolean isVer(Context context){
-       boolean flag=true;
-       switch(context.getResources().getConfiguration().orientation){
-           case Configuration.ORIENTATION_LANDSCAPE:
-               //横屏
-               flag=true;
-               break;
-           case Configuration.ORIENTATION_PORTRAIT:
-               //竖屏
-               flag=false;
-               break;
-           default:
-               flag=true;
-       }
-       return flag;
-   }
+    public boolean isVer(Context context) {
+        boolean flag = true;
+        switch (context.getResources().getConfiguration().orientation) {
+            case Configuration.ORIENTATION_LANDSCAPE:
+                //横屏
+                flag = true;
+                break;
+            case Configuration.ORIENTATION_PORTRAIT:
+                //竖屏
+                flag = false;
+                break;
+            default:
+                flag = true;
+        }
+        return flag;
+    }
 
     /*
      * 验证手机号，11位，且必须含全是数字
@@ -664,10 +662,10 @@ public class UgameUtil {
         if ("EN".equals(languageToLoad)) {
             locale = new Locale("en");
             LogUtil.k("字体改为英文");
-        }else if("TH".equals(languageToLoad)) {
+        } else if ("TH".equals(languageToLoad)) {
             locale = new Locale("th");
             LogUtil.k("字体改为泰文");
-        } else  {
+        } else {
             locale = new Locale("zh", languageToLoad);
             LogUtil.k("字体改为" + languageToLoad);
         }
@@ -915,11 +913,9 @@ public class UgameUtil {
     }
 
 
-
-
     private FloatViewService floatViewService;
 
-    public void checkFuction(final String serverId, String roleId, String sdkuId,final String sPcText,final IFuntionCheck mFCheck, final FloatViewService floatViewService) {
+    public void checkFuction(final String serverId, String roleId, String sdkuId, final String sPcText, final IFuntionCheck mFCheck, final FloatViewService floatViewService) {
 
 
         final SharedPreferences preferences = mycontext.getSharedPreferences("LoginCount", Context.MODE_PRIVATE);
@@ -958,7 +954,7 @@ public class UgameUtil {
                         String fbflag = obj.getString("fbflag");
                         String starflag = obj.getString("5starflag");
                         String payflag = obj.getString("paymentflag");
-                        String isRelax=obj.getString("relaxflag");
+                        String isRelax = obj.getString("relaxflag");
 
                         mFCheck.checkFunctionOpen(fbflag, starflag, payflag);
 
@@ -968,9 +964,9 @@ public class UgameUtil {
                         edit.putString("fbflag", fbflag);
                         edit.putString("5starflag", starflag);
                         edit.putString("paymentflag", payflag);
-                        edit.putString("serverId",serverId);
-                        edit.putString("sPcText",sPcText);
-                        edit.putString("isRelax",isRelax);
+                        edit.putString("serverId", serverId);
+                        edit.putString("sPcText", sPcText);
+                        edit.putString("isRelax", isRelax);
 
 
                         edit.commit();

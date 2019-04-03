@@ -57,12 +57,12 @@ public class UgamePay {
     // GooglePlay支付
     IabHelper mHelper;
     // int mTank;
-    static final int GOOGLE_CHECK_ORDER=2000;
+    static final int GOOGLE_CHECK_ORDER = 2000;
     static final int RC_REQUEST = 10001;//request code for the purchase flow请求码
     static final int PAYACTIVITY_ALIREQUEST = 1000;
-    static final int PAY_DEL=10002;
-    static final int PAY_UPDATE=10003;
-    static final int PAY_INSERT=10004;
+    static final int PAY_DEL = 10002;
+    static final int PAY_UPDATE = 10003;
+    static final int PAY_INSERT = 10004;
     private boolean iap_is_ok = false;
     private String[] skus = new String[1];
     private String coin; // 货币名称
@@ -75,15 +75,15 @@ public class UgamePay {
     private String serverId;// 服务器id
     private String Ctext;//自定义参数
     private Context context;
-    private String transactionId="";//谷歌订单id
-    private String encodeTransactionId="";//谷歌订单id进行md5加密
-    private String signture="";//谷歌签名
-    private String originalJson="";//谷歌返回数据
+    private String transactionId = "";//谷歌订单id
+    private String encodeTransactionId = "";//谷歌订单id进行md5加密
+    private String signture = "";//谷歌签名
+    private String originalJson = "";//谷歌返回数据
     private UgamePay.MHandler handler;
     private int payStyle;
     private Purchase mPurchase;
     private Activity activity;
-    private static final int ERROR_OPERATE_DB=2020;
+    private static final int ERROR_OPERATE_DB = 2020;
     private IInAppBillingService billingservice;
     private String curSku; //检查错误订单时从数据库获取的商品ID
     private String curCoorderid;//检查错误订单时从数据库获取的订单号
@@ -101,16 +101,15 @@ public class UgamePay {
     private Dialog dialog;
     private GooglePayListener googlePayListener;
 
-    public UgamePay(Context context){
-        LogUtil.k("gigifunpay-iigampay"+"==初始化BEGIN");
-        this.context=context;
+    public UgamePay(Context context) {
+        LogUtil.k("gigifunpay-iigampay" + "==初始化BEGIN");
+        this.context = context;
         DatabaseManager.initializeInstance(context);
-        payStyle=1;
+        payStyle = 1;
         init(context);
-        LogUtil.k("gigifunpay-iigampay"+"==初始化END");
+        LogUtil.k("gigifunpay-iigampay" + "==初始化END");
 
     }
-
 
 
     public void init(Context context) {
@@ -137,12 +136,13 @@ public class UgamePay {
             }
         });
     }
-   /*
-   * 查询没有上传的订单，所有数据从手机上取
-   * */
+
+    /*
+     * 查询没有上传的订单，所有数据从手机上取
+     * */
     private void resentFailBill(Activity activity, final String serverId) {
         this.serverId = serverId;
-        this.activity=activity;
+        this.activity = activity;
         DBOpenHelper helper = new DBOpenHelper(context);
         final SQLiteDatabase db = helper.getWritableDatabase();
         //查询表中所有的数据
@@ -153,31 +153,31 @@ public class UgamePay {
                 Cursor cursor = db.query(DBOpenHelper.tab_syzg, null, null, null, null, null, null);
                 int columnCount = cursor.getColumnCount();
                 int count = cursor.getCount();
-                LogUtil.k("gigifunpay-checkFail,行数==="+count+",列数=="+columnCount);
-                if (cursor.moveToFirst()){
+                LogUtil.k("gigifunpay-checkFail,行数===" + count + ",列数==" + columnCount);
+                if (cursor.moveToFirst()) {
                     do {
-                        LogUtil.k("数据库信息:"+"uid="+cursor.getString(cursor.getColumnIndex("uid"))+
-                                ",lnid="+cursor.getString(cursor.getColumnIndex("lnid"))+
-                                ",coorderid="+cursor.getString(cursor.getColumnIndex("coorderid"))+
-                                ",encode_coorderid="+cursor.getString(cursor.getColumnIndex("encode_coorderid"))+
-                                ",mode="+cursor.getString(cursor.getColumnIndex("mode"))+
-                                ",coin="+cursor.getString(cursor.getColumnIndex("coin"))+
-                                ",originaljson="+cursor.getString(cursor.getColumnIndex("originaljson"))+
-                                ",signture="+cursor.getString(cursor.getColumnIndex("signture"))+
-                                ",product="+cursor.getString(cursor.getColumnIndex("product"))+
-                                ",amount="+cursor.getString(cursor.getColumnIndex("amount"))+
-                                ",clientid="+cursor.getString(cursor.getColumnIndex("clientid"))+
-                                ",isPayment="+cursor.getString(cursor.getColumnIndex("isPayment"))+
-                                ",requestStatus="+cursor.getString(cursor.getColumnIndex("requestStatus"))+
-                                ",reason="+cursor.getString(cursor.getColumnIndex("reason"))+
-                                ",serverid="+cursor.getString(cursor.getColumnIndex("serverid"))+
-                                ",encode_transaction_id="+cursor.getString(cursor.getColumnIndex("encode_transaction_id"))+
-                                ",serverid="+cursor.getString(cursor.getColumnIndex("serverid"))+
-                                ",current_time="+cursor.getString(cursor.getColumnIndex("current_time"))+
-                                ",transaction_id="+cursor.getString(cursor.getColumnIndex("transaction_id"))+
-                                ",sku="+cursor.getString(cursor.getColumnIndex("sku"))+
-                                ",isfit="+cursor.getString(cursor.getColumnIndex("isfit"))+
-                                ",Ctext="+cursor.getString(cursor.getColumnIndex("Ctext"))
+                        LogUtil.k("数据库信息:" + "uid=" + cursor.getString(cursor.getColumnIndex("uid")) +
+                                ",lnid=" + cursor.getString(cursor.getColumnIndex("lnid")) +
+                                ",coorderid=" + cursor.getString(cursor.getColumnIndex("coorderid")) +
+                                ",encode_coorderid=" + cursor.getString(cursor.getColumnIndex("encode_coorderid")) +
+                                ",mode=" + cursor.getString(cursor.getColumnIndex("mode")) +
+                                ",coin=" + cursor.getString(cursor.getColumnIndex("coin")) +
+                                ",originaljson=" + cursor.getString(cursor.getColumnIndex("originaljson")) +
+                                ",signture=" + cursor.getString(cursor.getColumnIndex("signture")) +
+                                ",product=" + cursor.getString(cursor.getColumnIndex("product")) +
+                                ",amount=" + cursor.getString(cursor.getColumnIndex("amount")) +
+                                ",clientid=" + cursor.getString(cursor.getColumnIndex("clientid")) +
+                                ",isPayment=" + cursor.getString(cursor.getColumnIndex("isPayment")) +
+                                ",requestStatus=" + cursor.getString(cursor.getColumnIndex("requestStatus")) +
+                                ",reason=" + cursor.getString(cursor.getColumnIndex("reason")) +
+                                ",serverid=" + cursor.getString(cursor.getColumnIndex("serverid")) +
+                                ",encode_transaction_id=" + cursor.getString(cursor.getColumnIndex("encode_transaction_id")) +
+                                ",serverid=" + cursor.getString(cursor.getColumnIndex("serverid")) +
+                                ",current_time=" + cursor.getString(cursor.getColumnIndex("current_time")) +
+                                ",transaction_id=" + cursor.getString(cursor.getColumnIndex("transaction_id")) +
+                                ",sku=" + cursor.getString(cursor.getColumnIndex("sku")) +
+                                ",isfit=" + cursor.getString(cursor.getColumnIndex("isfit")) +
+                                ",Ctext=" + cursor.getString(cursor.getColumnIndex("Ctext"))
                         );
 
                         curSku = cursor.getString(cursor.getColumnIndex("sku"));
@@ -191,90 +191,90 @@ public class UgamePay {
                         curCtext = cursor.getString(cursor.getColumnIndex("Ctext"));
                         curisfit = cursor.getString(cursor.getColumnIndex("isfit"));
                         //上传到后端。无论成功失败都把订单delete
-                        HashMap<String,String> map =new HashMap<String,String>();
+                        HashMap<String, String> map = new HashMap<String, String>();
 
-                        LogUtil.k("gigifunpay_checkfailbill"+"==检查的post");
-                        LogUtil.k("补单roleid=="+ curRoled);
-                        LogUtil.k("补单serverId=="+curServerId);
-                        LogUtil.k("补单sdkUid=="+ curSdkuid);
+                        LogUtil.k("gigifunpay_checkfailbill" + "==检查的post");
+                        LogUtil.k("补单roleid==" + curRoled);
+                        LogUtil.k("补单serverId==" + curServerId);
+                        LogUtil.k("补单sdkUid==" + curSdkuid);
 
                         map.put("Ugamekey", UgameUtil.getInstance().CLIENT_SECRET);
-                        map.put("Version",getVersionName(context));
-                        if (!"null".equals(curGameId) && !TextUtils.isEmpty(curGameId)){
+                        map.put("Version", getVersionName(context));
+                        if (!"null".equals(curGameId) && !TextUtils.isEmpty(curGameId)) {
                             map.put("Ugameid", curGameId);
-                        }else {
-                            map.put("Ugameid","");
+                        } else {
+                            map.put("Ugameid", "");
                         }
-                        if (!"null".equals(curRoled) && !TextUtils.isEmpty(curRoled)){
+                        if (!"null".equals(curRoled) && !TextUtils.isEmpty(curRoled)) {
                             map.put("Roleid", curRoled);
-                        }else {
-                            map.put("Roleid","");
+                        } else {
+                            map.put("Roleid", "");
                         }
-                        if (!"null".equals(curServerId) && !TextUtils.isEmpty(curServerId)){
+                        if (!"null".equals(curServerId) && !TextUtils.isEmpty(curServerId)) {
                             map.put("Serverid", curServerId);
-                        }else {
-                            map.put("Serverid","");
+                        } else {
+                            map.put("Serverid", "");
                         }
-                        if (!"null".equals(curSdkuid) && !TextUtils.isEmpty(curSdkuid)){
+                        if (!"null".equals(curSdkuid) && !TextUtils.isEmpty(curSdkuid)) {
                             map.put("Uid", curSdkuid);
-                        }else {
-                            map.put("Uid","");
+                        } else {
+                            map.put("Uid", "");
                         }
-                        if (!"null".equals(curSdkuid) && !TextUtils.isEmpty(curSdkuid)){
+                        if (!"null".equals(curSdkuid) && !TextUtils.isEmpty(curSdkuid)) {
                             map.put("Uid", curSdkuid);
-                        }else {
-                            map.put("Uid","");
+                        } else {
+                            map.put("Uid", "");
                         }
 
-                        if (!"null".equals(curSku) && !TextUtils.isEmpty(curSku)){
+                        if (!"null".equals(curSku) && !TextUtils.isEmpty(curSku)) {
                             map.put("Sku", curSku);
-                        }else {
-                            map.put("Sku","");
+                        } else {
+                            map.put("Sku", "");
                         }
                         //在数据库中获取的订单号已经是aes加密，所以直接上传就可以，可以为空
-                        if (!"null".equals(curCoorderid) && !TextUtils.isEmpty(curCoorderid)){
-                            map.put("Cp_orderid",dec(curCoorderid));
-                        }else {
-                            map.put("Cp_orderid","");
+                        if (!"null".equals(curCoorderid) && !TextUtils.isEmpty(curCoorderid)) {
+                            map.put("Cp_orderid", dec(curCoorderid));
+                        } else {
+                            map.put("Cp_orderid", "");
                         }
-                        if (!"null".equals(curOriginaljson) && !TextUtils.isEmpty(curOriginaljson)){
-                            map.put("Receive_data",aes(curOriginaljson));
-                        }else {
-                            map.put("Receive_data","");
+                        if (!"null".equals(curOriginaljson) && !TextUtils.isEmpty(curOriginaljson)) {
+                            map.put("Receive_data", aes(curOriginaljson));
+                        } else {
+                            map.put("Receive_data", "");
                         }
-                        if (!"null".equals(curSignture) && !TextUtils.isEmpty(curSignture)){
+                        if (!"null".equals(curSignture) && !TextUtils.isEmpty(curSignture)) {
                             map.put("Sign", curSignture);
-                        }else {
-                            map.put("Sign","");
+                        } else {
+                            map.put("Sign", "");
                         }
                         //透传参数传CP传过来
 //                map.put("Cp_orderid","");
-                        if (!"null".equals(curCtext) && !TextUtils.isEmpty(curCtext)){
+                        if (!"null".equals(curCtext) && !TextUtils.isEmpty(curCtext)) {
                             map.put("Ctext", curCtext);
-                        }else {
-                            map.put("Ctext","");
+                        } else {
+                            map.put("Ctext", "");
                         }
                         //判断是否为补单，1为补单，0为正常
-                        if (!"null".equals(curisfit) && !TextUtils.isEmpty(curisfit)){
+                        if (!"null".equals(curisfit) && !TextUtils.isEmpty(curisfit)) {
                             map.put("Isfix", curisfit);
-                        }else {
-                            map.put("Isfix","");
+                        } else {
+                            map.put("Isfix", "");
                         }
                         //把map保存到本地
 
-                        UhttpUtil.post(UgameUtil.getInstance().GOOGLE_PAY, map, new UcallBack(){
+                        UhttpUtil.post(UgameUtil.getInstance().GOOGLE_PAY, map, new UcallBack() {
 
                             @Override
                             public void onResponse(String response, int arg1) {
                                 try {
                                     JSONObject jo = new JSONObject(response);
-                                    String status=jo.optString("Status");
-                                    if("0".equals(status)){
+                                    String status = jo.optString("Status");
+                                    if ("0".equals(status)) {
                                         LogUtil.d("谷歌订单不正确");
                                         //在数据库删除该订单
                                         paydelDb(curCoorderid);
 
-                                    }else if("1".equals(status)){
+                                    } else if ("1".equals(status)) {
                                         LogUtil.d("谷歌订单正确");
                                         //在数据库删除该订单
                                         paydelDb(curCoorderid);
@@ -291,28 +291,29 @@ public class UgamePay {
                         });
                         //上传到后端。无论成功失败都把订单delete
                         // delDb(coOrderId);
-                    }while (cursor.moveToNext());
+                    } while (cursor.moveToNext());
                     cursor.close();
-                }else {
-                    LogUtil.k("gigifunpay-init,"+"数据库没有数据");
+                } else {
+                    LogUtil.k("gigifunpay-init," + "数据库没有数据");
                 }
             }
         }).start();
 
     }
-    public void queryUnfinishBill(Activity activity,String serverId,String roleid,String sdkuid){
-        LogUtil.i("sku: "+sku);
-        this.roleid=roleid;
+
+    public void queryUnfinishBill(Activity activity, String serverId, String roleid, String sdkuid) {
+        LogUtil.i("sku: " + sku);
+        this.roleid = roleid;
         this.sdkuid = sdkuid;
         this.gameId = UgameUtil.getInstance().GAME_ID;
         this.coin = "USD";
         this.serverId = serverId;
-        this.activity=activity;
+        this.activity = activity;
 
 //    查询商品，执行掉单操作
         if (iap_is_ok) {
             mHelper.queryInventoryAsync(mGotInventoryListener);
-            LogUtil.i( "调用查询方法");
+            LogUtil.i("调用查询方法");
         }
         //保存用户id 和角色id到手机
         SharedPreferences preferences = activity.getSharedPreferences("LoginCount", Context.MODE_PRIVATE);
@@ -320,94 +321,94 @@ public class UgamePay {
         edit.putString("paysdkUid", sdkuid);
         edit.putString("payroleId", roleid);
         edit.putString("payserverId", serverId);
-        LogUtil.k("保存角色uid，sdkuid="+sdkuid);
-        LogUtil.k("保存角色roleid，roleid="+roleid);
-        LogUtil.k("保存角色payserverId，payserverId="+serverId);
+        LogUtil.k("保存角色uid，sdkuid=" + sdkuid);
+        LogUtil.k("保存角色roleid，roleid=" + roleid);
+        LogUtil.k("保存角色payserverId，payserverId=" + serverId);
         edit.commit();
 
         //检查有无未完成订单
-        LogUtil.k("gigifunpay-选择角色"+"==检查订单前");
+        LogUtil.k("gigifunpay-选择角色" + "==检查订单前");
         resentFailBill(activity, serverId);
-        LogUtil.k("gigifunpay-选择角色"+"==检查订单后");
+        LogUtil.k("gigifunpay-选择角色" + "==检查订单后");
 
     }
+
     /**
-     *
      * @param activity
      * @param serverId  服务器id
-//     * @param roleid    游戏角色id
-//     * @param sdkuid	平台id
+     *                  //     * @param roleid    游戏角色id
+     *                  //     * @param sdkuid	平台id
      * @param product   商品描述
-//     * @param amount	商品价格
-         * @param coOrderId	订单号
+     *                  //     * @param amount	商品价格
+     * @param coOrderId 订单号
      * @param sku       谷歌sku
-     * @param Ctext		自定义参数
+     * @param Ctext     自定义参数
      */
-    public void googlePlay(Activity activity,String serverId,String product,
-                           String coOrderId,String sku,String Ctext,GooglePayListener googlePayListener
-    ) {
+    public void googlePlay(Activity activity, String serverId, String product,
+                           String coOrderId, String sku, String Ctext, GooglePayListener googlePayListener) {
 
         UgameUtil.getInstance().changeLang(activity);
-        this.googlePayListener=googlePayListener;
-        LogUtil.k("gigifunpay-googlepay"+"==BEGIN");
+        this.googlePayListener = googlePayListener;
+        LogUtil.k("gigifunpay-googlepay" + "==BEGIN");
         if (iap_is_ok) {
             mHelper.queryInventoryAsync(mGotInventoryListener);
-            LogUtil.i( "调用查询方法");
+            LogUtil.i("调用查询方法");
         }
         //再检查还有没有未完成订单
-        LogUtil.k("gigifunpay-googleplay"+"进入购买前检查未完成订单");
+        LogUtil.k("gigifunpay-googleplay" + "进入购买前检查未完成订单");
         resentFailBill(activity, serverId);
-        LogUtil.k("gigifunpay-googleplay=="+"进入购买前检查完成");
+        LogUtil.k("gigifunpay-googleplay==" + "进入购买前检查完成");
 
-        LogUtil.d("mHelper=="+mHelper);
+        LogUtil.d("mHelper==" + mHelper);
 
         SharedPreferences preferences = activity.getSharedPreferences("LoginCount", Context.MODE_PRIVATE);
         paysdkUid = preferences.getString("paysdkUid", "");
         payroleId = preferences.getString("payroleId", "");
 
-        LogUtil.k("购买时的paysdkUid="+paysdkUid);
-        LogUtil.k("购买时的payroleId="+payroleId);
+        LogUtil.k("购买时的paysdkUid=" + paysdkUid);
+        LogUtil.k("购买时的payroleId=" + payroleId);
 
         // 获取googleplay参数
-        this.sku =sku;
-        LogUtil.i("sku: "+sku);
+        this.sku = sku;
+        LogUtil.i("sku: " + sku);
         if (null != sku) {
             skus[0] = sku;
         }
         this.gameId = UgameUtil.getInstance().GAME_ID;
         this.coin = "USD";
-        this.product =product;
+        this.product = product;
         this.coOrderId = coOrderId;
         this.serverId = serverId;
-        this.Ctext=Ctext;
-        this.activity=activity;
-        LogUtil.k("packname="+activity.getPackageName());
+        this.Ctext = Ctext;
+        this.activity = activity;
+        LogUtil.k("packname=" + activity.getPackageName());
 
-        LogUtil.d("Gameid: "+gameId+" roleId:"+ payroleId +" sdkUid:"+ paysdkUid +" serverId:"
-                +serverId+" coOrderId:"+coOrderId+" product:"+
-                product+"coin"+coin+"Ctext"+Ctext);
+        LogUtil.d("Gameid: " + gameId + " roleId:" + payroleId + " sdkUid:" + paysdkUid + " serverId:"
+                + serverId + " coOrderId:" + coOrderId + " product:" +
+                product + "coin" + coin + "Ctext" + Ctext);
 
-        if(TextUtils.isEmpty(payroleId)||TextUtils.isEmpty(paysdkUid)||TextUtils.isEmpty(serverId)||
+        if (TextUtils.isEmpty(payroleId) || TextUtils.isEmpty(paysdkUid) || TextUtils.isEmpty(serverId) ||
                 TextUtils.isEmpty(coOrderId)
-                )
-        {
+                ) {
             LogUtil.k("请检查参数类型是否正确");
         }
-        if(null==Ctext){
-            Ctext="";
+        if (null == Ctext) {
+            Ctext = "";
         }
         if (null == skus[0] || "".equals(skus[0])) {
             Toast.makeText(context, MResource.getIdByName(context, "string", "recharge_failure"), Toast.LENGTH_SHORT).show();
             return;
         }
-        LogUtil.k("gamepay-googleplay,"+" iap_is_ok="+iap_is_ok);
+        LogUtil.k("gamepay-googleplay," + " iap_is_ok=" + iap_is_ok);
         if (iap_is_ok) {
+            //传送消息到handler中调用支付
             handler.sendEmptyMessage(PAY_INSERT);
         } else {
-            Toast.makeText(context, MResource.getIdByName(context, "string", "google_play_initialization_failure"),Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, MResource.getIdByName(context, "string", "google_play_initialization_failure"), Toast.LENGTH_SHORT).show();
         }
-        LogUtil.k("gigifunpay-googlepay"+"==END");
+        LogUtil.k("gigifunpay-googlepay" + "==END");
     }
+
     IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
         public void onQueryInventoryFinished(IabResult result,
                                              Inventory inventory) {
@@ -415,64 +416,64 @@ public class UgamePay {
             if (mHelper == null)
                 return;
             if (result.isFailure()) {
-                LogUtil.v( "查询失败 "+result.getMessage());
+                LogUtil.v("查询失败 " + result.getMessage());
 //                Toast.makeText(context, result.getMessage(), Toast.LENGTH_LONG).show();
                 return;
             }
 
-            int unComsumeSize=inventory.getAllOwnedSkus().size();
-            LogUtil.d( "未消耗商品数量："+ unComsumeSize);
+            int unComsumeSize = inventory.getAllOwnedSkus().size();
+            LogUtil.d("未消耗商品数量：" + unComsumeSize);
             List<String> allOwnedSkus = inventory.getAllOwnedSkus();
 
-            if(unComsumeSize>0){
+            if (unComsumeSize > 0) {
                 for (int i = 0; i < unComsumeSize; i++) {
                     final Purchase purchase = inventory.getPurchase(allOwnedSkus.get(i));
-                    LogUtil.k("查询未消耗purchase=="+purchase+"");
+                    LogUtil.k("查询未消耗purchase==" + purchase + "");
 
-                    Calendar calendar=Calendar.getInstance();
-                    SimpleDateFormat format=new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
-                    String date=format.format(calendar.getTime());
-                    reOrderId = "fill_"+date;
+                    Calendar calendar = Calendar.getInstance();
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+                    String date = format.format(calendar.getTime());
+                    reOrderId = "fill_" + date;
 
 //                    查询到未消耗，post到服务器上
-                    HashMap<String,String> map =new HashMap<String,String>();
+                    HashMap<String, String> map = new HashMap<String, String>();
                     map.put("Ugamekey", UgameUtil.getInstance().CLIENT_SECRET);
                     map.put("Ugameid", UgameUtil.getInstance().GAME_ID);
-                    map.put("Roleid",roleid);
-                    map.put("Serverid",serverId);
-                    map.put("Uid",sdkuid);
+                    map.put("Roleid", roleid);
+                    map.put("Serverid", serverId);
+                    map.put("Uid", sdkuid);
                     map.put("Cp_orderid", reOrderId);
-                    map.put("Receive_data",aes(purchase.getOriginalJson())); //对Receive_data进行aes加密
-                    map.put("Version",getVersionName(context));
-                    map.put("Sku",purchase.getSku());
-                    map.put("Sign",purchase.getSignature());
-                    map.put("Ctext","");
-                    map.put("Isfix","1");
-                    map.put("packname",activity.getPackageName());
+                    map.put("Receive_data", aes(purchase.getOriginalJson())); //对Receive_data进行aes加密
+                    map.put("Version", getVersionName(context));
+                    map.put("Sku", purchase.getSku());
+                    map.put("Sign", purchase.getSignature());
+                    map.put("Ctext", "");
+                    map.put("Isfix", "1");
+                    map.put("packname", activity.getPackageName());
                     //要不要插入数据库,保存到数据库后如果得不到后台回调，就要等下一次，
-                    insertDb("2","haspay","2","refill",purchase,reOrderId,"1");
-                    if(null!=mHelper && null!=purchase){
+                    insertDb("2", "haspay", "2", "refill", purchase, reOrderId, "1");
+                    if (null != mHelper && null != purchase) {
                         LogUtil.d("states 0 查询未消耗 执行消耗之前 ");
                         mHelper.consumeAsync(purchase, mConsumeFinishedListener);
                         LogUtil.d("states 0 查询未消耗 执行消耗之后 ");
                     }
-                    UhttpUtil.post(UgameUtil.getInstance().GOOGLE_PAY, map, new UcallBack(){
+                    UhttpUtil.post(UgameUtil.getInstance().GOOGLE_PAY, map, new UcallBack() {
 
                         @Override
                         public void onResponse(String response, int arg1) {
                             try {
                                 JSONObject jo = new JSONObject(response);
-                                String status=jo.optString("Status");
-                                if("0".equals(status)){
+                                String status = jo.optString("Status");
+                                if ("0".equals(status)) {
                                     Toast.makeText(context, MResource.getIdByName(context, "string", "link_error"), Toast.LENGTH_SHORT)
                                             .show();
                                     LogUtil.d("谷歌订单不正确");
                                     paydelDb(aes(reOrderId));
-                                }else if("1".equals(status)){
+                                } else if ("1".equals(status)) {
                                     String mount = jo.getString("amount");
                                     //把金额改成从服务上取
-                                    LogUtil.k("amount = "+ mount);
-                                    LanucherMonitor.getInstance().payTrack(context,payroleId+"_"+serverId+"_"+paysdkUid,mount,"googlePay");
+                                    LogUtil.k("amount = " + mount);
+                                    LanucherMonitor.getInstance().payTrack(context, payroleId + "_" + serverId + "_" + paysdkUid, mount, "googlePay");
                                     paydelDb(aes(reOrderId));
                                 }
 
@@ -490,55 +491,56 @@ public class UgamePay {
             }
         }
     };
+
     IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
         public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
-            LogUtil.i("谷歌支付结果: "+purchase);
+            LogUtil.i("谷歌支付结果: " + purchase);
 
             payStyle = 1;
-            if(null!=purchase){
-                mPurchase=purchase;
-                transactionId=purchase.getOrderId();//谷歌的订单号
-                signture=purchase.getSignature();
-                originalJson=purchase.getOriginalJson();
+            if (null != purchase) {
+                mPurchase = purchase;
+                transactionId = purchase.getOrderId();//谷歌的订单号
+                signture = purchase.getSignature();
+                originalJson = purchase.getOriginalJson();
             }
 
             if (result.isFailure()) {
-                LogUtil.i("response: "+result.getResponse());
-                if(result.getResponse()== IabHelper.IABHELPER_USER_CANCELLED){
-                    if(null==purchase){
+                LogUtil.i("response: " + result.getResponse());
+                if (result.getResponse() == IabHelper.IABHELPER_USER_CANCELLED) {
+                    if (null == purchase) {
 
                     }
                 }
 
-                if(null==purchase){
+                if (null == purchase) {
                     Toast.makeText(context, MResource.getIdByName(context, "string", "user_cancel"), Toast.LENGTH_SHORT)
                             .show();
                     googlePayListener.cancel("cancel");
-                    LogUtil.i( "支付失败 : "+result.getMessage());
-                }else{
-                    int purchaseState=purchase.getPurchaseState();
-                    if(0==purchaseState){//已扣钱
-                        Toast.makeText(context, MResource.getIdByName(context, "string", "pay_error")+purchaseState, Toast.LENGTH_SHORT)
+                    LogUtil.i("支付失败 : " + result.getMessage());
+                } else {
+                    int purchaseState = purchase.getPurchaseState();
+                    if (0 == purchaseState) {//已扣钱
+                        Toast.makeText(context, MResource.getIdByName(context, "string", "pay_error") + purchaseState, Toast.LENGTH_SHORT)
                                 .show();
                         googlePayListener.cancel("error");
-                    }else{
-                        LogUtil.i( "其他情况");
-                        Toast.makeText(context, MResource.getIdByName(context, "string", "pay_error")+purchaseState, Toast.LENGTH_SHORT)
+                    } else {
+                        LogUtil.i("其他情况");
+                        Toast.makeText(context, MResource.getIdByName(context, "string", "pay_error") + purchaseState, Toast.LENGTH_SHORT)
                                 .show();
                         googlePayListener.cancel("error");
                     }
                 }
                 return;
-            }else{
-                int purchaseState=purchase.getPurchaseState();
-                LogUtil.i( "支付成功  purchaseState="+purchaseState);
-                if(0==purchaseState){//已扣钱
+            } else {
+                int purchaseState = purchase.getPurchaseState();
+                LogUtil.i("支付成功  purchaseState=" + purchaseState);
+                if (0 == purchaseState) {//已扣钱
 //                    purchase.setSku("com.iiugame.sdk.99");
 //                    LogUtil.i("谷歌sku结果: "+purchase.getSku());
-                    LogUtil.k("谷歌支付成功结果: "+purchase);
+                    LogUtil.k("谷歌支付成功结果: " + purchase);
                     googlePay(purchase);
-                }else{
-                    LogUtil.i( "其他情况");
+                } else {
+                    LogUtil.i("其他情况");
                 }
             }
 
@@ -547,16 +549,16 @@ public class UgamePay {
     };
     IabHelper.OnConsumeFinishedListener mConsumeFinishedListener = new IabHelper.OnConsumeFinishedListener() {
         public void onConsumeFinished(Purchase purchase, IabResult result) {
-            LogUtil.e( "PayActivity 消费结果 "+result.getMessage());
+            LogUtil.e("PayActivity 消费结果 " + result.getMessage());
             /**
              * 消费结果提交日志
              */
-            LogUtil.e( "正常支付：  消费是否成功 ： "+result.isSuccess());
+            LogUtil.e("正常支付：  消费是否成功 ： " + result.isSuccess());
             if (result.isSuccess()) {
                 //delDb(coOrderId);
-                LogUtil.e( "PayActivity 消费成功");
-            } else{
-                LogUtil.e( "PayActivity 消费失败");
+                LogUtil.e("PayActivity 消费成功");
+            } else {
+                LogUtil.e("PayActivity 消费失败");
             }
             onBack();
         }
@@ -564,44 +566,44 @@ public class UgamePay {
 
     private void googlePay(final Purchase purchase) {
 
-        if(null==purchase){
-            LogUtil.i( "正常支付： 查询谷歌订单是否正确，purchase为空 ");
+        if (null == purchase) {
+            LogUtil.i("正常支付： 查询谷歌订单是否正确，purchase为空 ");
             return;
         }
 
-        HashMap<String,String> map =new HashMap<String,String>();
+        HashMap<String, String> map = new HashMap<String, String>();
         map.put("Ugamekey", UgameUtil.getInstance().CLIENT_SECRET);
         map.put("Ugameid", UgameUtil.getInstance().GAME_ID);
-        map.put("Roleid",payroleId);
-        map.put("Serverid",serverId);
-        map.put("Uid",paysdkUid);
-        map.put("Cp_orderid",coOrderId);
-        map.put("Receive_data",aes(purchase.getOriginalJson())); //对Receive_data进行aes加密
-        map.put("Version",getVersionName(context));
-        map.put("Sku",purchase.getSku());
-        map.put("Sign",purchase.getSignature());
-        map.put("Ctext",Ctext);
-        map.put("Isfix","0");
-        map.put("packname",activity.getPackageName());
+        map.put("Roleid", payroleId);
+        map.put("Serverid", serverId);
+        map.put("Uid", paysdkUid);
+        map.put("Cp_orderid", coOrderId);
+        map.put("Receive_data", aes(purchase.getOriginalJson())); //对Receive_data进行aes加密
+        map.put("Version", getVersionName(context));
+        map.put("Sku", purchase.getSku());
+        map.put("Sign", purchase.getSignature());
+        map.put("Ctext", Ctext);
+        map.put("Isfix", "0");
+        map.put("packname", activity.getPackageName());
 
         //测试未成功消耗
 //        int i = 2/0;
-        insertDb("1", "before Paying", "1", "before pay",purchase,coOrderId,"0");
+        insertDb("1", "before Paying", "1", "before pay", purchase, coOrderId, "0");
 
-        if(null!=mHelper && null!=purchase){
+        if (null != mHelper && null != purchase) {
             LogUtil.d("states 0 购买成功 执行消耗之前 ");
             mHelper.consumeAsync(purchase, mConsumeFinishedListener);
             LogUtil.d("states 0 购买成功 执行消耗之后 ");
         }
 //        int i = 2/0;
-        UhttpUtil.post(UgameUtil.getInstance().GOOGLE_PAY, map, new UcallBack(){
+        UhttpUtil.post(UgameUtil.getInstance().GOOGLE_PAY, map, new UcallBack() {
 
             @Override
             public void onResponse(String response, int arg1) {
                 try {
                     JSONObject jo = new JSONObject(response);
-                    String status=jo.optString("Status");
-                    if("0".equals(status)){
+                    String status = jo.optString("Status");
+                    if ("0".equals(status)) {
                         Toast.makeText(context, MResource.getIdByName(context, "string", "link_error"), Toast.LENGTH_SHORT)
                                 .show();
                         LogUtil.k("谷歌订单不正确");
@@ -609,18 +611,18 @@ public class UgamePay {
                         googlePayListener.cancel("google orderNo error");
 
                         //在数据库删除该订单
-                        LogUtil.k("购买完成后删除订单"+"订单号为=="+coOrderId+",加密后="+aes(coOrderId));
+                        LogUtil.k("购买完成后删除订单" + "订单号为==" + coOrderId + ",加密后=" + aes(coOrderId));
                         paydelDb(aes(coOrderId));
 
-                    }else if("1".equals(status)){
+                    } else if ("1".equals(status)) {
 
                         googlePayListener.success("success");
-                        LogUtil.k("购买完成后删除订单,"+"订单号为=="+coOrderId+",加密后="+aes(coOrderId));
+                        LogUtil.k("购买完成后删除订单," + "订单号为==" + coOrderId + ",加密后=" + aes(coOrderId));
                         LogUtil.k("谷歌订单正确");
+                        //把金额改成从服务器上取
                         String mount = jo.getString("amount");
-                        //把金额改成从服务上取
-                        LogUtil.k("amount = "+ mount);
-                        LanucherMonitor.getInstance().payTrack(context,payroleId+"_"+serverId+"_"+paysdkUid,mount,"googlePay");
+                        LogUtil.k("amount = " + mount);
+                        LanucherMonitor.getInstance().payTrack(context, payroleId + "_" + serverId + "_" + paysdkUid, mount, "googlePay");
                         //在数据库删除该订单
                         paydelDb(aes(coOrderId));
                     }
@@ -651,6 +653,7 @@ public class UgamePay {
             return "";
         }
     }
+
     private boolean isInstallGoogleStore() {
         List<String> packages = new ArrayList<String>();
         List<PackageInfo> appList = getAllApps(context);
@@ -673,6 +676,7 @@ public class UgamePay {
         }
         return true;
     }
+
     public static List<PackageInfo> getAllApps(Context context) {
 
         ArrayList<PackageInfo> apps = new ArrayList<PackageInfo>();
@@ -687,20 +691,19 @@ public class UgamePay {
     }
 
 
-
     private void insertDb(final String mode, final String ispay, final String requestStatus, final String reason,
-                          final Purchase purchase, final String orderid, final String isfit){
+                          final Purchase purchase, final String orderid, final String isfit) {
 
-        LogUtil.k("originalJson="+purchase.getOriginalJson()+",signture="+purchase.getSignature()+",orderid="+orderid);
-        new Thread(){
+        LogUtil.k("originalJson=" + purchase.getOriginalJson() + ",signture=" + purchase.getSignature() + ",orderid=" + orderid);
+        new Thread() {
             @Override
             public void run() {
                 super.run();
-                ContentValues values=new ContentValues();
+                ContentValues values = new ContentValues();
                 values.put(DBFile.UID, payroleId);
                 values.put(DBFile.LNID, paysdkUid);
 //                String aescoOrderId=aes(coOrderId);
-                String aescoOrderId=aes(orderid);
+                String aescoOrderId = aes(orderid);
                 values.put(DBFile.COORDERID, aescoOrderId);
                 values.put(DBFile.ENCODE_COORDERID, MD5Utils.md5Sign(aescoOrderId));
                 values.put(DBFile.MODE, mode);
@@ -719,16 +722,16 @@ public class UgamePay {
                 values.put(DBFile.SIGNTURE, purchase.getSignature());
                 values.put(DBFile.CTEXT, Ctext);
                 values.put(DBFile.ISFIT, isfit);
-                Calendar calendar=Calendar.getInstance();
-                SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                String date=format.format(calendar.getTime());
+                Calendar calendar = Calendar.getInstance();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String date = format.format(calendar.getTime());
                 values.put(DBFile.CURRENT_TIME, date);
 
-                SQLiteDatabase db= DatabaseManager.getInstance().openDatabase();
-                long insert= DBDao.insertPay(db, values);
-                if(insert>0){
-                    LogUtil.e("插入数据库成功: "+insert);
-                }else{
+                SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
+                long insert = DBDao.insertPay(db, values);
+                if (insert > 0) {
+                    LogUtil.e("插入数据库成功: " + insert);
+                } else {
                     LogUtil.e("插入数据库失败");
                 }
                 DatabaseManager.getInstance().closeDatabase();
@@ -785,18 +788,18 @@ public class UgamePay {
 //
 //}
 
-    private void delDb(final String coorderid){
-        new Thread(){
+    private void delDb(final String coorderid) {
+        new Thread() {
 
             @Override
             public void run() {
                 super.run();
-                SQLiteDatabase db= DatabaseManager.getInstance().openDatabase();
+                SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
 
-                int del= DBDao.delPay(db, MD5Utils.md5Sign(coorderid));
-                if(del>0){
-                    LogUtil.i("删除数据成功: "+del);
-                }else{
+                int del = DBDao.delPay(db, MD5Utils.md5Sign(coorderid));
+                if (del > 0) {
+                    LogUtil.i("删除数据成功: " + del);
+                } else {
                     LogUtil.i("删除数据库失败: ");
 
                     /**
@@ -814,20 +817,21 @@ public class UgamePay {
 
     /**
      * delete bill according to coorderid number
+     *
      * @param coorderid
      */
-    private void paydelDb(final String coorderid){
-        new Thread(){
+    private void paydelDb(final String coorderid) {
+        new Thread() {
 
             @Override
             public void run() {
                 super.run();
-                SQLiteDatabase db= DatabaseManager.getInstance().openDatabase();
-                int del= DBDao.delPay(db, MD5Utils.md5Sign(coorderid));
-                LogUtil.k("gigifunpay_删除订单===="+coorderid);
-                if(del>0){
-                    LogUtil.k("删除数据成功: "+del);
-                }else{
+                SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
+                int del = DBDao.delPay(db, MD5Utils.md5Sign(coorderid));
+                LogUtil.k("gigifunpay_删除订单====" + coorderid);
+                if (del > 0) {
+                    LogUtil.k("删除数据成功: " + del);
+                } else {
                     LogUtil.k("删除数据库失败: ");
 
                 }
@@ -842,6 +846,7 @@ public class UgamePay {
 
     /**
      * 更新数据库
+     *
      * @param coorderid
      * @param uid
      * @param lnid
@@ -850,33 +855,33 @@ public class UgamePay {
      * @param requestStatus
      * @param reason
      */
-    private void updateDb(final String coorderid,final String uid,final String lnid,final String mode,final String ispay,final String requestStatus,final String reason){
-        new Thread(){
+    private void updateDb(final String coorderid, final String uid, final String lnid, final String mode, final String ispay, final String requestStatus, final String reason) {
+        new Thread() {
 
             @Override
             public void run() {
                 super.run();
-                ContentValues values=new ContentValues();
+                ContentValues values = new ContentValues();
                 values.put(DBFile.MODE, mode);
                 values.put(DBFile.ISPAYMENT, ispay);
                 values.put(DBFile.REQUESTSTATUS, requestStatus);
                 values.put(DBFile.REASON, reason);
-                if(payStyle==1){
-                    String aes_transactionId=aes(transactionId);
+                if (payStyle == 1) {
+                    String aes_transactionId = aes(transactionId);
                     values.put(DBFile.TRANSACTION_ID, aes_transactionId);
                     values.put(DBFile.ENCODE_TRANSACTION_ID, MD5Utils.md5Sign(aes_transactionId));
-                    values.put(DBFile.ORIGINALJSON,aes(originalJson));
+                    values.put(DBFile.ORIGINALJSON, aes(originalJson));
                     values.put(DBFile.SIGNTURE, aes(signture));
                 }
-                Calendar calendar=Calendar.getInstance();
-                SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                String date=format.format(calendar.getTime());
+                Calendar calendar = Calendar.getInstance();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String date = format.format(calendar.getTime());
                 values.put(DBFile.CURRENT_TIME, date);
-                SQLiteDatabase db= DatabaseManager.getInstance().openDatabase();
-                int update= DBDao.updataPayResult(db, values, new String[]{uid,lnid, MD5Utils.md5Sign(aes(coorderid))});
-                if(update>0){
-                    LogUtil.i("修改数据成功: "+update);
-                }else{
+                SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
+                int update = DBDao.updataPayResult(db, values, new String[]{uid, lnid, MD5Utils.md5Sign(aes(coorderid))});
+                if (update > 0) {
+                    LogUtil.i("修改数据成功: " + update);
+                } else {
                     LogUtil.i("修改数据库失败: ");
 
 
@@ -894,35 +899,34 @@ public class UgamePay {
     }
 
 
-
-    private void exceptionupdateDb(final String coorderid,final String uid,final String lnid,final String mode,final String ispay,final String requestStatus,final String reason){
-        new Thread(){
+    private void exceptionupdateDb(final String coorderid, final String uid, final String lnid, final String mode, final String ispay, final String requestStatus, final String reason) {
+        new Thread() {
 
             @Override
             public void run() {
                 super.run();
-                ContentValues values=new ContentValues();
+                ContentValues values = new ContentValues();
                 values.put(DBFile.MODE, mode);
                 values.put(DBFile.ISPAYMENT, ispay);
                 values.put(DBFile.REQUESTSTATUS, requestStatus);
                 values.put(DBFile.REASON, reason);
-                if(payStyle==1){
-                    String aes_transactionId=aes(transactionId);
+                if (payStyle == 1) {
+                    String aes_transactionId = aes(transactionId);
                     values.put(DBFile.TRANSACTION_ID, aes_transactionId);
                     values.put(DBFile.ENCODE_TRANSACTION_ID, MD5Utils.md5Sign(aes_transactionId));
                     values.put(DBFile.ORIGINALJSON, aes(originalJson));
                     values.put(DBFile.SIGNTURE, aes(signture));
                 }
-                Calendar calendar=Calendar.getInstance();
-                SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                String date=format.format(calendar.getTime());
+                Calendar calendar = Calendar.getInstance();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String date = format.format(calendar.getTime());
                 values.put(DBFile.CURRENT_TIME, date);
 
-                SQLiteDatabase db= DatabaseManager.getInstance().openDatabase();
-                int update= DBDao.updataPayResult(db, values, new String[]{uid,lnid, MD5Utils.md5Sign(aes(coorderid))});
-                if(update>0){
-                    LogUtil.i("修改数据成功: "+update);
-                }else{
+                SQLiteDatabase db = DatabaseManager.getInstance().openDatabase();
+                int update = DBDao.updataPayResult(db, values, new String[]{uid, lnid, MD5Utils.md5Sign(aes(coorderid))});
+                if (update > 0) {
+                    LogUtil.i("修改数据成功: " + update);
+                } else {
                     LogUtil.i("修改数据库失败: ");
 
                     /**
@@ -939,9 +943,9 @@ public class UgamePay {
 
     }
 
-    private String aes(String coorderid){
+    private String aes(String coorderid) {
         try {
-            AESEncode aes=new AESEncode();
+            AESEncode aes = new AESEncode();
             return aes.encrypt(coorderid);
         } catch (Exception e) {
             e.printStackTrace();
@@ -949,9 +953,10 @@ public class UgamePay {
         }
 
     }
-    private String dec(String enc){
+
+    private String dec(String enc) {
         try {
-            AESEncode aes=new AESEncode();
+            AESEncode aes = new AESEncode();
             return aes.decrypt(enc);
         } catch (Exception e) {
             e.printStackTrace();
@@ -959,19 +964,20 @@ public class UgamePay {
         }
 
     }
-    public class MHandler extends android.os.Handler{
+
+    public class MHandler extends android.os.Handler {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
                 case PAY_INSERT:
                     //写入数据成功
-                    LogUtil.k("gigifunpay-handler-进入购买,"+"paystyle="+payStyle);
-                    if(payStyle==1){//谷歌
-                        LogUtil.k("gigifunpay-handler-进入购买,"+"sku="+skus[0]+",RC_REQUEST="+RC_REQUEST);
+                    LogUtil.k("gigifunpay-handler-进入购买," + "paystyle=" + payStyle);
+                    if (payStyle == 1) {//谷歌
+                        LogUtil.k("gigifunpay-handler-进入购买," + "sku=" + skus[0] + ",RC_REQUEST=" + RC_REQUEST);
                         try {
                             mHelper.launchPurchaseFlow(activity, skus[0], RC_REQUEST,
-                                    mPurchaseFinishedListener,coOrderId);
+                                    mPurchaseFinishedListener, coOrderId);
                         } catch (Exception e) {
                             try {
                                 Toast.makeText(context, MResource.getIdByName(context, "string", "checking_unconsume_order"), Toast.LENGTH_LONG).show();
@@ -988,25 +994,23 @@ public class UgamePay {
         }
     }
 
-    private void onBack(){
+    private void onBack() {
         if (null != dialog && dialog.isShowing()) {
             dialog.dismiss();
         }
     }
+
     public void onDestroy() {
-        UgameUtil.getInstance().PAY_STATE=0;
-//        if (mHelper != null)
-//            mHelper.dispose();
-//        mHelper = null;
+        UgameUtil.getInstance().PAY_STATE = 0;
         try {
             if (mHelper != null) mHelper.dispose();
             mHelper = null;
-        }catch (IllegalArgumentException e){
-            LogUtil.d("Error: "+e.getMessage());
+        } catch (IllegalArgumentException e) {
+            LogUtil.d("Error: " + e.getMessage());
             mHelper = null;
         }
-
     }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if (null != mHelper) {

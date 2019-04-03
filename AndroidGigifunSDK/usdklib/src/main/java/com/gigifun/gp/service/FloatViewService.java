@@ -25,7 +25,7 @@ import com.gigifun.gp.listener.OnFloatLintener;
 import com.gigifun.gp.utils.LogUtil;
 import com.gigifun.gp.widget.FloatView;
 
-public class  FloatViewService extends Service {
+public class FloatViewService extends Service {
 
     private FloatView mFloatView;
 
@@ -45,19 +45,20 @@ public class  FloatViewService extends Service {
 
     public void showFloat() {
 
-        if ( mFloatView != null ) {
+        if (mFloatView != null) {
             mFloatView.show();
         }
     }
 
     public void hideFloat() {
-        if ( mFloatView != null ) {
+        if (mFloatView != null) {
             mFloatView.hide();
         }
     }
+
     public void destroyFloat() {
 
-        if ( mFloatView != null ) {
+        if (mFloatView != null) {
             mFloatView.destroy();
         }
         mFloatView = null;

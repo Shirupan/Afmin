@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.gigifun.wszj">
+    package="com.gtoken.unclejoe">
 
     <supports-screens
         android:largeScreens="true"
@@ -21,14 +21,16 @@
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
+        android:name="com.gigifun.wszj.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/icon2"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.gigifun.wszj.TestActivity"
+            android:name="com.gigifun.wszj.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="userLandscape">
@@ -40,6 +42,7 @@
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Accepts URIs "com.example.myapp://" -->
@@ -50,7 +53,7 @@
         </activity>
 
         <!--floatbutton bengin-->
-        <service android:name="com.gigifun.gp.service.FloatViewService"/>
+        <service android:name="com.gigifun.gp.service.FloatViewService" />
         <!--floatbutton end-->
         <!-- begin  AppsFlyer -->
         <receiver

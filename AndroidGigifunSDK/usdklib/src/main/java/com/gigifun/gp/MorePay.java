@@ -41,17 +41,17 @@ import java.util.HashMap;
 import okhttp3.Call;
 
 public class MorePay extends Activity {
-    private  Activity mActivity;
+    private Activity mActivity;
     private WebSettings webSettings;
     private WebView mWebView;
     private ProgressWheel mProgressWheel;
     private Button btnCancel;
 
-   private String serverId;
-   private String roleid;
-   private String sdkuid;
-   private String ctext;
-   private String GAME_ID;
+    private String serverId;
+    private String roleid;
+    private String sdkuid;
+    private String ctext;
+    private String GAME_ID;
     private SharedPreferences preferences;
 
 
@@ -59,10 +59,10 @@ public class MorePay extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(com.gigifun.gp.utils.MResource.getIdByName(this,"layout","activity_more_pay"));
-        btnCancel=(Button)this.findViewById(com.gigifun.gp.utils.MResource.getIdByName(MorePay.this, "id", "btn_cancel"));
-        mWebView=(WebView)this.findViewById(com.gigifun.gp.utils.MResource.getIdByName(MorePay.this,"id","web_molpay"));
-        mProgressWheel=(ProgressWheel)this.findViewById(com.gigifun.gp.utils.MResource.getIdByName(MorePay.this,"id","web_progress"));
+        setContentView(com.gigifun.gp.utils.MResource.getIdByName(this, "layout", "activity_more_pay"));
+        btnCancel = (Button) this.findViewById(com.gigifun.gp.utils.MResource.getIdByName(MorePay.this, "id", "btn_cancel"));
+        mWebView = (WebView) this.findViewById(com.gigifun.gp.utils.MResource.getIdByName(MorePay.this, "id", "web_molpay"));
+        mProgressWheel = (ProgressWheel) this.findViewById(com.gigifun.gp.utils.MResource.getIdByName(MorePay.this, "id", "web_progress"));
 
         preferences = this.getSharedPreferences("LoginCount", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = preferences.edit();
@@ -79,19 +79,19 @@ public class MorePay extends Activity {
             @Override
             public void run() {
                 LogUtil.k("More Pay service==" + mFloatViewService);
-                if (mFloatViewService != null){
+                if (mFloatViewService != null) {
                     mFloatViewService.hideFloat();
                 }
             }
         });
 
 
-        GAME_ID= UgameUtil.getInstance().GAME_ID;
+        GAME_ID = UgameUtil.getInstance().GAME_ID;
         Intent intent = getIntent();
-         serverId = intent.getStringExtra("serverId");
+        serverId = intent.getStringExtra("serverId");
 //         roleid = intent.getStringExtra("roleid");
 //         sdkuid = intent.getStringExtra("sdkuid");
-         ctext = intent.getStringExtra("sPcText");
+        ctext = intent.getStringExtra("sPcText");
 //        从本地获取角色id
         SharedPreferences preferences = getSharedPreferences("LoginCount", Context.MODE_PRIVATE);
         sdkuid = preferences.getString("paysdkUid", "");
@@ -102,13 +102,13 @@ public class MorePay extends Activity {
             @Override
             public void onClick(View v) {
                 btnCancel.setClickable(false);
-                postCountPayTask(GAME_ID,sdkuid);
+                postCountPayTask(GAME_ID, sdkuid);
                 finish();
                 mFloatViewService.showFloat();
             }
         });
 
-        if(Build.VERSION.SDK_INT >= 19) {
+        if (Build.VERSION.SDK_INT >= 19) {
             mWebView.getSettings().setLoadsImagesAutomatically(true);
         } else {
             mWebView.getSettings().setLoadsImagesAutomatically(false);
@@ -116,10 +116,10 @@ public class MorePay extends Activity {
 
 
         mWebView.requestFocusFromTouch();
-        webSettings=mWebView.getSettings();
+        webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setBuiltInZoomControls(true);
-        mWebView.setWebViewClient(new WebViewClient(){
+        mWebView.setWebViewClient(new WebViewClient() {
 
             @Override
             public void onReceivedError(WebView view, int errorCode,
@@ -142,7 +142,7 @@ public class MorePay extends Activity {
                 // TODO Auto-generated method stub
                 super.onPageFinished(view, url);
 
-                if(!mWebView.getSettings().getLoadsImagesAutomatically()) {
+                if (!mWebView.getSettings().getLoadsImagesAutomatically()) {
                     mWebView.getSettings().setLoadsImagesAutomatically(true);
                 }
                 closeProgressWheel();
@@ -159,26 +159,26 @@ public class MorePay extends Activity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
 
-                if( url.startsWith("http:") || url.startsWith("https:") ) {
+                if (url.startsWith("http:") || url.startsWith("https:")) {
                     return false;
                 }
-                try{
+                try {
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                    startActivity( intent );
-                }catch(Exception e){
+                    startActivity(intent);
+                } catch (Exception e) {
 
                 }
                 return true;
             }
 
-//            處理瀏覽器的按鍵
+            //            處理瀏覽器的按鍵
             @Override
             public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
                 return super.shouldOverrideKeyEvent(view, event);
             }
         });
 
-        mWebView.setWebChromeClient(new WebChromeClient(){
+        mWebView.setWebChromeClient(new WebChromeClient() {
 
             @Override
             public void onProgressChanged(WebView view, int newProgress) {
@@ -200,7 +200,7 @@ public class MorePay extends Activity {
                 + "&cp_id="
                 + ctext
                 + "&type=0";
-        LogUtil.k("webview地址=="+otherUrl);
+        LogUtil.k("webview地址==" + otherUrl);
         mWebView.getSettings().setUserAgentString("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36");
         mWebView.loadUrl(otherUrl);
     }
@@ -210,11 +210,11 @@ public class MorePay extends Activity {
     public boolean onKeyUp(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             LogUtil.k("点击退出");
-            if(null !=mWebView && mWebView.canGoBack()){
+            if (null != mWebView && mWebView.canGoBack()) {
                 mWebView.goBack();
                 return true;
-            }else{
-                if(event.getAction()==KeyEvent.ACTION_UP) {
+            } else {
+                if (event.getAction() == KeyEvent.ACTION_UP) {
                     LogUtil.k("postCountPayTask");
                     postCountPayTask(GAME_ID, sdkuid);
                 }
@@ -227,14 +227,14 @@ public class MorePay extends Activity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        LogUtil.k("点击==="+event.getAction());
+        LogUtil.k("点击===" + event.getAction());
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             LogUtil.k("点击退出");
-            if(null !=mWebView && mWebView.canGoBack()){
+            if (null != mWebView && mWebView.canGoBack()) {
                 mWebView.goBack();
                 return true;
-            }else{
-                if(event.getAction()==KeyEvent.ACTION_UP) {
+            } else {
+                if (event.getAction() == KeyEvent.ACTION_UP) {
                     LogUtil.k("postCountPayTask");
                     postCountPayTask(GAME_ID, sdkuid);
                 }
@@ -249,7 +249,7 @@ public class MorePay extends Activity {
     /**
      * 发起统计请求
      */
-    public   void  postCountPayTask(String gameid,String userid){
+    public void postCountPayTask(String gameid, String userid) {
 
         SharedPreferences.Editor edit = preferences.edit();
         edit.putString("floatStatus", "0");
@@ -258,17 +258,17 @@ public class MorePay extends Activity {
         HashMap<String, String> param = new HashMap<String, String>();
         param.put("gameid", gameid);
         param.put("userid", userid);
-        param.put("sign", MD5Utils.md5MorePaySign(gameid, userid,"0"));
+        param.put("sign", MD5Utils.md5MorePaySign(gameid, userid, "0"));
         param.put("isios", "0");
-        LogUtil.k("拼接的签名："+ MD5Utils.md5MorePaySign(gameid, userid,"0"));
+        LogUtil.k("拼接的签名：" + MD5Utils.md5MorePaySign(gameid, userid, "0"));
 
-        UhttpUtil.post(UgameUtil.getInstance().GET_USER_PAY,param, new UcallBack() {
+        UhttpUtil.post(UgameUtil.getInstance().GET_USER_PAY, param, new UcallBack() {
 
             @Override
             public void onResponse(String response, int arg1) {
 
                 requestResult(response);
-                LogUtil.k("第三方支付返回=="+response);
+                LogUtil.k("第三方支付返回==" + response);
             }
 
             @Override
@@ -278,28 +278,30 @@ public class MorePay extends Activity {
             }
         });
     }
+
     /**
      * 处理返回结果信息
+     *
      * @param result
      */
-    private  void requestResult(String result) {
+    private void requestResult(String result) {
 
 
         try {
             JSONObject jo = new JSONObject((String) result);
             HashMap<String, String> requestStatus = JSONParseUtil
                     .requestParse(jo);
-            if(requestStatus.get("Status").equals("1")){
+            if (requestStatus.get("Status").equals("1")) {
                 //请求成功
-                JSONArray jsonArray=jo.optJSONArray("Data");
-                if(jsonArray.length()>0){
-                    for(int i=0;i<jsonArray.length();i++){
+                JSONArray jsonArray = jo.optJSONArray("Data");
+                if (jsonArray.length() > 0) {
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         // LanucherMonitor.payTrack(MolPayActivity.this,jo.optString("Userid"),jsonArray.get(i).toString(),"WebPay");
-                        JSONObject payOb=(JSONObject) jsonArray.get(i);
-                        String amount=payOb.optString("amount");
-                        String channel=payOb.optString("channel");
-                        LogUtil.k("amount： "+amount+"channel： "+channel);
-                        LanucherMonitor.getInstance().payTrack(MorePay.this,jo.optString("Userid"),amount,channel);
+                        JSONObject payOb = (JSONObject) jsonArray.get(i);
+                        String amount = payOb.optString("amount");
+                        String channel = payOb.optString("channel");
+                        LogUtil.k("amount： " + amount + "channel： " + channel);
+                        LanucherMonitor.getInstance().payTrack(MorePay.this, jo.optString("Userid"), amount, channel);
                     }
                 }
             }
@@ -338,6 +340,7 @@ public class MorePay extends Activity {
             mProgressWheel.setVisibility(View.GONE);
         }
     }
+
     private FloatViewService mFloatViewService;
     private final ServiceConnection mServiceConnection = new ServiceConnection() {
         @Override
@@ -345,10 +348,11 @@ public class MorePay extends Activity {
             LogUtil.k("init,成功连接服务");
             FloatViewService.FloatViewServiceBinder iBinder1 = (FloatViewService.FloatViewServiceBinder) iBinder;
             mFloatViewService = (iBinder1).getService();
-            LogUtil.k("MorePay mFloatViewService=="+mFloatViewService);
+            LogUtil.k("MorePay mFloatViewService==" + mFloatViewService);
 
             mFloatViewService.hideFloat();
         }
+
         @Override
         public void onServiceDisconnected(ComponentName componentName) {
             LogUtil.k("init,连接服务失败");

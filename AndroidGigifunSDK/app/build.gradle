@@ -18,14 +18,15 @@ android {
         }
     }
 
-    compileSdkVersion 26
-    buildToolsVersion "28.0.2"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId 'com.gigifun.wszj'
+        applicationId 'com.gtoken.unclejoe'
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 4
         versionName '1.0.3'
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -55,4 +56,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation project(':usdklib')
+    implementation project(':sdk_api')
+
+//    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+
 }

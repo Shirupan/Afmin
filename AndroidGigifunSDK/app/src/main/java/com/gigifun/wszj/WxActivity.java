@@ -11,6 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import com.gigifun.gp.utils.LogUtil;
+import com.gtoken.unclejoe.R;
 
 public class WxActivity extends Activity {
 
