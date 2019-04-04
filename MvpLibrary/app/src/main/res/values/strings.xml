@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">MvpLibrary</string>
+    <string name="net_no_network_error">网络链接异常</string>
+    <string name="net_host_error">网络IP异常</string>
+    <string name="net_date_error">数据异常</string>
+    <string name="net_time_out_error">网络连接超时</string>
 </resources>
