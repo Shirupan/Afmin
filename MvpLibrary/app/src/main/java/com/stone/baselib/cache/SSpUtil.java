@@ -9,25 +9,25 @@ import com.stone.baselib.SConfig;
  * Stone
  * 2019/4/3
  **/
-public class SSharedPreferences implements SCacheible {
+public class SSpUtil implements SCacheible {
 
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor editor;
 
     private static final String SP_NAME = SConfig.SP_NAME;
 
-    private static SSharedPreferences instance;
+    private static SSpUtil instance;
 
-    private SSharedPreferences(Context context) {
+    private SSpUtil(Context context) {
         sharedPreferences = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
 
-    public static SSharedPreferences getInstance(Context context) {
+    public static SSpUtil getInstance(Context context) {
         if (instance == null) {
-            synchronized (SSharedPreferences.class) {
+            synchronized (SSpUtil.class) {
                 if (instance == null) {
-                    instance = new SSharedPreferences(context.getApplicationContext());
+                    instance = new SSpUtil(context.getApplicationContext());
                 }
             }
         }
