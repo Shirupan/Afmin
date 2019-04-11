@@ -15,12 +15,12 @@ import io.reactivex.functions.Consumer;
  * Stone
  * 2019/4/4
  **/
-//public class SPresent extends BasePresent<SActivity> {
+//public class SPresentible extends BasePresent<SAbstractActivity> {
 //TODO 写完activity解除注释
 //    public void requestStone() {
 //        Map<String, Object> map = new HashMap<>();
 //        map.put("stone", "stone");
-//        SHttp.getService().postStone(map)
+//        SHttpFactory.getService().postStone(map)
 //                .compose(SHttpUtils.<StoneModel>getApiTransformer())
 //                .compose(SHttpUtils.<StoneModel>getScheduler())
 //                .compose(getV().bindToLifecycle())

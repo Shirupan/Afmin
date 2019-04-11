@@ -7,21 +7,21 @@ package com.stone.baselib.imageloader;
  **/
 public class SImgLoadFactory {
 
-    private static SImgLoadible loader;
+    private static volatile SImgLoadible instance;
 
     private SImgLoadFactory() {
 
     }
 
     public static SImgLoadible getGlideLoader() {
-        if (loader == null) {
+        if (instance == null) {
             synchronized (SImgLoadFactory.class) {
-                if (loader == null) {
-                    loader = new SGlideLoader();
+                if (instance == null) {
+                    instance = new SGlideImpl();
                 }
             }
         }
-        return loader;
+        return instance;
     }
 
 

@@ -21,7 +21,7 @@ import okio.Buffer;
  * 2019/4/4
  **/
 public class SLogInterceptor implements Interceptor {
-    public static final String TAG = "SHttp";
+    public static final String TAG = "SHttpFactory";
 
     @Override
     public Response intercept(Chain chain) throws IOException {
