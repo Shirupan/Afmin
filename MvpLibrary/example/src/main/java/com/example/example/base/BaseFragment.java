@@ -1,0 +1,31 @@
+package com.example.example.base;
+
+
+
+/**
+ * Stone
+ * 2019/4/11
+ * 处理一些定制化的加载提示
+ **/
+public abstract class BaseFragment<P extends SPresentImpl> extends SAbstractFragment<P> {
+
+    @Override
+    public void showLoading() {
+//TODO
+    }
+
+    @Override
+    public void showError() {
+//TODO
+    }
+
+    @Override
+    public void showNoNet() {
+//TODO
+    }
+
+    @Override
+    public void showEmpty() {
+//TODO
+    }
+}

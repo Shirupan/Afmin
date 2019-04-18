@@ -14,10 +14,12 @@ ext {
             okhttpVersion           : "3.9.0",
             retrofitVersion         : "2.3.0",
             rxjavaVersion         : "2.0.1",
+
             glideVersion            : "4.8.0",
 
             butterknifeVersion      : "8.8.1",
             leakcanaryVersion       : "1.6.2"
+
     ]
 
     dependencies = [
@@ -40,9 +42,16 @@ ext {
             "retrofit"                          : "com.squareup.retrofit2:retrofit:${version["retrofitVersion"]}",
             "converter-gson"                    : "com.squareup.retrofit2:converter-gson:${version["retrofitVersion"]}",
             "retrofit-adapter-rxjava"    : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitVersion"]}",
+
+            //rx
             "rxandroid"                  : "io.reactivex.rxjava2:rxandroid:${version["rxjavaVersion"]}",
             "rxjava"                     : "io.reactivex.rxjava2:rxjava:${version["rxjavaVersion"]}",
+            "rxlifecycle"                : "com.trello.rxlifecycle2:rxlifecycle:${version["rxjavaVersion"]}",
+            "rxlifecycle-android"        : "com.trello.rxlifecycle2:rxlifecycle-android:${version["rxjavaVersion"]}",
+            "rxlifecycle-components"     : "com.trello.rxlifecycle2:rxlifecycle-components:${version["rxjavaVersion"]}",
 
+            "eventbus"                      : "org.greenrobot:eventbus:3.1.1",
+            "butterknife"                : "com.jakewharton:butterknife:8.4.0",
 
             "gson"                              : "com.google.code.gson:gson:2.8.2",
             "multidex"       : "com.android.support:multidex:1.0.1",
