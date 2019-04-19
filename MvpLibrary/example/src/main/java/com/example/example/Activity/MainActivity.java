@@ -113,11 +113,21 @@ public class MainActivity extends BaseActivity<MainPresent> {
     }
 
     @OnClick({R.id.btn_main_sp})
-    public void onSp(View view) {
+    public void onClickSp(View view) {
         getP().getExitTime();
     }
 
     public void showExitTime(String time){
         btnSp.setText(time);
+    }
+
+    @OnClick({R.id.btn_main_http_post})
+    public void onClickHttpPost(View view) {
+        getP().httpPost();
+    }
+
+    @OnClick({R.id.btn_main_http_get})
+    public void onClickHttpGet(View view) {
+        getP().httpGet();
     }
 }

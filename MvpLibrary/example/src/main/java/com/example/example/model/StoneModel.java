@@ -1,6 +1,6 @@
-package com.stone.baselib.net.example;
+package com.example.example.model;
 
-import com.stone.baselib.net.SModel;
+import com.example.example.bean.StoneBean;
 
 import java.util.List;
 

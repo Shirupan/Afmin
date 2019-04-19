@@ -46,4 +46,20 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_main_event" />
+
+    <Button
+        android:id="@+id/btn_main_http_get"
+        style="@style/BtnMain"
+        android:text="Http get"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_sp" />
+
+    <Button
+        android:id="@+id/btn_main_http_post"
+        style="@style/BtnMain"
+        android:text="Http post"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_http_get" />
 </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.stone.baselib.net.example;
+package com.example.example.bean;
 
 /**
  * Stone
