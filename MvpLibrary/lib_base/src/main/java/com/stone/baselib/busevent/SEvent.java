@@ -6,5 +6,5 @@ package com.stone.baselib.busevent;
  **/
 public interface SEvent {
     int getEventType();
-    void setEventType(int eventType);
+    SEvent setEventType(int eventType);
 }

@@ -1,6 +1,8 @@
 package com.example.example.base;
 
 
+import com.stone.baselib.mvp.SAbstractActivity;
+import com.stone.baselib.mvp.SPresentImpl;
 
 /**
  * Stone

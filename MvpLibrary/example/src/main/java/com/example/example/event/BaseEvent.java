@@ -1,4 +1,4 @@
-package com.stone.baselib.busevent.example;
+package com.example.example.event;
 
 import com.stone.baselib.busevent.SEvent;
 
@@ -9,17 +9,25 @@ import com.stone.baselib.busevent.SEvent;
  **/
 public class BaseEvent implements SEvent {
     private int eventType;
-    private Object date;
-    private Object xx;
+    private Object data;
 
     @Override
     public int getEventType() {
-        return 0;
+        return eventType;
     }
 
     @Override
-    public void setEventType(int eventType) {
+    public BaseEvent setEventType(int eventType) {
         this.eventType = eventType;
+        return this;
     }
 
+    public Object getData() {
+        return data;
+    }
+
+    public BaseEvent setData(Object data) {
+        this.data = data;
+        return this;
+    }
 }

@@ -22,16 +22,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    packagingOptions {
+        exclude 'META-INF/androidx.core_core.version'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+        exclude 'META-INF/androidx.versionedparcelable_versionedparcelable.version'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    api project(':lib_base')
+
+    api project(":lib_base")
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]//若写在lib工程里注解会无效
+
 }
