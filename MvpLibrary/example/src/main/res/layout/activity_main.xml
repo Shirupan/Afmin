@@ -38,4 +38,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_main_snack" />
+
+    <Button
+        android:id="@+id/btn_main_sp"
+        style="@style/BtnMain"
+        android:text="sp get last exit time"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_event" />
 </android.support.constraint.ConstraintLayout>

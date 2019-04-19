@@ -8,12 +8,10 @@ import android.widget.ImageView;
 import com.example.example.Present.MainPresent;
 import com.example.example.R;
 import com.example.example.base.BaseActivity;
-import com.example.example.base.Constants;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
 import com.example.example.event.TestStrEvent;
 import com.stone.baselib.busevent.SBusFactory;
-import com.stone.baselib.busevent.SEvent;
 import com.stone.baselib.busevent.SEventBusImpl;
 import com.stone.baselib.imageloader.SImgLoadFactory;
 import com.stone.baselib.utils.SLogUtils;
@@ -33,8 +31,12 @@ public class MainActivity extends BaseActivity<MainPresent> {
     Button btnSnack;
     @BindView(R.id.btn_main_event)
     Button btnEvent;
+    @BindView(R.id.btn_main_sp)
+    Button btnSp;
+
     @BindView(R.id.iv_main_bg)
     ImageView ivBg;
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -56,6 +58,12 @@ public class MainActivity extends BaseActivity<MainPresent> {
     @Override
     public boolean useEventBus() {
         return false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        getP().saveTime();
     }
 
     public void showMsg(String msg) {
@@ -80,11 +88,7 @@ public class MainActivity extends BaseActivity<MainPresent> {
 
     @OnClick({R.id.btn_main_event})
     public void onClickEvent(View view) {
-        SEventBusImpl bus = SBusFactory.getBus();
-        bus.post(new TestStrEvent().setMsg("str event"));
-        bus.post(new TestIntEvent().setNum(1));
-        bus.post(new BaseEvent().setEventType(Constants.EVENT_BASE_INT).setData(1));
-        bus.post(new BaseEvent().setEventType(Constants.EVENT_BASE_STR).setData("str"));
+        getP().postBus();
     }
 
     //按类型方式来接收event
@@ -106,5 +110,14 @@ public class MainActivity extends BaseActivity<MainPresent> {
         }else if(event.getEventType()==Constants.EVENT_BASE_STR){
             showSnackBar((String) event.getData(), R.color.colorMain, R.string.btnSnackText);
         }
+    }
+
+    @OnClick({R.id.btn_main_sp})
+    public void onSp(View view) {
+        getP().getExitTime();
+    }
+
+    public void showExitTime(String time){
+        btnSp.setText(time);
     }
 }
