@@ -1,7 +1,9 @@
 package com.stone.baselib.cache;
 
-import android.support.v4.util.LruCache;
 import android.text.TextUtils;
+
+import androidx.collection.LruCache;
+
 
 /**
  * Stone

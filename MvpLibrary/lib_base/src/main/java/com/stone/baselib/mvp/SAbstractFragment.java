@@ -3,7 +3,6 @@ package com.stone.baselib.mvp;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,9 @@ import android.widget.Toast;
 
 import com.stone.baselib.busevent.SBusFactory;
 import com.stone.baselib.utils.SShowMsgUtils;
-import com.trello.rxlifecycle2.components.support.RxFragment;
+import com.trello.rxlifecycle3.components.RxFragment;
 
+import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
 
 /**

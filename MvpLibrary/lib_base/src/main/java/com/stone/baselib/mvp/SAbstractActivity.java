@@ -2,10 +2,7 @@ package com.stone.baselib.mvp;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.BaseTransientBottomBar;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
+
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,8 +10,9 @@ import android.widget.Toast;
 import com.painstone.mvplibrary.R;
 import com.stone.baselib.busevent.SBusFactory;
 import com.stone.baselib.utils.SShowMsgUtils;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
+import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
 
 /**

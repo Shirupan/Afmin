@@ -513,10 +513,6 @@ public class SDecodeUtils {
 
     }
 
-    public static boolean checkNull(String text) {
-        return null == text || text.length() == 0;
-    }
-
     public enum Algorithm {
         SHA("SHA"),
         MD5("MD5"),

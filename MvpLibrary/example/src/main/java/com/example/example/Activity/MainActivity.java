@@ -5,20 +5,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.example.Fragment.OneFragment;
+import com.example.example.Fragment.ThreeFragment;
+import com.example.example.Fragment.TwoFragment;
 import com.example.example.Present.MainPresent;
 import com.example.example.R;
 import com.example.example.base.BaseActivity;
+import com.example.example.base.BaseFragment;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
 import com.example.example.event.TestStrEvent;
-import com.stone.baselib.busevent.SBusFactory;
-import com.stone.baselib.busevent.SEventBusImpl;
 import com.stone.baselib.imageloader.SImgLoadFactory;
 import com.stone.baselib.utils.SLogUtils;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -48,6 +54,21 @@ public class MainActivity extends BaseActivity<MainPresent> {
 
         //使用Glide加载本地图片，也可以从网络加载
         SImgLoadFactory.getGlideLoader().loadResource(ivBg, R.mipmap.jfla, null);
+
+        initFragment();
+
+        initViewPager();
+    }
+
+    private void initViewPager() {
+    }
+
+    private void initFragment() {
+//        List<BaseFragment> list = new ArrayList<>();
+//        list.add(new OneFragment());
+//        list.add(new TwoFragment());
+//        list.add(new ThreeFragment());
+//        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), list));
     }
 
     @Override
@@ -130,4 +151,5 @@ public class MainActivity extends BaseActivity<MainPresent> {
     public void onClickHttpGet(View view) {
         getP().httpGet();
     }
+
 }

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -22,6 +21,9 @@ import com.bumptech.glide.request.transition.Transition;
 import com.stone.baselib.SConfig;
 
 import java.io.File;
+
+
+import androidx.annotation.Nullable;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
