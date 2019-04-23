@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.stone.baselib.busevent.SBusFactory;
 import com.stone.baselib.utils.SShowMsgUtils;
-import com.trello.rxlifecycle3.components.RxFragment;
+import com.trello.rxlifecycle3.components.SRxFragment;
 
 import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
  * Stone
  * 2019/4/11
  **/
-public abstract class SAbstractFragment<P extends SPresentible> extends RxFragment implements SViewible<P> {
+public abstract class SAbstractFragment<P extends SPresentible> extends SRxFragment implements SViewible<P> {
 
     private P p;
     private View mRootView;

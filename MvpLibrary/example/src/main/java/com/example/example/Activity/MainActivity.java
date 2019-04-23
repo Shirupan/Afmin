@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.example.Adpter.ViewPagerAdapter;
 import com.example.example.Fragment.OneFragment;
 import com.example.example.Fragment.ThreeFragment;
 import com.example.example.Fragment.TwoFragment;
@@ -31,6 +32,8 @@ import butterknife.OnClick;
 public class MainActivity extends BaseActivity<MainPresent> {
     public static final String TAG = "MainActivity";
 
+    @BindView(R.id.vp_main)
+    ViewPager viewPager;
     @BindView(R.id.btn_main_toast)
     Button btnToast;
     @BindView(R.id.btn_main_snack)
@@ -64,11 +67,11 @@ public class MainActivity extends BaseActivity<MainPresent> {
     }
 
     private void initFragment() {
-//        List<BaseFragment> list = new ArrayList<>();
-//        list.add(new OneFragment());
-//        list.add(new TwoFragment());
-//        list.add(new ThreeFragment());
-//        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), list));
+        List<BaseFragment> list = new ArrayList<>();
+        list.add(new OneFragment());
+        list.add(new TwoFragment());
+        list.add(new ThreeFragment());
+        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), list));
     }
 
     @Override
