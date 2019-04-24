@@ -1,12 +1,11 @@
-package com.example.example.Activity;
+package com.example.example.activity;
 
 import android.os.Bundle;
 
-import com.example.example.Adpter.ViewPager2Adapter;
-import com.example.example.Adpter.ViewPagerAdapter;
-import com.example.example.Fragment.OneFragment;
-import com.example.example.Fragment.ThreeFragment;
-import com.example.example.Fragment.TwoFragment;
+import com.example.example.adpter.ViewPager2Adapter;
+import com.example.example.fragment.HomeFragment;
+import com.example.example.fragment.ThreeFragment;
+import com.example.example.fragment.TwoFragment;
 import com.example.example.R;
 import com.example.example.base.BaseActivity;
 import com.example.example.base.BaseFragment;
@@ -14,7 +13,6 @@ import com.example.example.base.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 import butterknife.BindView;
 
@@ -37,7 +35,7 @@ public class ViewPager2Activity extends BaseActivity {
 
     private void initViewPager() {
         List<BaseFragment> list = new ArrayList<>();
-        list.add(new OneFragment());
+        list.add(new HomeFragment());
         list.add(new TwoFragment());
         list.add(new ThreeFragment());
         viewPager.setAdapter(new ViewPager2Adapter(this , list));

@@ -1,14 +1,14 @@
-package com.example.example.Activity;
+package com.example.example.activity;
 
 import android.os.Bundle;
 
 import com.example.example.Adpter.ViewPagerAdapter;
-import com.example.example.Fragment.OneFragment;
-import com.example.example.Fragment.ThreeFragment;
-import com.example.example.Fragment.TwoFragment;
 import com.example.example.R;
 import com.example.example.base.BaseActivity;
 import com.example.example.base.BaseFragment;
+import com.example.example.fragment.HomeFragment;
+import com.example.example.fragment.ThreeFragment;
+import com.example.example.fragment.TwoFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ public class ViewPagerActivity extends BaseActivity {
 
     private void initViewPager() {
         List<BaseFragment> list = new ArrayList<>();
-        list.add(new OneFragment());
+        list.add(new HomeFragment());
         list.add(new TwoFragment());
         list.add(new ThreeFragment());
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), list));

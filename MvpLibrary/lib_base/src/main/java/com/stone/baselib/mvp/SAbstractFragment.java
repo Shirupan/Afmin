@@ -105,7 +105,7 @@ public abstract class SAbstractFragment<P extends SPresentible> extends SRxFragm
 
     @Override
     public void butterKnifeBind(View rootView) {
-        ButterKnife.bind(rootView);
+        ButterKnife.bind(this, rootView);
     }
 
     @Override

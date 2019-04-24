@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".fragment.HomeFragment">
 
     <ImageView
-        android:id="@+id/iv_main_bg"
+        android:id="@+id/iv_home_bg"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -16,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <Button
-        android:id="@+id/btn_main_toast"
+        android:id="@+id/btn_home_toast"
         style="@style/BtnMain"
         android:text="Show toast"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,59 +25,42 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_main_snack"
+        android:id="@+id/btn_home_snack"
         style="@style/BtnMain"
         android:text="Show snack"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_toast" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_toast" />
 
     <Button
-        android:id="@+id/btn_main_event"
+        android:id="@+id/btn_home_event"
         style="@style/BtnMain"
         android:text="Send event"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_snack" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_snack" />
 
     <Button
-        android:id="@+id/btn_main_sp"
+        android:id="@+id/btn_home_sp"
         style="@style/BtnMain"
         android:text="sp get last exit time"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_event" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_event" />
 
     <Button
-        android:id="@+id/btn_main_http_get"
+        android:id="@+id/btn_home_http_get"
         style="@style/BtnMain"
         android:text="Http get"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_sp" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_sp" />
 
     <Button
-        android:id="@+id/btn_main_http_post"
+        android:id="@+id/btn_home_http_post"
         style="@style/BtnMain"
         android:text="Http post"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_http_get" />
-
-    <Button
-        android:id="@+id/btn_main_viewpager"
-        style="@style/BtnMain"
-        android:text="viewpager"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_http_post" />
-
-    <Button
-        android:id="@+id/btn_main_viewpager2"
-        style="@style/BtnMain"
-        android:text="viewpager2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_viewpager" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_http_get" />
 </androidx.constraintlayout.widget.ConstraintLayout>

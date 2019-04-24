@@ -1,14 +1,17 @@
-package com.example.example.activity;
+package com.example.example.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.example.Present.MainPresent;
+import com.example.example.Present.HomePresent;
+import com.example.example.Present.SetPwdPresent;
 import com.example.example.R;
-import com.example.example.base.BaseActivity;
+import com.example.example.activity.Constants;
+import com.example.example.base.BaseFragment;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
 import com.example.example.event.TestStrEvent;
@@ -19,26 +22,32 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends BaseActivity<MainPresent> {
-    public static final String TAG = "MainActivity";
 
-    @BindView(R.id.btn_main_toast)
+/**
+ * Stone
+ * 2019/4/11
+ **/
+public class HomeFragment extends BaseFragment<HomePresent> {
+    public static final String TAG = "HomeFragment";
+
+    @BindView(R.id.btn_home_toast)
     Button btnToast;
-    @BindView(R.id.btn_main_snack)
+    @BindView(R.id.btn_home_snack)
     Button btnSnack;
-    @BindView(R.id.btn_main_event)
+    @BindView(R.id.btn_home_event)
     Button btnEvent;
-    @BindView(R.id.btn_main_sp)
+    @BindView(R.id.btn_home_sp)
     Button btnSp;
 
-    @BindView(R.id.iv_main_bg)
+    @BindView(R.id.iv_home_bg)
     ImageView ivBg;
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.fragment_home;
     }
 
     @Override
@@ -47,12 +56,11 @@ public class MainActivity extends BaseActivity<MainPresent> {
 
         //使用Glide加载本地图片，也可以从网络加载
         SImgLoadFactory.getGlideLoader().loadResource(ivBg, R.mipmap.jfla, null);
-
     }
 
     @Override
-    public MainPresent getPInstance() {
-        return new MainPresent();
+    public HomePresent getPInstance() {
+        return new HomePresent();
     }
 
     @Override
@@ -61,8 +69,8 @@ public class MainActivity extends BaseActivity<MainPresent> {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
+        super.onDestroyView();
         getP().saveTime();
     }
 
@@ -76,17 +84,17 @@ public class MainActivity extends BaseActivity<MainPresent> {
         showToast(msg);
     }
 
-    @OnClick({R.id.btn_main_snack})
+    @OnClick({R.id.btn_home_snack})
     public void onClickSnack(View view) {
         showSnackBar("Click snack", R.color.colorMain, R.string.btnSnackText);
     }
 
-    @OnClick({R.id.btn_main_toast})
+    @OnClick({R.id.btn_home_toast})
     public void onClickToast(View view) {
         showToast("Click toast");
     }
 
-    @OnClick({R.id.btn_main_event})
+    @OnClick({R.id.btn_home_event})
     public void onClickEvent(View view) {
         getP().postBus();
     }
@@ -112,7 +120,7 @@ public class MainActivity extends BaseActivity<MainPresent> {
         }
     }
 
-    @OnClick({R.id.btn_main_sp})
+    @OnClick({R.id.btn_home_sp})
     public void onClickSp(View view) {
         getP().getExitTime();
     }
@@ -121,28 +129,13 @@ public class MainActivity extends BaseActivity<MainPresent> {
         btnSp.setText(time);
     }
 
-    @OnClick({R.id.btn_main_http_post})
+    @OnClick({R.id.btn_home_http_post})
     public void onClickHttpPost(View view) {
         getP().httpPost();
     }
 
-    @OnClick({R.id.btn_main_http_get})
+    @OnClick({R.id.btn_home_http_get})
     public void onClickHttpGet(View view) {
         getP().httpGet();
     }
-
-    @OnClick({R.id.btn_main_viewpager})
-    public void onClickViewPager(View view) {
-        toAct(ViewPagerActivity.class);
-    }
-
-    @OnClick({R.id.btn_main_viewpager2})
-    public void onClickViewPager2(View view) {
-        toAct(ViewPager2Activity.class);
-    }
-
-    private void toAct(Class<?> cls) {
-        startActivity(new Intent(this, cls));
-    }
-
 }

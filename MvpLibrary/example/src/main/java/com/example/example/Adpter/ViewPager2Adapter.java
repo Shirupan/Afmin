@@ -1,4 +1,4 @@
-package com.example.example.Adpter;
+package com.example.example.adpter;
 
 import com.example.example.base.BaseFragment;
 

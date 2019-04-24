@@ -1,4 +1,4 @@
-package com.example.example.Activity;
+package com.example.example.activity;
 
 /**
  * Stone

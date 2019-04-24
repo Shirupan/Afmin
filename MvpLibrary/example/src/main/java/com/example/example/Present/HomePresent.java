@@ -5,6 +5,7 @@ import com.example.example.activity.MainActivity;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
 import com.example.example.event.TestStrEvent;
+import com.example.example.fragment.HomeFragment;
 import com.example.example.http.SHttpFactory;
 import com.example.example.http.subscriber.SNetSubscriber;
 import com.example.example.model.NearMerChantsModel;
@@ -24,7 +25,7 @@ import java.util.Map;
  * Stone
  * 2019/4/11
  **/
-public class MainPresent extends SPresentImpl<MainActivity> {
+public class HomePresent extends SPresentImpl<HomeFragment> {
 
     public void getTestStr() {
         getV().showMsg("test");
@@ -39,12 +40,12 @@ public class MainPresent extends SPresentImpl<MainActivity> {
     }
 
     public void getExitTime() {
-        long time = SSpUtil.getInstance(getV()).getLong(Constants.SP_EXIT_TIME, 0);
+        long time = SSpUtil.getInstance(getV().getContext()).getLong(Constants.SP_EXIT_TIME, 0);
         getV().showExitTime(SDateUtils.getYmdhms(time));
     }
 
     public void saveTime() {
-        SSpUtil.getInstance(getV()).putLong(Constants.SP_EXIT_TIME, System.currentTimeMillis());
+        SSpUtil.getInstance(getV().getContext()).putLong(Constants.SP_EXIT_TIME, System.currentTimeMillis());
     }
 
 
