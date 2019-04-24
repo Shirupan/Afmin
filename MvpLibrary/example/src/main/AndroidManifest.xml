@@ -22,6 +22,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".Activity.ViewPagerActivity"></activity>
+        <activity android:name=".Activity.ViewPager2Activity"></activity>
     </application>
 
 </manifest>

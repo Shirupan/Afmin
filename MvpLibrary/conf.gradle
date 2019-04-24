@@ -33,6 +33,8 @@ ext {
             "cardview"       : "com.android.support:cardview-v7:${version["supportLibraryVersion"]}",
             "constraint-layout"                 : "com.android.support.constraint:constraint-layout:1.1.3",
             "appcompat-x"                 : "androidx.appcompat:appcompat:1.0.2",
+            "viewpager2"                 : "androidx.viewpager2:viewpager2:1.0.0-alpha03",
+
 
             //ImageLoader
             "glide"          : "com.github.bumptech.glide:glide:${version["glideVersion"]}",

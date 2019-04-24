@@ -44,6 +44,7 @@ dependencies {
     api project(":lib_base")
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]//若写在lib工程里注解会无效
 
-//    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha03'
+
+    api rootProject.ext.dependencies["viewpager2"]
 
 }
