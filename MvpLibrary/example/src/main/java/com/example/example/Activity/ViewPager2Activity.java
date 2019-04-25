@@ -19,6 +19,7 @@ import butterknife.BindView;
 /**
  * Stone
  * 2019/4/23
+ * ViewPager2还是测试版本2019.4.24
  **/
 public class ViewPager2Activity extends BaseActivity {
     @BindView(R.id.vp2_main)
@@ -38,6 +39,7 @@ public class ViewPager2Activity extends BaseActivity {
         list.add(new HomeFragment());
         list.add(new TwoFragment());
         list.add(new ThreeFragment());
+//        viewPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);//设置竖向滚动
         viewPager.setAdapter(new ViewPager2Adapter(this , list));
     }
 
