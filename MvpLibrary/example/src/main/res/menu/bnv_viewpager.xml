@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@mipmap/ic_menu_home"
+        android:title="@string/bnv_one"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/menu_two"
+        android:icon="@mipmap/ic_menu_home"
+        android:title="@string/bnv_two"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/menu_three"
+        android:icon="@mipmap/ic_menu_home"
+        android:title="@string/bnv_three"
+        app:showAsAction="withText" />
+</menu>
