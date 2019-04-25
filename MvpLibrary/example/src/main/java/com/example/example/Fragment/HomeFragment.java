@@ -1,16 +1,13 @@
 package com.example.example.fragment;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.example.Present.HomePresent;
-import com.example.example.Present.SetPwdPresent;
 import com.example.example.R;
-import com.example.example.activity.Constants;
+import com.example.example.app.Constants;
 import com.example.example.base.BaseFragment;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
@@ -22,7 +19,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 

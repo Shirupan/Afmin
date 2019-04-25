@@ -1,4 +1,8 @@
-package com.example.example.activity;
+package com.example.example.app;
+
+import android.os.Environment;
+
+import java.io.File;
 
 /**
  * Stone
@@ -13,4 +17,7 @@ public class Constants {
 
 //    sp
     public static final String SP_EXIT_TIME = "sp exit time";
+
+    public static final String FILE_DIR = Environment.getExternalStorageDirectory()+ File.separator+"stone"+File.separator;
+
 }

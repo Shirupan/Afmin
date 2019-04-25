@@ -9,7 +9,7 @@ import com.example.example.base.BaseActivity;
 import com.example.example.base.BaseFragment;
 import com.example.example.fragment.HomeFragment;
 import com.example.example.fragment.ThreeFragment;
-import com.example.example.fragment.TwoFragment;
+import com.example.example.fragment.FileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.stone.baselib.utils.SLogUtils;
 
@@ -49,7 +49,7 @@ public class ViewPagerActivity extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
-                    case R.id.menu_home:
+                    case R.id.menu_one:
                         viewPager.setCurrentItem(0);
                         return true;
                     case R.id.menu_two:
@@ -67,7 +67,7 @@ public class ViewPagerActivity extends BaseActivity {
     private void initViewPager() {
         List<BaseFragment> list = new ArrayList<>();
         list.add(new HomeFragment());
-        list.add(new TwoFragment());
+        list.add(new FileFragment());
         list.add(new ThreeFragment());
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), list));
         viewPager.setOffscreenPageLimit(list.size()-1);//设置页面缓存

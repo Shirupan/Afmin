@@ -3,6 +3,7 @@
     <string name="btnSnackText">Ok</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="bnv_one">Home</string>
-    <string name="bnv_two">two</string>
+    <string name="bnv_two">File</string>
     <string name="bnv_three">three</string>
+    <string name="hint_et_file">请输入文件内容</string>
 </resources>

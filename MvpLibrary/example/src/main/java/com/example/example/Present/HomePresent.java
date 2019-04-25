@@ -1,7 +1,6 @@
 package com.example.example.Present;
 
-import com.example.example.activity.Constants;
-import com.example.example.activity.MainActivity;
+import com.example.example.app.Constants;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
 import com.example.example.event.TestStrEvent;

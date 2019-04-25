@@ -1,6 +1,6 @@
 package com.example.example.event;
 
-import com.example.example.activity.Constants;
+import com.example.example.app.Constants;
 import com.stone.baselib.busevent.SEvent;
 
 /**

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.example.example.Present.MainPresent;
 import com.example.example.R;
+import com.example.example.app.Constants;
 import com.example.example.base.BaseActivity;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
