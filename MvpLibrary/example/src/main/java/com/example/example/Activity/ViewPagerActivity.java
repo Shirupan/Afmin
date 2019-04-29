@@ -11,6 +11,7 @@ import com.example.example.fragment.HomeFragment;
 import com.example.example.fragment.ThreeFragment;
 import com.example.example.fragment.FileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.example.anim.SPageTransformerFadeIn;
 import com.stone.baselib.utils.SLogUtils;
 
 import java.util.ArrayList;
@@ -69,9 +70,10 @@ public class ViewPagerActivity extends BaseActivity {
         list.add(new HomeFragment());
         list.add(new FileFragment());
         list.add(new ThreeFragment());
+        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.left_in, R.anim.right_out);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), list));
         viewPager.setOffscreenPageLimit(list.size()-1);//设置页面缓存
-
+        viewPager.setPageTransformer(true, new SPageTransformerFadeIn());
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

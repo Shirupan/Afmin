@@ -1,11 +1,14 @@
 package com.example.example.Present;
 
+import android.app.ActivityManager;
 import android.text.Editable;
 
 import com.example.example.app.Constants;
 import com.example.example.fragment.FileFragment;
 import com.stone.baselib.mvp.SPresentImpl;
+import com.stone.baselib.utils.SDecodeUtils;
 import com.stone.baselib.utils.SFileUtils;
+import com.stone.baselib.utils.SLogUtils;
 
 /**
  * Stone
@@ -24,5 +27,19 @@ public class FilePresent extends SPresentImpl<FileFragment> {
 
     public void read() {
         getV().setEtText(SFileUtils.readFile(FILENAME, "UTF-8").toString());
+    }
+
+    public void decode(String info) {
+//        getV().setEtText(SDecodeUtils.bytes2Hex(SDecodeUtils.BASE64.decode(info)));
+//        SDecodeUtils.RSA;SDecodeUtils.DES;
+    }
+
+    public void encode(String info) {
+//        try {
+//            SLogUtils.d(SDecodeUtils.hex2Bytes(SDecodeUtils.SHA.encrypt(info.getBytes())));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        getV().setEtText(SDecodeUtils.BASE64.encodeToString(info.getBytes()));
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--透明-->
+    <alpha
+        android:duration="500"
+        android:fromAlpha="0.8"
+        android:toAlpha="1.0" />
+
+    <!--平移：屏幕中间移出到右侧，-->
+    <translate
+        android:duration="500"
+        android:fromXDelta="0%p"
+        android:interpolator="@android:anim/accelerate_interpolator"
+        android:toXDelta="100%p" />
+
+    <!--旋转:500毫秒，0°旋转到360°，以X轴50%和Y轴50%点为中心-->
+    <rotate
+        android:duration="500"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="360" />
+
+    <!--缩放:500毫秒，XY从0放大到1.4倍，以X轴50%和Y轴50%点为中心-->
+    <scale
+        android:duration="500"
+        android:fromXScale="0"
+        android:toXScale="1.4"
+        android:fromYScale="0"
+        android:toYScale="1.4"
+        android:pivotX="50%"
+        android:pivotY="50%"/>
+</set>

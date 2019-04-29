@@ -29,4 +29,22 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_file_write" />
 
+    <Button
+        android:id="@+id/btn_file_decode"
+        style="@style/BtnMain"
+        android:text="File decode"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_file_read" />
+
+    <Button
+        android:id="@+id/btn_file_encode"
+        style="@style/BtnMain"
+        android:text="File encode"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_file_decode" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

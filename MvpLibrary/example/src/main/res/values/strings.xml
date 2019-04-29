@@ -6,4 +6,5 @@
     <string name="bnv_two">File</string>
     <string name="bnv_three">three</string>
     <string name="hint_et_file">请输入文件内容</string>
+    <string name="isComing">待实现</string>
 </resources>

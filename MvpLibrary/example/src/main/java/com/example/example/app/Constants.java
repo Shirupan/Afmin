@@ -9,6 +9,9 @@ import java.io.File;
  * 2019/4/19
  **/
 public class Constants {
+    //    encode
+    public static final int ENCODE_SHA = 1;
+
     //    BusEvent
     public static final int EVENT_TEST_INT = 1;
     public static final int EVENT_TEST_STR = 2;

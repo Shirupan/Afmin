@@ -19,6 +19,7 @@ import butterknife.OnClick;
 /**
  * Stone
  * 2019/4/11
+ * 文件操作示例
  **/
 public class FileFragment extends BaseFragment<FilePresent> {
 
@@ -49,6 +50,18 @@ public class FileFragment extends BaseFragment<FilePresent> {
     @OnClick(R.id.btn_file_read)
     public void onClickFileRead(View view) {
         getP().read();
+    }
+
+    @OnClick(R.id.btn_file_decode)
+    public void onClickFileDecode(View view) {
+        showToast(getString(R.string.isComing));
+        getP().decode(etFile.getText().toString());
+    }
+
+    @OnClick(R.id.btn_file_encode)
+    public void onClickFileEncode(View view) {
+        showToast(getString(R.string.isComing));
+        getP().encode(etFile.getText().toString());
     }
 
     public void setEtText(String msg){

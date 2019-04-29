@@ -14,7 +14,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 /**
  * Stone
  * 2019/4/22
- * FragmentPagerAdapter在saveState()和restoreState()不保存Fragment状态，而FragmentStatePagerAdapter将保存Fragment状态
  **/
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     List<BaseFragment> fragments;

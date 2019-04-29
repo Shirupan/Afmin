@@ -21,7 +21,8 @@
         android:text="Show toast"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_main_snack"
@@ -29,7 +30,8 @@
         android:text="Show snack"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_toast" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_toast"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_main_event"
@@ -37,7 +39,8 @@
         android:text="Send event"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_snack" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_snack"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_main_sp"
@@ -45,7 +48,8 @@
         android:text="sp get last exit time"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_event" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_event"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_main_http_get"
@@ -53,7 +57,8 @@
         android:text="Http get"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_sp" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_sp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_main_http_post"
@@ -61,7 +66,8 @@
         android:text="Http post"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_main_http_get" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_main_http_get"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/btn_main_viewpager"
