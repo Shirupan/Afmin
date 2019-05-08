@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.example.Present.MainPresent;
+import com.example.example.present.MainPresent;
 import com.example.example.R;
 import com.example.example.app.Constants;
 import com.example.example.base.BaseActivity;

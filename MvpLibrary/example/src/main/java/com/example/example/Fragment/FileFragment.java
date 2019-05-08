@@ -2,13 +2,11 @@ package com.example.example.fragment;
 
 import android.Manifest;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.example.Present.FilePresent;
+import com.example.example.present.FilePresent;
 import com.example.example.R;
-import com.example.example.app.Constants;
 import com.example.example.base.BaseFragment;
 
 import androidx.core.app.ActivityCompat;

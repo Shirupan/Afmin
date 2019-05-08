@@ -1,4 +1,4 @@
-package com.example.example.Present;
+package com.example.example.present;
 
 import com.example.example.app.Constants;
 import com.example.example.activity.MainActivity;

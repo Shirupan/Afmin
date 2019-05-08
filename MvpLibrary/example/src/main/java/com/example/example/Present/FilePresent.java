@@ -1,14 +1,9 @@
-package com.example.example.Present;
-
-import android.app.ActivityManager;
-import android.text.Editable;
+package com.example.example.present;
 
 import com.example.example.app.Constants;
 import com.example.example.fragment.FileFragment;
 import com.stone.baselib.mvp.SPresentImpl;
-import com.stone.baselib.utils.SDecodeUtils;
 import com.stone.baselib.utils.SFileUtils;
-import com.stone.baselib.utils.SLogUtils;
 
 /**
  * Stone

@@ -11,6 +11,7 @@ import com.stone.baselib.net.SRequestHandler;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 import okhttp3.CookieJar;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -29,6 +30,8 @@ public class App extends Application {
         super.onCreate();
         context = this;
         registerProvider();
+        //左滑关闭activity
+        BGASwipeBackHelper.init(this, null);
     }
 
     @Override
