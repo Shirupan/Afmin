@@ -7,4 +7,7 @@
     <string name="bnv_three">three</string>
     <string name="hint_et_file">请输入文件内容</string>
     <string name="isComing">待实现</string>
+    <string name="title_left">back</string>
+    <string name="title_right">close</string>
+    <string name="title_title">title</string>
 </resources>
