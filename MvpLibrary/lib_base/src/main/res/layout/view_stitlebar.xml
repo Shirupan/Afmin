@@ -7,29 +7,33 @@
         android:id="@+id/img_title_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:paddingEnd="5dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:paddingEnd="10dp"
+        tools:src="@mipmap/ic_test"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tv_title_left"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/tv_title_left"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:paddingEnd="10dp"
+        android:gravity="center"
         tools:text="left"
+        android:textSize="@dimen/text_size_title_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img_title_left"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/tv_title_center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
         tools:text="title"
+        android:textSize="@dimen/text_size_title_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,21 +42,23 @@
     <TextView
         android:id="@+id/tv_title_right"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:paddingStart="10dp"
+        android:gravity="center"
         tools:text="right"
-        android:padding="10dp"
+        android:textSize="@dimen/text_size_title_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/img_title_right"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <ImageView
         android:id="@+id/img_title_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="5dp"
-        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        tools:src="@mipmap/ic_test"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

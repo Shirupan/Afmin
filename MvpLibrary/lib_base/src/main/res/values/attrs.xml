@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="STitleBar">
+        <attr name="text_size" format="dimension" />
         <attr name="left_text" format="string" />
         <attr name="left_color" format="color" />
         <attr name="left_visible" format="boolean" />

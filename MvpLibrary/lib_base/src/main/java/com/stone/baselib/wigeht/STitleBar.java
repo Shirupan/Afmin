@@ -26,7 +26,8 @@ public class STitleBar extends ConstraintLayout {
     private TextView tvLeft;
     private TextView tvCenter;
     private TextView tvRight;
-    private int defColor = Color.BLACK;
+    private int defTextColor = Color.BLACK;
+    private float defTextSize = 18;
 
     public STitleBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -40,7 +41,7 @@ public class STitleBar extends ConstraintLayout {
         TypedArray attributes = context.obtainStyledAttributes(attrs, R.styleable.STitleBar);
         if (attributes != null) {
             tvLeft.setText(attributes.getString(R.styleable.STitleBar_left_text));
-            tvLeft.setTextColor(attributes.getColor(R.styleable.STitleBar_left_color, defColor));
+            tvLeft.setTextColor(attributes.getColor(R.styleable.STitleBar_left_color, defTextColor));
             if(attributes.getBoolean(R.styleable.STitleBar_left_visible,true)){
                 setLeftTextVisible(VISIBLE);
             }else {
@@ -55,7 +56,7 @@ public class STitleBar extends ConstraintLayout {
             }
 
             tvCenter.setText(attributes.getString(R.styleable.STitleBar_title_text));
-            tvCenter.setTextColor(attributes.getColor(R.styleable.STitleBar_title_color, defColor));
+            tvCenter.setTextColor(attributes.getColor(R.styleable.STitleBar_title_color, defTextColor));
             if(attributes.getBoolean(R.styleable.STitleBar_title_visible,true)){
                 setTitleVisible(VISIBLE);
             }else {
@@ -63,7 +64,7 @@ public class STitleBar extends ConstraintLayout {
             }
 
             tvRight.setText(attributes.getString(R.styleable.STitleBar_right_text));
-            tvRight.setTextColor(attributes.getColor(R.styleable.STitleBar_right_color, defColor));
+            tvRight.setTextColor(attributes.getColor(R.styleable.STitleBar_right_color, defTextColor));
             if(attributes.getBoolean(R.styleable.STitleBar_right_visible,true)){
                 setRightTextVisible(VISIBLE);
             }else {
@@ -77,6 +78,7 @@ public class STitleBar extends ConstraintLayout {
                 setRightImgVisible(GONE);
             }
 
+            setTextSize(attributes.getDimension(R.styleable.STitleBar_text_size, defTextSize));
         }
     }
 
@@ -96,6 +98,12 @@ public class STitleBar extends ConstraintLayout {
         tvLeft.setTextColor(getContext().getResources().getColor(colorId));
         tvCenter.setTextColor(getContext().getResources().getColor(colorId));
         tvRight.setTextColor(getContext().getResources().getColor(colorId));
+    }
+
+    public void setTextSize(float size){
+        tvLeft.setTextSize(size);
+        tvCenter.setTextSize(size);
+        tvRight.setTextSize(size);
     }
 
     public void setLeftImg(int id, OnClickListener onClickListener) {
