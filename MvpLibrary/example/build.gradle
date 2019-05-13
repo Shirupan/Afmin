@@ -37,7 +37,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    api 'cn.bingoogolapple:bga-swipebacklayout:1.2.0'
 //    api rootProject.ext.dependencies["appcompat-v7"]
     api rootProject.ext.dependencies["appcompat-x"]
 
@@ -45,6 +45,7 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]//若写在lib工程里注解会无效
 
     api 'com.jaeger.statusbarutil:library:1.5.1'
+
     api rootProject.ext.dependencies["viewpager2"]
 
 }

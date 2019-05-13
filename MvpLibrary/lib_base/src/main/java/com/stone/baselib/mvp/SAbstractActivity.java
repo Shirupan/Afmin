@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.painstone.mvplibrary.R;
 import com.stone.baselib.busevent.SBusFactory;
 import com.stone.baselib.utils.SShowMsgUtils;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
@@ -32,8 +29,8 @@ public abstract class SAbstractActivity<P extends SPresentible> extends RxAppCom
 
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());
-            initTopBar();
             butterKnifeBind(null);
+            initTopBar();
         }
         initView(savedInstanceState);
 
