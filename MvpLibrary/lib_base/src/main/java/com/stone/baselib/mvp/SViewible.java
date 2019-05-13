@@ -10,7 +10,8 @@ import android.view.View;
  **/
 public interface SViewible<P> {
 
-    //具体activity实现这三个方法
+    //具体Activity实现这三个方法
+
     /**
      * get view's layout
      */
@@ -27,8 +28,7 @@ public interface SViewible<P> {
     P getPInstance();
 
 
-
-    //AbstractActivity
+    //AbstractActivity实现以下方法
     /**
      * 展示顶部无网提示
      */
@@ -39,7 +39,14 @@ public interface SViewible<P> {
      */
     boolean useEventBus();
 
+    /**
+     * 设置状态栏
+     */
+    void setStatusBarBg();
 
+    /**
+     * 设置顶部自定义标题栏
+     */
     void initTopBar();
 
     void butterKnifeBind(View rootView);
@@ -54,9 +61,9 @@ public interface SViewible<P> {
     /**
      * Show snackBar
      *
-     * @param msg Message
+     * @param msg       Message
      * @param textColor text int color
-     * @param btnText btn int Message
+     * @param btnText   btn int Message
      */
     void showSnackBar(String msg, int textColor, int btnText);
 

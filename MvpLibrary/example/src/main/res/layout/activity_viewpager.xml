@@ -29,7 +29,7 @@
         app:img_left_visible="true"
         app:img_right_src="@mipmap/ic_close"
         app:img_right_visible="true"
-        app:text_size="20sp"/>
+        app:text_size="16sp"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_main"
