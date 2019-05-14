@@ -5,11 +5,13 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.painstone.mvplibrary.R;
+import com.stone.baselib.utils.SLogUtils;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -20,6 +22,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
  * 建议在xml中统一设置，或者在代码中统一设置。在代码中设置将覆盖xml设置。
  **/
 public class STitleBar extends ConstraintLayout {
+    public static final String TAG = "STitleBar";
 
     private ImageView imgLeft;
     private ImageView imgRight;
@@ -27,7 +30,7 @@ public class STitleBar extends ConstraintLayout {
     private TextView tvCenter;
     private TextView tvRight;
     private int defTextColor = Color.BLACK;
-    private float defTextSize = 18;
+    private int defTextSize = 54;//获取xml设置的值会翻三倍
 
     public STitleBar(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -78,7 +81,7 @@ public class STitleBar extends ConstraintLayout {
                 setRightImgVisible(GONE);
             }
 
-            setTextSize(attributes.getDimension(R.styleable.STitleBar_text_size, defTextSize));
+            setTextSize(attributes.getDimension(R.styleable.STitleBar_text_size, defTextSize)/3);
         }
     }
 
