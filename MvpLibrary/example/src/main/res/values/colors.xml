@@ -6,4 +6,8 @@
     <color name="colorMain">#66ccff</color>
     <color name="bg_title">@color/colorMain</color>
     <color name="text_title">#000000</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
 </resources>

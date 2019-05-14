@@ -19,7 +19,7 @@ public abstract class BaseActivity<P extends SPresentImpl> extends SAbstractActi
     STitleBar titleBar;
 
     public void setStatusBarBg() {
-        StatusBarUtil.setColor(this,getResources().getColor(R.color.bg_title));
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorMain), 0);
     }
 
     @Override
