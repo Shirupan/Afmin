@@ -59,8 +59,8 @@ ext {
             "butterknife-compiler"                : "com.jakewharton:butterknife-compiler:${version["butterknifeVersion"]}",
             "gson"                              : "com.google.code.gson:gson:2.8.2",
             "multidex"       : "com.android.support:multidex:1.0.1",
-            "swipeback"     :"cn.bingoogolapple:bga-swipebacklayout:1.2.0"
-
+            "swipeback"     :"cn.bingoogolapple:bga-swipebacklayout:1.2.0",
+            "statusbarutil"     :"com.jaeger.statusbarutil:library:1.5.1"
     ]
 
 }

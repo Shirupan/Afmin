@@ -46,5 +46,7 @@ dependencies {
     api rootProject.ext.dependencies["rxlifecycle-android"]
     api rootProject.ext.dependencies["rxlifecycle-components"]
     api rootProject.ext.dependencies["swipeback"]
+    api rootProject.ext.dependencies["statusbarutil"]
+
 
 }

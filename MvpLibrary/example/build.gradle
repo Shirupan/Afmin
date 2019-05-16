@@ -5,12 +5,11 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.example"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
+        flavorDimensions "versionCode"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -20,6 +19,38 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.config //签名
+        }
+        debug {
+            multiDexEnabled true
+//                signingConfig signingConfigs.config
+        }
+    }
+
+    productFlavors {//多渠道打包
+        yoyo {
+            applicationId 'com.example.example'
+        }
+    }
+
+    signingConfigs {
+        config {
+            keyAlias ''
+            keyPassword ''
+            storeFile file('../xx.jks')
+            storePassword ''
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def fileName = "Sapp"
+            def type = variant.buildType.name
+            if (variant.buildType.name.equals('release')) {
+                outputFileName = fileName + "-" + variant.productFlavors[0].name + "-" + variant.productFlavors[0].versionName + ".apk"
+            } else if (type.equals('debug')) {
+                outputFileName = fileName + new Date().format("-YYYYMMdd-HHmmss") + ".apk"
+            }
         }
     }
 
@@ -33,20 +64,18 @@ android {
         exclude 'META-INF/androidx.core_core.version'
         exclude 'META-INF/androidx.loader_loader.version'
     }
-}
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-//    api rootProject.ext.dependencies["appcompat-v7"]
-    api rootProject.ext.dependencies["appcompat-x"]
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api project(":lib_base")
+        api rootProject.ext.dependencies["appcompat-x"]
 
-    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]//若写在lib工程里注解会无效
+        api project(":lib_base")
 
-    api 'com.jaeger.statusbarutil:library:1.5.1'
+        annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]//若写在lib工程里注解会无效
 
-    api rootProject.ext.dependencies["viewpager2"]
+        api rootProject.ext.dependencies["viewpager2"]
 
+    }
 }
