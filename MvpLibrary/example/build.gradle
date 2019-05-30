@@ -7,38 +7,41 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
         flavorDimensions "versionCode"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
 
+    signingConfigs {
+        simaple {
+            keyAlias ''
+            keyPassword ''
+            storeFile file('../xx.jks')
+            storePassword ''
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.config //签名
+            multiDexEnabled true
+            minifyEnabled true
+            // true - 打开资源压缩
+//            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro','../lib_base/proguard-rules.pro'
+            signingConfig signingConfigs.simaple
         }
         debug {
             multiDexEnabled true
-//                signingConfig signingConfigs.config
+            minifyEnabled false
         }
     }
 
     productFlavors {//多渠道打包
         yoyo {
             applicationId 'com.example.example'
-        }
-    }
-
-    signingConfigs {
-        config {
-            keyAlias ''
-            keyPassword ''
-            storeFile file('../xx.jks')
-            storePassword ''
+            versionCode 1
+            versionName "1.0"
         }
     }
 
