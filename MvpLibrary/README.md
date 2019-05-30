@@ -1,6 +1,6 @@
-#基于mvp框架的基础库
+# 基于mvp框架的基础库
 
-##已实现：
+## 已实现：
 网络请求（retrofit）
 图片加载（glide）
 eventbus
@@ -14,7 +14,7 @@ StatusBarUtil
 activity滑动返回（swipeback）
 混淆
 
-##计划要实现：
+## 计划要实现：
 回调，dialog，跳转，数据库（Room），加载失败界面，webview，内存分析，动画，键盘，Activity管理，Activity过场动画
 
 
