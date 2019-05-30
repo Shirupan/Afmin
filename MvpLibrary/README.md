@@ -15,6 +15,16 @@ activity滑动返回（swipeback） </br>
 混淆  </br>
 
 ## 计划要实现：
-回调，dialog，跳转，数据库（Room），加载失败界面，webview，内存分析，动画，键盘，Activity管理，Activity过场动画
+回调  </br>
+dialog  </br>
+跳转  </br>
+数据库（Room） </br>
+加载失败界面  </br>
+webview  </br>
+内存分析  </br>
+动画  </br>
+键盘  </br
+Activity管理  </br>
+Activity过场动画
 
 
