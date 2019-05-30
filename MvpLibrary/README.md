@@ -1,7 +1,7 @@
 # 基于mvp框架的基础库
 
 ## 已实现：
-网络请求（retrofit）
+网络请求（retrofit）</br>
 图片加载（glide）
 eventbus
 日志打印
