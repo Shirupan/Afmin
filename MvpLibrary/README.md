@@ -30,10 +30,10 @@ Activity过场动画
 
 ## FAQ
 1、Static interface methods are only supported starting with Android N，JDK1.8以下不支持lambda，添加如下配置到build.gradle</br>
-    compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-    }
+        compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        }
 
 2、提示add 'tools:replace="android:appComponentFactory"' to <application> element at AndroidManifest.xml，添加如下配置到AndroidManifest</br>
     tools:replace="android:appComponentFactory"
