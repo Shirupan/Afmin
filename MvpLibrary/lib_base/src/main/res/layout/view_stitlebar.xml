@@ -10,7 +10,7 @@
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingEnd="10dp"
-        tools:src="@mipmap/ic_test"
+        tools:src="@mipmap/ic_stest"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -58,7 +58,7 @@
         android:paddingStart="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        tools:src="@mipmap/ic_test"
+        tools:src="@mipmap/ic_stest"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

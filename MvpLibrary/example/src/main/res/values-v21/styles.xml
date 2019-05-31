@@ -11,10 +11,10 @@
 
     <!--Activity切换动画-->
     <style name="activityAnimation" parent="@android:style/Animation">
-        <item name="android:activityOpenEnterAnimation">@anim/right_in</item>
-        <item name="android:activityOpenExitAnimation">@anim/left_out</item>
-        <item name="android:activityCloseEnterAnimation">@anim/left_in</item>
-        <item name="android:activityCloseExitAnimation">@anim/right_out</item>
+        <item name="android:activityOpenEnterAnimation">@anim/s_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/s_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/s_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/s_right_out</item>
     </style>
 
 </resources>

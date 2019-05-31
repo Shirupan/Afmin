@@ -70,7 +70,7 @@ public class ViewPagerActivity extends BaseActivity {
         list.add(new HomeFragment());
         list.add(new FileFragment());
         list.add(new ThreeFragment());
-        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.left_in, R.anim.right_out);
+        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.s_left_in, R.anim.s_right_out);
         viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager(), list));
         viewPager.setOffscreenPageLimit(list.size()-1);//设置页面缓存
         viewPager.setPageTransformer(true, new SPageTransformerFadeIn());
