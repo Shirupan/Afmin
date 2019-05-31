@@ -1,1 +1,0 @@
-include ':app', ':usdklib', ':base_lib', ':basic_plugin', ':sdk_api', ':pay_plugin', ':xx_channel'

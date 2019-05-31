@@ -1,9 +1,0 @@
-{
-    "channel_id": "TEST0000000",
-    "channel_from":"1",
-    "game_type": "2",
-    "game_id": "1",
-    "game_version": "v0.0.0_s0.0.0.0",
-    "sdk_version": "0.0.0.0",  
-	"isdebug":"false"
-}

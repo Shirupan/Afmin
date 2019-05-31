@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="currency_code">USD</string>
-    <!-- ugame url-->
-    <string name="ugame_url">https://api.playtoken.com/</string>
-
-</resources>

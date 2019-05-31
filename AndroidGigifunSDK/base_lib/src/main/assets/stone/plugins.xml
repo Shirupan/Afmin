@@ -1,5 +1,0 @@
-<plugins>
-    <plugin name="basic" class="com.stone.basic.impl.BasicPlugin" description="basic" init="false" version="1.0.0" versionCode="1"/>
-    <plugin name="jo" class="com.stone.channel.JointOperate" description="channel" interfaces="OnLifeCycleListener,OnLoginListener" init="false" version="1.0.0" versionCode="1"/>
-    <plugin name="pay" class="com.pubsky.jo.charge.ChargePlugin" description="pay" interfaces="OnLoginListener" init="false" version="1.0.0" versionCode="1"/>
-</plugins>
