@@ -29,6 +29,7 @@ Activity管理  </br>
 Activity过场动画
 
 ## 使用
+1、在项目build.gradle中添加
 
     allprojects {
         repositories {
@@ -36,6 +37,8 @@ Activity过场动画
             maven { url 'https://jitpack.io' }
         }
     }
+   
+2、添加依赖   
     
     implementation 'com.github.Shirupan:mvplib:1.0.3'
 
