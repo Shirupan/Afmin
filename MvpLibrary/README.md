@@ -28,6 +28,17 @@ webview  </br>
 Activity管理  </br>
 Activity过场动画
 
+## 使用
+
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+    
+    implementation 'com.github.Shirupan:mvplib:1.0.3'
+
 ## FAQ
 1、Static interface methods are only supported starting with Android N，JDK1.8以下不支持lambda，添加如下配置到build.gradle</br>
 
