@@ -1,5 +1,5 @@
 # 基于mvp框架的基础库
-
+本框架仅适用于androidX
 
 ## 已实现：
 网络请求（retrofit） </br>
@@ -63,4 +63,8 @@ Activity过场动画
     packagingOptions {
          exclude 'META-INF/*'
     }
+    
+4、报错V4相关Program type already present: android.support.v4.**，修改gradle.properties，使用androidX</br>
 
+    android.useAndroidX=true
+    android.enableJetifier=true
