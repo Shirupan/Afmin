@@ -41,7 +41,7 @@ Activity过场动画
 2、添加依赖   
     
     implementation 'com.github.Shirupan:mvplib:1.0.3'
-    implementation 'com.jakewharton:butterknife-compiler：10.1.0'
+    implementation 'com.jakewharton:butterknife-compiler:10.1.0'
 
 ## FAQ
 1、Static interface methods are only supported starting with Android N，JDK1.8以下不支持lambda，添加如下配置到build.gradle</br>
