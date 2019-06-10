@@ -3,6 +3,7 @@ package com.example.example.activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.example.R;
 import com.example.example.adpter.ViewPagerAdapter;
 import com.example.example.base.BaseActivity;
@@ -25,6 +26,7 @@ import butterknife.BindView;
  * Stone
  * 2019/4/23
  **/
+@Route(path = "/viewpager/activity")
 public class ViewPagerActivity extends BaseActivity {
 
     public static final String TAG = "ViewPagerActivity";

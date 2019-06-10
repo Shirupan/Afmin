@@ -31,7 +31,6 @@ dependencies {
     api rootProject.ext.dependencies["design"]
 
     api rootProject.ext.dependencies["glide"]
-    annotationProcessor rootProject.ext.dependencies["glide-compiler"]
 
     api rootProject.ext.dependencies["gson"]
     api rootProject.ext.dependencies["retrofit"]
@@ -48,6 +47,6 @@ dependencies {
     api rootProject.ext.dependencies["rxlifecycle-components"]
     api rootProject.ext.dependencies["swipeback"]
     api rootProject.ext.dependencies["statusbarutil"]
-
+    api rootProject.ext.dependencies["arouter"]
 
 }

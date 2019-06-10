@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.example.present.MainPresent;
 import com.example.example.R;
 import com.example.example.app.Constants;
@@ -134,12 +135,18 @@ public class MainActivity extends BaseActivity<MainPresent> {
 
     @OnClick({R.id.btn_main_viewpager})
     public void onClickViewPager(View view) {
-        toAct(ViewPagerActivity.class);
+        ARouter.getInstance().build("/viewpager/activity").navigation();
+//        toAct(ViewPagerActivity.class);
     }
 
     @OnClick({R.id.btn_main_viewpager2})
     public void onClickViewPager2(View view) {
         toAct(ViewPager2Activity.class);
+    }
+
+    @OnClick(R.id.btn_main_pay)
+    public void onClickPay(View view) {
+        ARouter.getInstance().build("/pay/activity").navigation();
     }
 
     private void toAct(Class<?> cls) {

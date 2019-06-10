@@ -19,7 +19,7 @@ ext {
             glideVersion            : "4.8.0",
 
             butterknifeVersion      : "10.1.0",
-            leakcanaryVersion       : "1.6.2"
+            leakcanaryVersion       : "1.6.2",
 
     ]
 
@@ -60,7 +60,9 @@ ext {
             "gson"                              : "com.google.code.gson:gson:2.8.2",
             "multidex"       : "com.android.support:multidex:1.0.1",
             "swipeback"     :"cn.bingoogolapple:bga-swipebacklayout:1.2.0",
-            "statusbarutil"     :"com.jaeger.statusbarutil:library:1.5.1"
+            "statusbarutil"     :"com.jaeger.statusbarutil:library:1.5.1",
+            "arouter"     :"com.alibaba:arouter-api:1.5.0",
+            "arouter-compiler"     :"com.alibaba:arouter-compiler:1.2.2"
     ]
 
 }
