@@ -1,4 +1,4 @@
-package com.example.pay;
+package com.example.example.bean;
 
 import java.io.Serializable;
 

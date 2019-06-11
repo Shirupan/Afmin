@@ -1,4 +1,4 @@
-package com.example.pay;
+package com.example.example.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,13 +6,15 @@ import android.os.Bundle;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.example.R;
+import com.example.example.bean.SerializableBean;
 import com.stone.baselib.utils.SLogUtils;
 
-import java.io.Serializable;
+import java.util.List;
 
 
 @Route(path = "/pay/activity")
-public class PayActivity extends Activity {
+public class ArouterActivity extends Activity {
 
     @Autowired int intMsg;
     @Autowired long longMsg;
@@ -20,6 +22,7 @@ public class PayActivity extends Activity {
     @Autowired float floatMsg;
     @Autowired boolean booleanMsg;
     @Autowired String stringMsg;
+    @Autowired List<SerializableBean> listMsg;
     @Autowired SerializableBean serializableMsg;
 
     @Override
@@ -35,7 +38,7 @@ public class PayActivity extends Activity {
         super.onStart();
         log();
     }
-     ;
+
     private void log() {
         SLogUtils.d("int:"+intMsg);
         SLogUtils.d("long:"+longMsg);
@@ -43,6 +46,7 @@ public class PayActivity extends Activity {
         SLogUtils.d("float:"+floatMsg);
         SLogUtils.d("boolean:"+booleanMsg);
         SLogUtils.d("String:"+stringMsg);
+        SLogUtils.d("object:"+listMsg.get(0).getName());
         SLogUtils.d("Serializable:"+serializableMsg.getAge()+","+serializableMsg.getName()+","+serializableMsg.getSex());
     }
 }

@@ -1,2 +1,2 @@
-include ':lib_base', ':lib_pay'
+include ':lib_base'
 include ':example'

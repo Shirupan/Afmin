@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".activity.ViewPagerActivity" />
         <activity android:name=".activity.ViewPager2Activity" />
+        <activity android:name=".activity.ArouterActivity" />
     </application>
 
 </manifest>

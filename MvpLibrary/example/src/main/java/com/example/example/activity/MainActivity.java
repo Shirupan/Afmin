@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.example.bean.SerializableBean;
 import com.example.example.present.MainPresent;
 import com.example.example.R;
 import com.example.example.app.Constants;
@@ -13,13 +14,15 @@ import com.example.example.base.BaseActivity;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
 import com.example.example.event.TestStrEvent;
-import com.example.pay.SerializableBean;
 import com.stone.baselib.imageloader.SImgLoadFactory;
 import com.stone.baselib.router.SRouterFactory;
 import com.stone.baselib.utils.SLogUtils;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -152,6 +155,10 @@ public class MainActivity extends BaseActivity<MainPresent> {
         sb.setAge(18);
         sb.setName("sb");
         sb.setSex(1);
+        List<SerializableBean> list = new ArrayList<>();
+        list.add(sb);
+//        ARouter.getInstance().build("/pay/activity").withObject("listMsg", list).navigation();
+
         SRouterFactory.getARouter().setAction("/pay/activity")
                 .putInt("intMsg", 1)
                 .putLong("longMsg", 2)
@@ -160,6 +167,7 @@ public class MainActivity extends BaseActivity<MainPresent> {
                 .putBoolean("booleanMsg", true)
                 .putString("stringMsg", "string")
                 .putSerializable("serializableMsg", sb)
+                .putObject("listMsg", list)
                 .start();
     }
 
