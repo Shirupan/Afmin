@@ -33,6 +33,7 @@ dependencies {
 
     api project(":lib_base")
 
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 
 }

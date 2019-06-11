@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.example.present.MainPresent;
 import com.example.example.R;
 import com.example.example.app.Constants;
@@ -14,7 +13,9 @@ import com.example.example.base.BaseActivity;
 import com.example.example.event.BaseEvent;
 import com.example.example.event.TestIntEvent;
 import com.example.example.event.TestStrEvent;
+import com.example.pay.SerializableBean;
 import com.stone.baselib.imageloader.SImgLoadFactory;
+import com.stone.baselib.router.SRouterFactory;
 import com.stone.baselib.utils.SLogUtils;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -135,8 +136,9 @@ public class MainActivity extends BaseActivity<MainPresent> {
 
     @OnClick({R.id.btn_main_viewpager})
     public void onClickViewPager(View view) {
-        ARouter.getInstance().build("/viewpager/activity").navigation();
-//        toAct(ViewPagerActivity.class);
+        SRouterFactory.getARouter().setAction("/viewpager/activity").start();
+        //        ARouter.getInstance().build("/viewpager/activity").navigation();
+
     }
 
     @OnClick({R.id.btn_main_viewpager2})
@@ -145,8 +147,20 @@ public class MainActivity extends BaseActivity<MainPresent> {
     }
 
     @OnClick(R.id.btn_main_pay)
-    public void onClickPay(View view) {
-        ARouter.getInstance().build("/pay/activity").navigation();
+    public void onClickArouter(View view) {
+        SerializableBean sb = new SerializableBean();
+        sb.setAge(18);
+        sb.setName("sb");
+        sb.setSex(1);
+        SRouterFactory.getARouter().setAction("/pay/activity")
+                .putInt("intMsg", 1)
+                .putLong("longMsg", 2)
+                .putFloat("floatMsg", 3)
+                .putDouble("doubleMsg", 4)
+                .putBoolean("booleanMsg", true)
+                .putString("stringMsg", "string")
+                .putSerializable("serializableMsg", sb)
+                .start();
     }
 
     private void toAct(Class<?> cls) {
