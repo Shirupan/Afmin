@@ -1,10 +1,11 @@
-package com.stone.baselib.router;
+package com.stone.baselib.router.arouter;
 
 import android.content.Context;
 import android.os.Parcelable;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.stone.baselib.router.SRouterible;
 
 import java.io.Serializable;
 

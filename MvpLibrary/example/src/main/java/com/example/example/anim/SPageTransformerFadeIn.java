@@ -15,7 +15,9 @@ public class SPageTransformerFadeIn extends SPageTransformerable {
     private float mMaxAlpha = 1.0f;
 
     public SPageTransformerFadeIn() {
+
     }
+
     public SPageTransformerFadeIn(float maxRotation) {
         setMaxAlpha(maxRotation);
     }
@@ -30,7 +32,6 @@ public class SPageTransformerFadeIn extends SPageTransformerable {
         }else{
             view.setAlpha(mMaxAlpha);
         }
-
 
     }
 

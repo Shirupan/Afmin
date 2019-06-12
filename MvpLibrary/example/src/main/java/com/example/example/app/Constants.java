@@ -19,7 +19,7 @@ public class Constants {
     public static final int EVENT_BASE_STR = 4;
 
 //    sp
-    public static final String SP_EXIT_TIME = "sp exit time";
+    public static final String SP_EXIT_TIME = "spExitTime";
 
     public static final String FILE_DIR = Environment.getExternalStorageDirectory()+ File.separator+"stone"+File.separator;
 

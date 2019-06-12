@@ -29,7 +29,6 @@ public class App extends SApp {
     @Override
     public void onCreate() {
         super.onCreate();
-        ARouter.init(this);
     }
 
     @Override

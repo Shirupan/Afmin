@@ -1,4 +1,4 @@
-package com.stone.baselib.router;
+package com.stone.baselib.router.arouter;
 
 import android.content.Context;
 
