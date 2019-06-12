@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.example.bean.SerializableBean;
 import com.example.example.present.MainPresent;
 import com.example.example.R;
@@ -139,9 +140,9 @@ public class MainActivity extends BaseActivity<MainPresent> {
 
     @OnClick({R.id.btn_main_viewpager})
     public void onClickViewPager(View view) {
-        SRouterFactory.getARouter().setAction("/viewpager/activity").start();
-        //        ARouter.getInstance().build("/viewpager/activity").navigation();
-
+        SRouterFactory.getARouter().setAction("/viewpager/activity")
+                .setTransition(R.anim.s_right_in, R.anim.s_left_out)
+                .startWithAnim(this);
     }
 
     @OnClick({R.id.btn_main_viewpager2})
@@ -157,7 +158,11 @@ public class MainActivity extends BaseActivity<MainPresent> {
         sb.setSex(1);
         List<SerializableBean> list = new ArrayList<>();
         list.add(sb);
-//        ARouter.getInstance().build("/pay/activity").withObject("listMsg", list).navigation();
+//        ARouter.getInstance().build("/pay/activity")
+//                .withObject("listMsg", list)
+//                .withSerializable("serializableMsg", sb)
+//                .withTransition(R.anim.s_left_in, R.anim.s_left_out)
+//                .navigation(this);//withTransition一定要传context才生效
 
         SRouterFactory.getARouter().setAction("/pay/activity")
                 .putInt("intMsg", 1)
@@ -168,7 +173,8 @@ public class MainActivity extends BaseActivity<MainPresent> {
                 .putString("stringMsg", "string")
                 .putSerializable("serializableMsg", sb)
                 .putObject("listMsg", list)
-                .start();
+                .setTransition(R.anim.s_right_in, R.anim.s_left_out)
+                .startWithAnim(this);
     }
 
     private void toAct(Class<?> cls) {

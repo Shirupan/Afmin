@@ -1,5 +1,6 @@
 package com.stone.baselib.router;
 
+import android.content.Context;
 import android.os.Parcelable;
 
 import com.alibaba.android.arouter.facade.Postcard;
@@ -78,6 +79,10 @@ public class SARouterImpl implements SRouterible {
         return this;
     }
 
+    public static void init(Context context) {
+        ARouter.getInstance().inject(context);
+    }
+
     public SARouterImpl putSerializable(String key, Serializable msg) {
         instance.withSerializable(key, msg);
         return this;
@@ -93,5 +98,7 @@ public class SARouterImpl implements SRouterible {
         instance.navigation();
     }
 
-
+    public void startWithAnim(Context context) {
+        instance.navigation(context);
+    }
 }

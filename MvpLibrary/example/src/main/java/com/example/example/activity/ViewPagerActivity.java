@@ -13,12 +13,14 @@ import com.example.example.fragment.ThreeFragment;
 import com.example.example.fragment.FileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.example.anim.SPageTransformerFadeIn;
+import com.stone.baselib.router.SRouterFactory;
 import com.stone.baselib.utils.SLogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import butterknife.BindView;
 

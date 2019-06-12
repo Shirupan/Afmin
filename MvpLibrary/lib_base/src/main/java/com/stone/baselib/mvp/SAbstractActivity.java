@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.painstone.mvplibrary.R;
 import com.stone.baselib.busevent.SBusFactory;
+import com.stone.baselib.router.SRouterFactory;
 import com.stone.baselib.utils.SShowMsgUtils;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
@@ -36,6 +37,7 @@ public abstract class SAbstractActivity<P extends SPresentible> extends RxAppCom
             initTopBar();
             initSwipeBackFinish();
             setStatusBarBg();
+            SRouterFactory.init(this);
         }
         initView(savedInstanceState);
 
