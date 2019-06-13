@@ -14,11 +14,11 @@ StatusBarUtil </br>
 标题栏titlebar </br>
 activity滑动返回（swipeback） </br>
 混淆  </br>
+跳转，未封装拦截器（ARouter）  </br>
 
 ## 计划要实现：
 回调  </br>
 dialog  </br>
-跳转  </br>
 数据库（Room） </br>
 加载失败界面  </br>
 webview  </br>
