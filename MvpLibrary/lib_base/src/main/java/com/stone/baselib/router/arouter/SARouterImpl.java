@@ -5,7 +5,9 @@ import android.os.Parcelable;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.stone.baselib.SConfig;
 import com.stone.baselib.router.SRouterible;
+import com.stone.baselib.utils.SLogUtils;
 
 import java.io.Serializable;
 
@@ -16,19 +18,25 @@ import java.io.Serializable;
 public class SARouterImpl implements SRouterible {
     private Postcard instance;
 
+    public static int ROUTER_ENTER_ANIM;
+    public static int ROUTER_EXIT_ANIM;
+
     public void SARouterImpl(){
 
     }
 
     @Override
     public SARouterImpl setAction(String action) {
+        ROUTER_ENTER_ANIM = SConfig.ROUTER_ENTER_ANIM;
+        ROUTER_EXIT_ANIM = SConfig.ROUTER_EXIT_ANIM;
         instance = ARouter.getInstance().build(action);
         return this;
     }
 
     @Override
     public SARouterImpl setTransition(int enterId, int exitId) {
-        instance.withTransition(enterId, exitId);
+        ROUTER_ENTER_ANIM = enterId;
+        ROUTER_EXIT_ANIM = exitId;
         return this;
     }
 
@@ -100,6 +108,11 @@ public class SARouterImpl implements SRouterible {
     }
 
     public void startWithAnim(Context context) {
+        SLogUtils.d(ROUTER_ENTER_ANIM+"");
+
+        if(ROUTER_ENTER_ANIM >0&& ROUTER_EXIT_ANIM >0){
+            instance.withTransition(ROUTER_ENTER_ANIM, ROUTER_EXIT_ANIM);
+        }
         instance.navigation(context);
     }
 }

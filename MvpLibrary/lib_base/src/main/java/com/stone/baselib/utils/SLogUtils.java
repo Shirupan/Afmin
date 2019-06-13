@@ -11,10 +11,11 @@ import com.stone.baselib.SConfig;
  **/
 public class SLogUtils {
     private static boolean mIsDebug = SConfig.ISLOGDEBUG;
-    private static final String TAG = SConfig.LOGTAG;
+    private static String TAG = SConfig.LOGTAG;
 
-    public void init(boolean isDebug){
-        mIsDebug = isDebug;
+    public static void init(){
+        mIsDebug = SConfig.ISLOGDEBUG;
+        TAG = SConfig.LOGTAG;
     }
 
     public static void d(String msg){

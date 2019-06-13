@@ -18,12 +18,10 @@ import com.stone.baselib.utils.SLogUtils;
 public class SRouterInterceptor implements IInterceptor {
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
-        SLogUtils.d("SLoginInterceptor process");
         callback.onContinue(postcard);//处理完成，交还控制权
     }
 
     @Override
     public void init(Context context) {
-        SLogUtils.d("SLoginInterceptor init");
     }
 }

@@ -5,10 +5,12 @@ import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.stone.baselib.App.SApp;
+import com.stone.baselib.SConfig;
 import com.stone.baselib.net.SHttpUtils;
 import com.stone.baselib.net.SNetError;
 import com.stone.baselib.net.SNetProvider;
 import com.stone.baselib.net.SRequestHandler;
+import com.stone.baselib.utils.SLogUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +31,8 @@ public class App extends SApp {
     @Override
     public void onCreate() {
         super.onCreate();
+        Constants.init();
+        SLogUtils.init();
     }
 
     @Override

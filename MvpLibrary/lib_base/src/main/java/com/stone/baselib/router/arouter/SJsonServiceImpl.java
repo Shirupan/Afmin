@@ -11,6 +11,7 @@ import java.lang.reflect.Type;
 /**
  * Stone
  * 2019/6/11
+ * withObject需要实现SerializationService，这个服务不需要使用者启动
  **/
 @Route(path = "/sarouter/json")
 public class SJsonServiceImpl implements SerializationService {
