@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.bumptech.glide.Glide;
 import com.stone.baselib.net.SHttpUtils;
 import com.stone.baselib.net.SNetError;
 import com.stone.baselib.net.SNetProvider;
@@ -117,6 +118,20 @@ public class SApp extends Application {
     //注册网络提供
     private void registerProvider() {
         SHttpUtils.registerProvider(getSNetProvider());
+    }
 
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        if (level == TRIM_MEMORY_UI_HIDDEN) {
+            Glide.get(this).clearMemory();
+        }
+        Glide.get(this).trimMemory(level);
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        Glide.get(this).clearMemory();
     }
 }
