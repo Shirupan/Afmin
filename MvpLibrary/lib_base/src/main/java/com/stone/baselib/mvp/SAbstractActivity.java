@@ -13,6 +13,7 @@ import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
 import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 
 /**
@@ -25,6 +26,7 @@ public abstract class SAbstractActivity<P extends SPresentible> extends RxAppCom
     private P p;
     protected Activity context;
     protected BGASwipeBackHelper mSwipeBackHelper;
+    private Unbinder unbind;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,6 +59,7 @@ public abstract class SAbstractActivity<P extends SPresentible> extends RxAppCom
         if (useEventBus()) {
             SBusFactory.getBus().unregister(this);
         }
+        unbind.unbind();
         if (getP() != null) {
             getP().detachV();
         }
@@ -90,7 +93,7 @@ public abstract class SAbstractActivity<P extends SPresentible> extends RxAppCom
 
     @Override
     public void butterKnifeBind(View rootView) {
-        ButterKnife.bind(this);
+        unbind = ButterKnife.bind(this);
     }
 
     /**

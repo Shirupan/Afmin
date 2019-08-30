@@ -15,6 +15,7 @@ import com.trello.rxlifecycle3.components.SRxFragment;
 
 import androidx.annotation.Nullable;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Stone
@@ -26,6 +27,7 @@ public abstract class SAbstractFragment<P extends SPresentible> extends SRxFragm
     private View mRootView;
     protected Activity context;
     protected LayoutInflater layoutInflater;
+    private Unbinder unbinder;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -113,6 +115,7 @@ public abstract class SAbstractFragment<P extends SPresentible> extends SRxFragm
         if (useEventBus()) {
             SBusFactory.getBus().unregister(this);
         }
+        unbinder.unbind();
         if (getP() != null) {
             getP().detachV();
         }
@@ -151,7 +154,7 @@ public abstract class SAbstractFragment<P extends SPresentible> extends SRxFragm
 
     @Override
     public void butterKnifeBind(View rootView) {
-        ButterKnife.bind(this, rootView);
+        unbinder = ButterKnife.bind(this, rootView);
     }
 
     @Override
