@@ -1,4 +1,4 @@
-package com.stone.baselib.wigeht;
+package com.stone.baselib.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
