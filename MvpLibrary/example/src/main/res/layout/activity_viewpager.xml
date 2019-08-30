@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.ViewPagerActivity">
 
-    <com.stone.baselib.wigeht.STitleBar
+    <com.stone.baselib.widget.STitleBar
         android:id="@+id/title_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <com.stone.baselib.wigeht.STitleBar
+    <com.stone.baselib.widget.STitleBar
         android:id="@+id/title_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

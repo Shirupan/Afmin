@@ -8,6 +8,7 @@ import android.view.View;
 import com.painstone.mvplibrary.R;
 import com.stone.baselib.busevent.SBusFactory;
 import com.stone.baselib.router.SRouterFactory;
+import com.stone.baselib.utils.SFinishActivityManager;
 import com.stone.baselib.utils.SShowMsgUtils;
 import com.trello.rxlifecycle3.components.support.RxAppCompatActivity;
 
@@ -27,7 +28,7 @@ public abstract class SAbstractActivity<P extends SPresentible> extends RxAppCom
     protected Activity context;
     protected BGASwipeBackHelper mSwipeBackHelper;
     private Unbinder unbind;
-
+    protected SFinishActivityManager activityManager;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,8 @@ public abstract class SAbstractActivity<P extends SPresentible> extends RxAppCom
             initSwipeBackFinish();
             setStatusBarBg();
             SRouterFactory.init(this);
+            activityManager = SFinishActivityManager.getManager();
+            activityManager.addActivity(this);
         }
         initView(savedInstanceState);
 
@@ -64,6 +67,7 @@ public abstract class SAbstractActivity<P extends SPresentible> extends RxAppCom
             getP().detachV();
         }
         p = null;
+        activityManager.finishActivity(this);
     }
 
     @Override

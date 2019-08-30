@@ -1,6 +1,5 @@
 package com.example.example.base;
 
-import android.os.Bundle;
 import com.example.example.R;
 import com.jaeger.library.StatusBarUtil;
 
@@ -8,7 +7,7 @@ import android.view.View;
 
 import com.stone.baselib.mvp.SAbstractActivity;
 import com.stone.baselib.mvp.SPresentImpl;
-import com.stone.baselib.wigeht.STitleBar;
+import com.stone.baselib.widget.STitleBar;
 
 /**
  * Stone
