@@ -15,6 +15,7 @@ StatusBarUtil </br>
 activity滑动返回（swipeback） </br>
 混淆  </br>
 跳转，未封装拦截器（ARouter）  </br>
+Activity管理  </br>
 
 ## 计划要实现：
 回调  </br>
@@ -25,7 +26,6 @@ webview  </br>
 内存分析  </br>
 动画  </br>
 键盘  </br>
-Activity管理  </br>
 Activity过场动画
 
 ## 使用
